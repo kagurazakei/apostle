@@ -21,7 +21,7 @@ in
       imports = [ inputs.hjem.nixosModules.default ];
 
       hjem = {
-        linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
+        linker = with-inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
         clobberByDefault = true;
         extraModules = [
           inputs.qtengine.hjemModules.default

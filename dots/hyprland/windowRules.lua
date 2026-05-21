@@ -1,4 +1,5 @@
 hl.layer_rule({ match = { namespace = "launcher" }, blur = true, ignore_alpha = 0 })
+hl.layer_rule({ match = { class = "org.febvre.Komikku" }, blur = true, ignore_alpha = 1 })
 hl.layer_rule({ match = { namespace = "wleave" }, blur = true, xray = true })
 hl.layer_rule({ match = { namespace = "bar-.*" }, blur = true, xray = true, ignore_alpha = 0 })
 hl.layer_rule({ match = { namespace = "notifications" }, blur = true, animation = "slide" })
@@ -65,7 +66,8 @@ hl.window_rule({
 	match = { class = "org.kde.dolphin" },
 	move = { "cursor_x-(window_w*0.5)", "cursor_y-(window_h*0.5)" },
 })
-hl.window_rule({ match = { class = "kitty" }, opacity = "0.8 0.8" })
+hl.window_rule({ match = { class = "kitty" }, opacity = "0.9 0.95" })
+hl.window_rule({ match = { class = "info.febvre.Komikku" }, opacity = "1.0 1.0" })
 hl.window_rule({ match = { float = true }, opacity = "0.95 0.98" })
 hl.window_rule({
 	match = { class = "librewolf" },
@@ -101,6 +103,8 @@ hl.window_rule({ match = { tag = "term" }, tag = "-code" }) -- Remove dynamic ta
 
 hl.layer_rule({ match = { namespace = "quickshell" }, no_anim = true, order = -1 })
 hl.layer_rule({ match = { namespace = "quickshell" }, blur = true })
+hl.layer_rule({ match = { namespace = "kitty" }, blur = true })
+hl.layer_rule({ match = { namespace = "librewolf" }, blur = true })
 hl.layer_rule({ match = { namespace = "quickshell" }, blur_popups = true })
 hl.layer_rule({ match = { namespace = "quickshell" }, ignore_alpha = 0.2 })
 hl.layer_rule({ match = { namespace = "quickshell" }, ignore_alpha = 0.4, blur = true })
@@ -132,7 +136,7 @@ hl.layer_rule({
 hl.window_rule({ match = { class = "^()$", title = "^()$" }, no_blur = true })
 
 -- Disable blur for every window
-hl.window_rule({ match = { class = ".*" }, no_blur = true })
+hl.window_rule({ match = { class = ".*" }, no_blur = false })
 
 -- Floating
 hl.window_rule({ match = { title = "^(Open File)(.*)$" }, center = true })

@@ -8,12 +8,14 @@ let
 
   inputSpec = {
     nixpkgs = inputs.nixpkgs;
+    nixpkgs-lib.inputs.nixpkgs.follows = "nixpkgs";
     hjem = inputs.hjem;
     flake-utils = inputs.flake-utils;
     quickshell = inputs.quickshell;
     hyprland = inputs.hyprland;
     niri = inputs.niri;
     niri-nix = inputs.niri-nix;
+    smfh.inputs.hjem.follows = "hjem";
     neovim-nightly = {
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -57,25 +59,16 @@ let
     };
 
   modules = {
-    imports =
-      utils.recursiveImport {
-        dirs = [
-          ./modules
-          ./options
-        ];
-        excludePrefixedWith = [
-          "_"
-          "+"
-        ];
-      }
-      ++ [
-        {
-          _module.args = {
-            zpkgs = zpkgs.customDeri;
-            inherit self;
-          };
-        }
+    imports = utils.recursiveImport {
+      dirs = [
+        ./modules
+        ./options
       ];
+      excludePrefixedWith = [
+        "_"
+        "+"
+      ];
+    };
   };
 
   self =
@@ -85,12 +78,14 @@ let
       ];
       specialArgs = {
         inherit
+          self
           utils
           inputs
           username
           with-inputs-lib
           with-inputs
           ;
+        zpkgs = zpkgs.customDeri;
         pkgs = nixpkgs;
       };
     }).config

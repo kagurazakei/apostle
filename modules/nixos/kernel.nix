@@ -1,4 +1,3 @@
-{ inputs, ... }:
 {
   modules.nixos.kernel =
     {
@@ -33,7 +32,7 @@
       boot = {
         kernelPackages =
           if config.networking.hostName == "hana" then
-            pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto
+            pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-zen4
           else
             pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
         kernelParams = [

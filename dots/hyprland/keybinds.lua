@@ -2,7 +2,6 @@ local terminal = "kitty"
 local fileManager = terminal .. " --class float-fm -e yazi"
 local menu = "TERMINAL=" .. terminal .. " fuzzel"
 local viuFloat = terminal .. " --class float-viu -e viu"
-
 local mainMod = "SUPER"
 local tpd = "elan962c:00-04f3:30d0-touchpad"
 hl.bind("ALT + mouse:272", hl.dsp.window.drag(), { mouse = true }) -- ALT + LMB: Move a window by dragging more than 10px.
@@ -54,21 +53,23 @@ hl.bind(
 )
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("ambxst brightness +10"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("ambxst brightness -10"), { locked = true, repeating = true })
-hl.bind("SUPER + Super_L", hl.dsp.exec_cmd("ambxst run launcher"))
-hl.bind("SUPER + M", hl.dsp.exec_cmd("ambxst run dashboard"))
-hl.bind("SUPER + A", hl.dsp.exec_cmd("ambxst run assistant"))
-hl.bind("SUPER + V", hl.dsp.exec_cmd("ambxst run clipboard"))
-hl.bind("SUPER + PERIOD", hl.dsp.exec_cmd("ambxst run emoji"))
-hl.bind("SUPER + N", hl.dsp.exec_cmd("ambxst run notes"))
-hl.bind("SUPER + T", hl.dsp.exec_cmd("ambxst run tmux"))
-hl.bind("SUPER + COMMA", hl.dsp.exec_cmd("ambxst run wallpapers"))
+hl.bind("SUPER + Super_L", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+-- hl.bind("SUPER + M", hl.dsp.exec_cmd("ambxst run dashboard"))
+hl.bind("SUPER + A", hl.dsp.exec_cmd("socat - UNIX-CONNECT:/tmp/quickshell_launcher"))
+-- hl.bind("SUPER + V", hl.dsp.exec_cmd("socat - UNIX-CONNECT:/tmp/quickshell_clipboard"))
+hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
+-- hl.bind("SUPER + M", hl.dsp.exec_cmd("socat - UNIX-CONNECT:/tmp/quickshell_wallpaper"))
+hl.bind("SUPER + M", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
+-- hl.bind("SUPER + N", hl.dsp.exec_cmd("socat - UNIX-CONNECT:/tmp/quickshell_colorscheme"))
+-- hl.bind("SUPER + T", hl.dsp.exec_cmd("ambxst run tmux"))
+hl.bind("SUPER + COMMA", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 hl.bind("SUPER + TAB", hl.dsp.exec_cmd("hyprview ipc call overview toggle"))
 hl.bind("SUPER + BACKSPACE", hl.dsp.exec_cmd("ambxst run powermenu"))
 hl.bind("SUPER + S", hl.dsp.exec_cmd("ambxst run tools"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("ambxst run screenshot"))
 hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("ambxst run screenrecord"))
 hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd("ambxst run lens"))
-hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd("noctalia msg screen-lock"))
 -- Switch workspaces with mainMod + [0-9] Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
@@ -96,7 +97,7 @@ hl.bind(mainMod .. " + SHIFT + P", exec("hyprctl dispatch pin"))
 
 hl.bind(mainMod .. " + P", exec("hyprctl dispatch fullscreenstate 1 1"))
 
-hl.bind(mainMod .. " + SHIFT + F", exec("hyprctl dispatch fullscreenstate 2 1"))
+hl.bind(mainMod .. " + SHIFT + F", exec("hyprctl dispatch fullscreenstate 1 1"))
 
 hl.bind("ALT + TAB", exec("hyprctl dispatch cyclenext"))
 
