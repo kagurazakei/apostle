@@ -2,7 +2,6 @@
   self,
   inputs,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -12,8 +11,6 @@ let
     hostname:
     let
       system = self.modules.hosts.${hostname}.system or "x86_64-linux";
-      pkgsForSystem = self.zpkgsLib.importPackages.${system} or { };
-
     in
     nixosSystem {
       modules = [
@@ -23,8 +20,6 @@ let
         }
       ];
       specialArgs = {
-        pkgsForSystem = pkgsForSystem;
-        scripts = pkgsForSystem.scripts or { };
         inherit
           self
           inputs
