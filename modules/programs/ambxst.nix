@@ -5,7 +5,7 @@
 {
   modules.programs.ambxst = {
     imports = [
-      inputs.Ambxst.nixosModules.default
+      inputs.ambxst.nixosModules.default
     ];
     programs.ambxst = {
       enable = true;

@@ -74,3 +74,9 @@ hl.config({
 		touchpad = { natural_scroll = true, middle_button_emulation = false },
 	},
 })
+
+-- Ambxst
+loadfile(os.getenv("HOME") .. "/.local/share/ambxst/hyprland.lua")()
+
+-- OVERRIDES
+-- Down here you can write or source anything that you want to override from Ambxst's settings.

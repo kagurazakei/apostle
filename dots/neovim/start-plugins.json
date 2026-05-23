@@ -158,9 +158,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "b9624aa012ddcbae9e79964bfd30cc1fbe3cf263",
-      "url": "https://github.com/junegunn/fzf.vim/archive/b9624aa012ddcbae9e79964bfd30cc1fbe3cf263.tar.gz",
-      "hash": "sha256-VPxTYXdJaVbr2U7d6VuO4CpIyTC62uo3TAuf1MYiAXI="
+      "revision": "b9b98ac5741afd2d0aa1e09f24b1614d4c91f15a",
+      "url": "https://github.com/junegunn/fzf.vim/archive/b9b98ac5741afd2d0aa1e09f24b1614d4c91f15a.tar.gz",
+      "hash": "sha256-6NV4hnkMRaUC7nQDEhKRJjuMfFmjSfgYS2uIVVMK+ys="
     },
     "gitsigns.nvim": {
       "type": "Git",
@@ -313,9 +313,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "cf027da13fd217cfe3af6ef978d0e947c7ee0f7a",
-      "url": "https://github.com/nvim-mini/mini.extra/archive/cf027da13fd217cfe3af6ef978d0e947c7ee0f7a.tar.gz",
-      "hash": "sha256-LSbcIx/1GtTDWhZGKzFPOdiDp2qglcI+1ymn9k2dAio="
+      "revision": "5b0acf09d7f7958946973367c66bf5aafe4209dd",
+      "url": "https://github.com/nvim-mini/mini.extra/archive/5b0acf09d7f7958946973367c66bf5aafe4209dd.tar.gz",
+      "hash": "sha256-+uTcSFEYSgfk72rg6t+1+TMNzeqJUplg2WKCulw778g="
     },
     "mini.indentscope": {
       "type": "GitRelease",
@@ -558,9 +558,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
-      "url": "https://github.com/folke/snacks.nvim/archive/ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e.tar.gz",
-      "hash": "sha256-7lDH1JlTM+H/LWjMlAQPNY6A+xmS/cp+wChy4buGYIU="
+      "revision": "0770753c88228f7f15449c6a5b242e3f7cd0d71c",
+      "url": "https://github.com/folke/snacks.nvim/archive/0770753c88228f7f15449c6a5b242e3f7cd0d71c.tar.gz",
+      "hash": "sha256-lMCozVT9RRgJwsudAUrrinI6WdiPb+gykcQe46OmRh4="
     },
     "telescope-fzf-native.nvim": {
       "type": "Git",
@@ -694,9 +694,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ce56cb1534a4192eaf13a2f8fb2c1cdfc553e5f2",
-      "url": "https://github.com/mikavilpas/yazi.nvim/archive/ce56cb1534a4192eaf13a2f8fb2c1cdfc553e5f2.tar.gz",
-      "hash": "sha256-IpWAW546GzHKlcNKup7zCMvUBx05HjZKQdOagAHnM6Q="
+      "revision": "a5834c2c639923717c1b0e13b73afdba88516c46",
+      "url": "https://github.com/mikavilpas/yazi.nvim/archive/a5834c2c639923717c1b0e13b73afdba88516c46.tar.gz",
+      "hash": "sha256-JRB6RvVudGJswz+fcnW1XCvdboyDXbiNJHZ0g6WsLlg="
     }
   },
   "version": 7

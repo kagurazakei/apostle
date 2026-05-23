@@ -38,9 +38,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "53bba9be32228eaed4563afc8256419b01dea16c",
-      "url": "https://github.com/kagurazakei/Ambxst/archive/53bba9be32228eaed4563afc8256419b01dea16c.tar.gz",
-      "hash": "sha256-3nh+VkwvE8y+JhzvfAFbj4Uuv2Y/Sw/y4lWCX7pyUQ8="
+      "revision": "950c1748d49a02eb41c2f441d5bdeb6ec2cfb3ab",
+      "url": "https://github.com/kagurazakei/Ambxst/archive/950c1748d49a02eb41c2f441d5bdeb6ec2cfb3ab.tar.gz",
+      "hash": "sha256-DM4N7leDraom4pO/3tIVZImi6Kae/S+KRzzm+x7+Fn4="
     },
     "cat-gtk-themes": {
       "type": "Git",

@@ -41,6 +41,7 @@
             viu
             equibop
             stash
+            rumda
             ;
           inherit (zpkgs.scripts)
             npins-ui

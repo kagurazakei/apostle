@@ -227,7 +227,7 @@
             "enabled": true,
             "keys": [
                 {
-                    "key": "C",
+                    "key": "Q",
                     "modifiers": [
                         "SUPER"
                     ]
@@ -1187,7 +1187,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "Left",
@@ -1234,7 +1234,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "Right",
@@ -1281,7 +1281,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "Left",
@@ -1322,7 +1322,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "Right",
