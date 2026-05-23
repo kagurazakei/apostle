@@ -1,15 +1,10 @@
 let
+  username = "antonio";
   sources = import ./npins;
   inputs = import ./inputs.nix;
   nixpkgs = import sources.nixpkgs { };
   utils = import ./utils;
-  username = "antonio";
-  with-inputs-lib = import sources.with-inputs;
-  inputSpec = import ./follows.nix { inherit inputs; };
-  flakeResult = with-inputs-lib sources inputSpec (with-inputs: {
-    resolved = with-inputs;
-  });
-  with-inputs = flakeResult.resolved;
+  with-inputs = import ./follows.nix { inherit sources inputs; };
   modules = {
     imports = utils.recursiveImport {
       dirs = [
@@ -22,11 +17,10 @@ let
       ];
     };
   };
+
   self =
     (nixpkgs.lib.evalModules {
-      modules = [
-        modules
-      ];
+      modules = [ modules ];
       specialArgs = {
         inherit
           self
@@ -34,18 +28,9 @@ let
           inputs
           username
           with-inputs
-          with-inputs-lib
           ;
         pkgs = nixpkgs;
       };
-    }).config
-    // {
-      paths = {
-        dots = ./dots;
-        templates = ./templates;
-        pkgs = ./pkgs;
-        secrets = ./secrets;
-      };
-    };
+    }).config;
 in
 self
