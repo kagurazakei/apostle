@@ -1,3 +1,8 @@
+-- Ambxst
+loadfile(os.getenv("HOME") .. "/.local/share/ambxst/hyprland.lua")()
+
+-- OVERRIDES
+-- Down here you can write or source anything that you want to override from Ambxst's settings.
 require("hyprcolors")
 require("animations.LimeFrenzy")
 require("windowRules")
@@ -7,7 +12,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm app -t service foot -- --server")
 	hl.exec_cmd("uwsm app -t service stash -- watch")
 	hl.exec_cmd("uwsm app nm-applet")
-	hl.exec_cmd("uwsm app -t service ambxst")
 	hl.exec_cmd("uwsm app -t service hyprview")
 	hl.exec_cmd("uwsm app -t service hjem-impure")
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
@@ -54,7 +58,7 @@ hl.config({
 	},
 	dwindle = { preserve_split = true },
 	scrolling = {
-		fullscreen_on_one_column = true,
+		fullscreen_on_one_column = false,
 		follow_focus = true,
 		focus_fit_method = 1,
 		direction = "right",
@@ -75,8 +79,32 @@ hl.config({
 	},
 })
 
--- Ambxst
-loadfile(os.getenv("HOME") .. "/.local/share/ambxst/hyprland.lua")()
+-- Track state in Lua (since Lua state persists in Hyprland)
 
--- OVERRIDES
--- Down here you can write or source anything that you want to override from Ambxst's settings.
+hl.device({
+	name = "elan962c:00-04f3:30d0-touchpad",
+	enabled = true,
+	natural_scroll = true,
+	middle_button_emulation = false,
+	tap_to_click = true,
+	drag_lock = false,
+	disable_while_typing = true,
+})
+-- Track state in Lua
+local touchpadEnabled = true
+local deviceName = "elan962c:00-04f3:30d0-touchpad"
+
+-- Toggle function using setprop
+local function toggleTouchpad()
+	touchpadEnabled = not touchpadEnabled
+	local newState = touchpadEnabled and "true" or "false"
+
+	-- Use setprop (this works with Lua)
+	hl.exec_cmd(string.format("hyprctl setprop device:%s enabled %s", deviceName, newState))
+
+	-- Notification
+	hl.exec_cmd(
+		string.format("notify-send 'Touchpad %s' -i input-touchpad", touchpadEnabled and "Enabled" or "Disabled")
+	)
+end
+hl.bind("XF86Tools", toggleTouchpad, { locked = true }, { action = "toggle" })

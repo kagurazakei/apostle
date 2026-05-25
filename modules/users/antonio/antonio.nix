@@ -18,9 +18,6 @@ in
       ...
     }:
     {
-      nixpkgs.overlays = [
-        inputs.neovim-nightly.overlays.default
-      ];
       imports = [
         self.modules.hjem.theming
         (lib.mkAliasOptionModule [ "hj" ] [ "hjem" "users" "${username}" ])

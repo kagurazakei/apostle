@@ -84,8 +84,6 @@ local function exec(cmd)
 	return hl.dsp.exec_cmd(cmd)
 end
 
-hl.bind("XF86Tools", exec("toggle-touchpad"))
-
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
 

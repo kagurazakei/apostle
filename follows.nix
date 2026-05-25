@@ -1,7 +1,7 @@
 { sources, inputs, ... }:
 let
   with-inputs-lib = import sources.with-inputs;
-  inputSpec = {
+  follows = {
     nixpkgs = inputs.nixpkgs;
     hjem = inputs.hjem;
     flake-utils = inputs.flake-utils;
@@ -30,8 +30,8 @@ let
     };
   };
 
-  flakeResult = with-inputs-lib sources inputSpec (with-inputs: {
+  followsResult = with-inputs-lib sources follows (with-inputs: {
     resolved = with-inputs;
   });
 in
-flakeResult.resolved
+followsResult.resolved
