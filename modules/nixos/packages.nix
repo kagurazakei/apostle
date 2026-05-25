@@ -39,7 +39,6 @@
           inherit (zpkgs)
             gtk-themes
             viu
-            equibop
             stash
             rumda
             ;
@@ -54,6 +53,7 @@
           inherit (pkgs.master)
             nh
             cachix
+            equibop
             ;
           inherit (pkgs)
             ffmpeg

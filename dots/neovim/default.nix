@@ -76,7 +76,7 @@ in
         inherit (pkgs.vimPlugins) conform-nvim;
         inherit (pkgs.vimPlugins) lspkind-nvim;
         inherit (pkgs.vimPlugins) nvim-ufo;
-
+        inherit (pkgs.stable.vimPlugins) blink-pairs;
         inherit (pkgs.vimPlugins)
           nvim-cokeline
           mini-animate
@@ -85,7 +85,6 @@ in
           nvim-surround
           bufjump-nvim
           blink-cmp
-          blink-pairs
           base16-nvim
           cord-nvim
           ;

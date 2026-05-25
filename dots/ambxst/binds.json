@@ -54,9 +54,10 @@
                 "layouts": [
                 ]
             },
-            "key": "Super_L",
+            "key": "D",
             "modifiers": [
-                "SUPER"
+                "SUPER",
+                "SHIFT"
             ]
         },
         "notes": {

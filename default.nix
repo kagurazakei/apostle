@@ -26,6 +26,7 @@ let
           self
           utils
           inputs
+          sources
           username
           with-inputs
           ;
