@@ -45,7 +45,7 @@ in
         fileset = fs.fromSource (lib.sources.cleanSource ./nvim);
       };
 
-      impure = "/home/antonio/Greenhouse/dots/neovim/nvim";
+      impure = "/home/antonio/apostle/dots/neovim/nvim";
     };
     #todo: no idea what this is
     startAttrs = inputs.mnw.lib.npinsToPluginsAttrs pkgs ./start-plugins.json;

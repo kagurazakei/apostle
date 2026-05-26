@@ -1,5 +1,5 @@
 <div align="center">
-<h2>Greenhouse</h2>
+<h2>Apostle</h2>
 <p>My Nixos configuration<br>(npins + dendritic pattern)<br>FlakeLess Config</p>
 </div>
 
