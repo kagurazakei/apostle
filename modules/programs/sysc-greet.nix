@@ -1,13 +1,16 @@
 {
   inputs,
   with-inputs,
-  pkgs,
   lib,
   ...
 }:
 {
   modules.programs.sysc-greet =
-    { config, ... }:
+    {
+      config,
+      pkgs,
+      ...
+    }:
     {
       imports = [ with-inputs.sysc-greet.nixosModules.default ];
       options = {
