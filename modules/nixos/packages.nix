@@ -56,6 +56,7 @@
             cachix
             ;
           inherit (pkgs)
+            zed-editor
             ffmpeg
             nix-init
             neovide

@@ -246,6 +246,23 @@
       "url": "https://github.com/nix-community/impermanence/archive/7b1d382faf603b6d264f58627330f9faa5cba149.tar.gz",
       "hash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y="
     },
+    "lix": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://git.lix.systems/",
+        "owner": "lix-project",
+        "repo": "lix"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "2.95.3",
+      "revision": "ddc4e4131c4e6f0c4ba2e4dc0b33cea672a93d96",
+      "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/2.95.3.tar.gz",
+      "hash": "sha256-rEhhsqccghnnJHjsqCCBzdD7PyF/ibDe8zadnajBmjI="
+    },
     "mango": {
       "type": "Git",
       "repository": {
@@ -377,6 +394,23 @@
       "url": "https://github.com/Nixos/nixos-hardware/archive/11b2a10c7be726321bb854403fdeec391e798bf0.tar.gz",
       "hash": "sha256-PtT7ix43ss8PONJ1VJw3f6t2yAoGH+q462Sn8lrmWmk=",
       "frozen": true
+    },
+    "nixos-module": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://git.lix.systems/",
+        "owner": "lix-project",
+        "repo": "nixos-module"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "2.93.1",
+      "revision": "c3c78a32273e89d28367d8605a4c880f0b6607e3",
+      "url": "https://git.lix.systems/api/v1/repos/lix-project/nixos-module/archive/2.93.1.tar.gz",
+      "hash": "sha256-EfA5K5EZAnspmraJrXQlziffVpaT+QDBiE6yKmuaNNQ="
     },
     "nixpkgs": {
       "type": "Git",
