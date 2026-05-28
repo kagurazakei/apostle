@@ -3,13 +3,10 @@
     { config, ... }:
     {
       documentation.enable = false;
-
       nixpkgs.config.allowUnfree = true;
-
       nix = {
         channel.enable = false;
         nixPath = [ "nixpkgs=/etc/nixos/nixpkgs" ];
-
         settings = {
           experimental-features = [
             "nix-command"
