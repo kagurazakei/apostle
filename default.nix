@@ -17,7 +17,6 @@ let
       ];
     };
   };
-
   self =
     (nixpkgs.lib.evalModules {
       modules = [ modules ];

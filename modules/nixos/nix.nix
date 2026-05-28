@@ -1,20 +1,18 @@
 {
   modules.nixos.nix =
-    { config, ... }:
+    { config, pkgs, ... }:
     {
       documentation.enable = false;
-
       nixpkgs.config.allowUnfree = true;
-
       nix = {
         channel.enable = false;
         nixPath = [ "nixpkgs=/etc/nixos/nixpkgs" ];
-
+        package = pkgs.lixPackageSets.git.lix;
         settings = {
           experimental-features = [
             "nix-command"
             "flakes"
-            "pipe-operators"
+            "pipe-operator"
           ];
           auto-optimise-store = true;
           require-sigs = true;
@@ -71,6 +69,7 @@
           allow-import-from-derivation = false
           !include ${config.age.secrets.secret2.path}
           connect-timeout = 60
+          extra-deprecated-features = broken-string-escape
         '';
       };
     };
