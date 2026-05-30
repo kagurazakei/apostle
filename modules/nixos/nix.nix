@@ -9,6 +9,7 @@
         nixPath = [ "nixpkgs=/etc/nixos/nixpkgs" ];
         package = pkgs.lixPackageSets.git.lix;
         settings = {
+          deprecated-features = [ "broken-string-escape" ];
           experimental-features = [
             "nix-command"
             "flakes"
@@ -64,12 +65,10 @@
           dates = "weekly";
           options = "--delete-older-than 30d";
         };
-
         extraOptions = ''
           allow-import-from-derivation = false
           !include ${config.age.secrets.secret2.path}
           connect-timeout = 60
-          extra-deprecated-features = broken-string-escape
         '';
       };
     };

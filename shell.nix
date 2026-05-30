@@ -13,7 +13,6 @@ pkgs.mkShell {
     (pkgs.writeShellScriptBin "start" ''
       npins --lock-file ./dots/neovim/start-plugins.json "$@"
     '')
-    pkgs.npins
   ];
 
   shellHook = ''

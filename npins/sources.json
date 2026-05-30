@@ -40,7 +40,8 @@
       "submodules": false,
       "revision": "950c1748d49a02eb41c2f441d5bdeb6ec2cfb3ab",
       "url": "https://github.com/kagurazakei/Ambxst/archive/950c1748d49a02eb41c2f441d5bdeb6ec2cfb3ab.tar.gz",
-      "hash": "sha256-DM4N7leDraom4pO/3tIVZImi6Kae/S+KRzzm+x7+Fn4="
+      "hash": "sha256-DM4N7leDraom4pO/3tIVZImi6Kae/S+KRzzm+x7+Fn4=",
+      "frozen": true
     },
     "cat-gtk-themes": {
       "type": "Git",
@@ -285,9 +286,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "43b7138226a3e7207c6a23dfb72c6604117a2b0f",
-      "url": "https://github.com/nixos/nixpkgs/archive/43b7138226a3e7207c6a23dfb72c6604117a2b0f.tar.gz",
-      "hash": "sha256-PI0UWtPOT1OxeBVS5/LEGK9LM3SwyUgrcUXZAi/vU+g="
+      "revision": "a7836d88aa7932a9ed17c1655439bdfda74eddb4",
+      "url": "https://github.com/nixos/nixpkgs/archive/a7836d88aa7932a9ed17c1655439bdfda74eddb4.tar.gz",
+      "hash": "sha256-7qXzyLfX0lZS/qRfqVj10RbOTw0I76zv8v1TzaOHqpI="
     },
     "mnw": {
       "type": "Git",
@@ -421,9 +422,9 @@
       },
       "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "29916453413845e54a65b8a1cf996842300cd299",
-      "url": "https://github.com/nixos/nixpkgs/archive/29916453413845e54a65b8a1cf996842300cd299.tar.gz",
-      "hash": "sha256-Ap9KJX+5xHIn3bPIpfNgT6MEXdAECECwo4/rmlQD74M="
+      "revision": "64c08a7ca051951c8eae34e3e3cb1e202fe36786",
+      "url": "https://github.com/nixos/nixpkgs/archive/64c08a7ca051951c8eae34e3e3cb1e202fe36786.tar.gz",
+      "hash": "sha256-tpyBcxPpcQb8ukyNF7DoCwfSY3VPsxHoYwj00Cayv5o="
     },
     "npins": {
       "type": "Git",
@@ -670,5 +671,5 @@
       "hash": "sha256-m1eHuqp/9ZSDmmBFS+nTt75dcqwA4V7I5kdeE99N15Y="
     }
   },
-  "version": 7
+  "version": 8
 }
