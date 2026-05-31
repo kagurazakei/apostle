@@ -564,11 +564,11 @@
         "owner": "nixos",
         "repo": "nixpkgs"
       },
-      "branch": "nixos-25.11",
+      "branch": "nixos-26.05",
       "submodules": false,
-      "revision": "b77b3de8775677f84492abe84635f87b0e153f0f",
-      "url": "https://github.com/nixos/nixpkgs/archive/b77b3de8775677f84492abe84635f87b0e153f0f.tar.gz",
-      "hash": "sha256-nOesoDCiXcUftqbRBMz9tt4blI5PvljMWbm3kuCA+0s="
+      "revision": "ec942ba042dad5ef097e2ef3a3effc034241f011",
+      "url": "https://github.com/nixos/nixpkgs/archive/ec942ba042dad5ef097e2ef3a3effc034241f011.tar.gz",
+      "hash": "sha256-R5nauXyqyfRUFiZycFFZdkF7wl6eaUpPLst35+2nJQY="
     },
     "stash": {
       "type": "GitRelease",

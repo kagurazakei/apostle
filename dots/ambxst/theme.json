@@ -9,6 +9,9 @@
   "tintIcons": false,
   "enableCorners": true,
   "animDuration": 300,
+  "dynamicColor": false,
+  "animStyle": "m3",
+  "animScale": 1,
   "shadowOpacity": 0.5,
   "shadowColor": "shadow",
   "shadowXOffset": 0,
@@ -169,7 +172,7 @@
       "surfaceBright",
       0
     ],
-    "itemColor": "overBackground",
+    "itemColor": "error",
     "opacity": 1
   },
   "srFocus": {
@@ -194,14 +197,14 @@
       "surfaceBright",
       0
     ],
-    "itemColor": "overBackground",
+    "itemColor": "error",
     "opacity": 1
   },
   "srPrimary": {
     "label": "Primary",
     "gradient": [
       [
-        "primary",
+        "overErrorContainer",
         0
       ]
     ],
@@ -226,7 +229,7 @@
     "label": "Primary Focus",
     "gradient": [
       [
-        "overPrimaryContainer",
+        "error",
         0
       ]
     ],
@@ -269,7 +272,7 @@
       "overPrimary",
       0
     ],
-    "itemColor": "primary",
+    "itemColor": "error",
     "opacity": 1
   },
   "srSecondary": {

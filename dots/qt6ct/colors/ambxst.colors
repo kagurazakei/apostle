@@ -19,8 +19,8 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=#272937
-BackgroundNormal=#272937
+BackgroundAlternate=#242532
+BackgroundNormal=#242532
 DecorationFocus=#87abf8
 DecorationHover=#87abf8
 ForegroundActive=#a9b1d6
@@ -89,7 +89,7 @@ ForegroundPositive=#add580
 ForegroundVisited=#b79ce9
 
 [Colors:Tooltip]
-BackgroundAlternate=#272937
+BackgroundAlternate=#242532
 BackgroundNormal=#191a25
 DecorationFocus=#87abf8
 DecorationHover=#87abf8
@@ -103,7 +103,7 @@ ForegroundPositive=#add580
 ForegroundVisited=#b79ce9
 
 [Colors:View]
-BackgroundAlternate=#272937
+BackgroundAlternate=#242532
 BackgroundNormal=#191a25
 DecorationFocus=#87abf8
 DecorationHover=#87abf8
@@ -117,7 +117,7 @@ ForegroundPositive=#add580
 ForegroundVisited=#b79ce9
 
 [Colors:Window]
-BackgroundAlternate=#272937
+BackgroundAlternate=#242532
 BackgroundNormal=#191a25
 DecorationFocus=#87abf8
 DecorationHover=#87abf8
