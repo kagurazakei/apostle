@@ -1,0 +1,118 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty",
+    "source": "~/.config/fastfetch/pngs/anime/*",
+    "width": 26,
+    "height":12,
+    "padding": {
+      "top": 4,
+      "left": 0,
+      "right":2
+    },
+  },
+  "display": {
+    "separator": " │ ",
+    "bar": {
+      "char": {
+        //"elapsed": "⣿", "total": "⣀"
+        // "elapsed": "•", "total": "•"
+        "elapsed": "─", "total": "─"
+      },
+      "width": 13
+    },
+    "percent": {
+      "type": 15
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": " ",
+      "format": "{6} {7} {8}"
+    },
+    {
+      "type": "custom",
+      "format": "{#cyan}╭──────────────────────────────────────────╮"
+    },
+    {// 
+      "type": "os",
+      "key": "{#cyan}│ {#magenta}󰣇 OS      ",
+      "format": "{#italic_bright_light_black}{2}                 {#cyan}│",
+      "keyColor": "magenta"
+    },
+    {
+        "type": "wm",
+        "key": "{#cyan}│ {#magenta} WM      ",
+        "format": "{#italic_bright_light_black}{2}                    {#cyan}│"
+    },
+    {
+      "type": "terminal",
+      "key": "{#cyan}│ {#magenta} Terminal",
+      "format": "{#italic_bright_light_black}tmux                        {#cyan}│"
+    },
+    {
+      "type": "shell",
+      "key": "{#cyan}│ {#magenta}  Shell  ",
+      "format": "{#italic_bright_light_black}{3}                         {#cyan}│",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "custom",
+      "format": "{#cyan}╰──────────────────────────────────────────╯"
+    },
+    "break",
+    {
+        "type": "host",
+        "format": "{#green}{5} {1}",
+        "key": "{#green}  ",
+        "keyColor": "33"
+    },
+    {
+      "type": "custom",
+      "format": "{#green}╭──────────────────────────────────────────╮"
+    },
+    { // "format": "{1} @ {7}",
+      "type": "cpu",
+      "format": "{#italic_bright_light_black}Intel i5-1135G7 @ 4.20 GHz   {#green}│",
+      "key": "{#green}│ {#blue} CPU    "
+    },
+    {
+      "type": "gpu",
+      "format": "{#italic_bright_light_black}{1} {2}       {#green}│",
+      "key": "{#green}│ {#blue}󰊴 GPU    "
+    },
+    {
+      "type": "memory",
+      "key": "{#green}│ {#blue}󰑭 Memory ",
+      "format": "{4}            {#green}│"
+    },
+    {
+      "type": "disk",
+      "key": "{#green}│ {#blue}󰋊 Disk   ",
+      "folders": "/",
+      "format": "{13}            {#green}│"
+    },
+    {
+      "type": "battery",
+      "key": "{#green}│ {#blue}󰁹 Battery",
+      "format": "{10}            {#green}│"
+    },
+    {
+      "type": "disk",
+      "key": "{#green}│ {#blue}󱦟 OS Age ",
+      "folders": "/",
+      "format": "{#italic_bright_light_black}{days} days                       {#green}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#green}╰──────────────────────────────────────────╯"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 4,
+      "symbol": "circle"
+    },
+    "break"
+  ]
+}

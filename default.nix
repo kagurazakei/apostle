@@ -19,7 +19,7 @@ let
   };
   self =
     (nixpkgs.lib.evalModules {
-      modules = [ modules ];
+      modules = with finix.nixosModules; [ modules ];
       specialArgs = {
         inherit
           self

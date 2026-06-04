@@ -15,7 +15,7 @@
   nodejs,
   withTTS ? true,
   withMiddleClickScroll ? false,
-  sources,
+  sources ? import ../../npins,
 }:
 let
   electron = electron_41;

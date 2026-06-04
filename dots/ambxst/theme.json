@@ -1,7 +1,7 @@
 {
   "oledMode": false,
   "lightMode": false,
-  "roundness": 2,
+  "roundness": 6,
   "font": "JetBrainsMono Nerd Font",
   "fontSize": 14,
   "monoFont": "Iosevka Nerd Font Mono",
@@ -9,6 +9,9 @@
   "tintIcons": false,
   "enableCorners": true,
   "animDuration": 300,
+  "dynamicColor": false,
+  "animStyle": "mac-modern",
+  "animScale": 1,
   "shadowOpacity": 0.5,
   "shadowColor": "shadow",
   "shadowXOffset": 0,
@@ -117,7 +120,7 @@
     "halftoneBackgroundColor": "surfaceDim",
     "border": [
       "surfaceBright",
-      2
+      0
     ],
     "itemColor": "overBackground",
     "opacity": 1
@@ -169,14 +172,14 @@
       "surfaceBright",
       0
     ],
-    "itemColor": "overBackground",
+    "itemColor": "overErrorContainer",
     "opacity": 1
   },
   "srFocus": {
     "label": "Focus",
     "gradient": [
       [
-        "surfaceBright",
+        "secondaryFixed",
         0
       ]
     ],
@@ -194,14 +197,14 @@
       "surfaceBright",
       0
     ],
-    "itemColor": "overBackground",
+    "itemColor": "background",
     "opacity": 1
   },
   "srPrimary": {
     "label": "Primary",
     "gradient": [
       [
-        "primary",
+        "error",
         0
       ]
     ],
@@ -226,7 +229,7 @@
     "label": "Primary Focus",
     "gradient": [
       [
-        "overPrimaryContainer",
+        "overRedContainer",
         0
       ]
     ],
@@ -269,7 +272,7 @@
       "overPrimary",
       0
     ],
-    "itemColor": "primary",
+    "itemColor": "error",
     "opacity": 1
   },
   "srSecondary": {

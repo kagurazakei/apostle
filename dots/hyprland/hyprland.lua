@@ -21,9 +21,9 @@ hl.env("GTK_THEME", "oomox-snazzy")
 
 hl.config({
 	general = {
-		gaps_in = 2,
-		gaps_out = 4,
-		border_size = 4,
+		gaps_in = 5,
+		gaps_out = 10,
+		border_size = 3,
 		col = {
 			active_border = {
 				colors = {
@@ -39,7 +39,6 @@ hl.config({
 		},
 		resize_on_border = true,
 		allow_tearing = false,
-		layout = "scrolling",
 	},
 	animations = { enabled = true },
 	xwayland = { force_zero_scaling = true },

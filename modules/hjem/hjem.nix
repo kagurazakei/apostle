@@ -18,7 +18,7 @@ in
       };
     in
     {
-      imports = [ inputs.hjem.nixosModules.default ];
+      imports = [ inputs.hjem.finixModules.default ];
 
       hjem = {
         linker = with-inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;

@@ -41,7 +41,6 @@
             viu
             stash
             rumda
-            equibop
             ;
           inherit (zpkgs.scripts)
             npins-ui
@@ -54,6 +53,7 @@
           inherit (pkgs.master)
             nh
             cachix
+            equibop
             ;
           inherit (pkgs)
             zed-editor
