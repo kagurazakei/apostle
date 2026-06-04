@@ -3,8 +3,8 @@
 #
 # [] []?: -> []
 let
-  sources = import ../npins;
-  lib = import "${sources.nixpkgs}/lib";
+  inputs = import ../.tack;
+  lib = import "${inputs.nixpkgs}/lib";
   inherit (builtins)
     filter
     any

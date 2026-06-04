@@ -133,5 +133,9 @@ in
     "foot/rose-pine.ini" = { ... }: inputs.rosep-foot + "/rose-pine";
     "wallpapers/nix-logo.png" = { ... }: inputs.walls + "/nix-logo.png";
     ".face.icon" = "/profile.png";
+    "zathura/binds" = "/zathura/binds";
+    "zathura/options" = "/zathura/options";
+    "zathura/theme" = "/zathura/theme";
+    "zathura/zathurarc" = "/zathura/zathurarc";
   };
 }

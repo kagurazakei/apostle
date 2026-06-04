@@ -3,13 +3,28 @@
 {
   lib,
   stdenvNoCC,
-  equibop,
   bun,
   writableTmpDirAsHomeHook,
 }:
+let
+  sources = import ../../npins;
+  equibop = sources.equibop;
+  srcPath =
+    if builtins.isPath equibop then
+      equibop
+    else if builtins.hasAttr "outPath" equibop then
+      equibop.outPath
+    else if builtins.hasAttr "src" equibop then
+      equibop.src
+    else
+      equibop;
+
+  version = if builtins.hasAttr "version" equibop then equibop.version else "latest";
+in
 stdenvNoCC.mkDerivation {
-  inherit (equibop) version src;
-  pname = equibop.pname + "-modules";
+  name = "equibop-modules-${version}";
+  src = srcPath;
+  inherit version;
 
   impureEnvVars = lib.fetchers.proxyImpureEnvVars ++ [
     "GIT_PROXY_COMMAND"
@@ -50,7 +65,7 @@ stdenvNoCC.mkDerivation {
 
   outputHash =
     {
-      x86_64-linux = "sha256-p8jx9HDYG2q2nhBiBK8XDTYm9O0ptTqv8L+PrQ8oiy8=";
+      x86_64-linux = "sha256-dLATw5Mb9grQnI/JTdlRdNP2JETELeqY8aXqb5dCXOA=";
       aarch64-linux = "sha256-UsccQFaSSjhmv1+oF2FZcRG8xtWBCcPD+tizbdQ7SSI=";
     }
     .${stdenvNoCC.hostPlatform.system}

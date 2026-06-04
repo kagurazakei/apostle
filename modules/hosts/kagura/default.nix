@@ -19,7 +19,7 @@ in
       self.modules.programs.qylock
       self.modules.programs.sysc-greet
       self.modules.programs.ambxst
-      self.modules.programs.git
+      # self.modules.programs.git
       self.modules.programs.dolphin
       self.modules.programs.fish
       self.modules.programs.impermanence
@@ -48,7 +48,6 @@ in
       self.modules.wm.hyprland
       self.modules.wm.niri
       self.modules.wm.mango
-
       self.modules.hjem._
       self.modules.hjem.antonio
 

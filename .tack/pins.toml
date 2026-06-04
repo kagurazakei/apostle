@@ -1,0 +1,217 @@
+[shorturls]
+gh = "github:{path}"
+amaan = "github:amaanq/{path}"
+manic = "github:manic-systems/{path}"
+[all_follow]
+nixpkgs = ["stable", "nixpkgs", "master"]
+fenix = "fenix"
+rust-overlay = "rust-overlay"
+flake-parts = "flake-parts"
+niri-src = ["niri-stable", "niri-unstable"]
+nix = "nix-src"
+crane = "crane"
+git-hooks = ["git-hooks-nix"]
+nixpkgs-lib = "nixpkgs-lib"
+rust-analyzer-src = "rust-analyzer"
+xwayland-satellite = [
+	"xwayland-satellite-stable",
+	"xwayland-satellite-unstable",
+]
+# sysc-greet = [ "flake-utils", "nixpkgs", "hyprland", "niri-nix" ]
+hjem-rum = "hjem"
+
+[inputs.flake-parts]
+url = "gh:hercules-ci/flake-parts"
+
+[inputs.rust-overlay]
+url = "gh:oxalica/rust-overlay"
+
+# core toolchain --------------------------------------------------------------
+
+[inputs.nixpkgs]
+url = "gh:nixos/nixpkgs/nixos-unstable"
+
+[inputs.stable]
+url = "gh:nixos/nixpkgs/nixos-26.05"
+
+[inputs.master]
+url = "gh:nixos/nixpkgs/master"
+
+[inputs.fenix]
+url = "gh:nix-community/fenix"
+
+# secrets / identity ----------------------------------------------------------
+
+[inputs.agenix]
+url = "gh:ryantm/agenix"
+
+[inputs.age-plugin-fido2-hmac]
+url = "amaan:age-plugin-fido2-hmac"
+
+[inputs.tombkey]
+url = "amaan:tombkey"
+
+# build / system --------------------------------------------------------------
+
+[inputs.nixos-core]
+url = "github:llakala/nixos-core"
+
+[inputs.nix-wrappers]
+url = "gh:midischwarz12/nix-wrappers"
+
+[inputs.nix-src]
+url = "gh:NixOS/nix"
+
+# build / tooling -------------------------------------------------------------
+
+[inputs.tack]
+url = "manic:tack"
+
+[inputs.cade]
+url = "manic:cade"
+
+# editor / personal forks -----------------------------------------------------
+
+[inputs.nvim-config]
+url = "amaan:nvim-config"
+
+# misc personal flakes --------------------------------------------------------
+
+[inputs.nirinit]
+url = "amaan:nirinit"
+
+[inputs.bindiff]
+url = "amaan:bindiff"
+
+[inputs.inshellah]
+url = "manic:inshellah"
+
+[inputs.github2forgejo]
+url = "gh:RGBCube/GitHub2Forgejo"
+
+[inputs.opencode-src]
+url = "gh:sst/opencode/v1.15.11"
+flake = false
+
+[inputs.spicetify]
+url = "gh:Gerg-L/spicetify-nix"
+
+# niri / desktop --------------------------------------------------------------
+
+[inputs.niri]
+url = "amaan:niri-flake/default-module"
+
+[inputs.niri-src]
+url = "gh:YaLTeR/niri"
+
+[inputs.noctalia-shell]
+url = "gh:noctalia-dev/noctalia-shell"
+
+[inputs.noctalia]
+url = "gh:noctalia-dev/noctalia-shell/v5"
+
+
+[inputs.tuigreet]
+url = "gh:notashelf/tuigreet"
+
+[inputs.watt]
+url = "gh:notashelf/watt"
+
+# system services -------------------------------------------------------------
+
+[inputs.qtengine]
+url = "gh:kossLAN/qtengine"
+
+[inputs.quickshell]
+url = "git+https://git.outfoxxed.me/quickshell/quickshell.git"
+
+[inputs.hjem-impure]
+url = "github:Rexcrazy804/hjem-impure"
+
+[inputs.hjem]
+url = "github:feel-co/hjem"
+
+[inputs.hjem-rum]
+url = "github:snugnug/hjem-rum"
+
+[inputs.niri-nix]
+url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
+
+[inputs.sysc-greet]
+url = "github:kagurazakei/sysc-greet/master"
+
+[inputs.ambxst]
+url = "github:kagurazakei/ambxst"
+
+[inputs.viu]
+url = "gh:viu-media/viu"
+
+[inputs.qylock-nix]
+url = "gh:kagurazakei/qylock-nix"
+
+[inputs.viu-fetch]
+url = "gh:viu-media/viu"
+type = "fetch"
+
+[inputs.neovim-nightly]
+url = "gh:nix-community/neovim-nightly-overlay"
+
+[inputs.cat-gtk-themes]
+url = "gh:kagurazakei/cat-gtk-themes"
+
+[inputs.catp-bat]
+url = "gh:catppuccin/bat"
+
+[inputs.chaotic]
+url = "gh:chaotic-cx/nyx/nyxpkgs-unstable"
+
+[inputs.equibop]
+url = "gh:Equicord/Equibop"
+
+[inputs.flake-utils]
+url = "gh:numtide/flake-utils"
+
+[inputs.hyprview]
+url = "gh:kagurazakei/quickshell-overview"
+
+[inputs.impermanence]
+url = "gh:nix-community/impermanence"
+
+[inputs.mango]
+url = "gh:mangowm/mango"
+
+[inputs.mnw]
+url = "gh:Gerg-L/mnw"
+
+[inputs.nix-cachyos-kernel]
+url = "gh:xddxdd/nix-cachyos-kernel"
+
+[inputs.nix-flatpak]
+url = "gh:gmodena/nix-flatpak"
+
+[inputs.nix-index-database]
+url = "gh:nix-community/nix-index-database"
+
+[inputs.nixos-hardware]
+url = "gh:Nixos/nixos-hardware"
+
+[inputs.rosep-fish]
+url = "gh:rose-pine/fish"
+
+[inputs.rosep-foot]
+url = "gh:rose-pine/foot"
+
+[inputs.rosep-kitty]
+url = "gh:rose-pine/kitty"
+
+[inputs.shizuruPkgs]
+url = "gh:kagurazakei/shizuruPkgs"
+
+[inputs.stash]
+url = "gh:NotAShelf/stash"
+
+[inputs.waifu-cursors]
+url = "gh:kagurazakei/waifu-cursors"
+
+[inputs.zenNvim]
+url = "gh:nendix/zen.nvim"

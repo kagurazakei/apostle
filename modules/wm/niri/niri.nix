@@ -3,7 +3,6 @@
   inputs,
   utils,
   username,
-  with-inputs,
   ...
 }:
 {
@@ -22,7 +21,7 @@
     {
       imports = [
         self.modules.wm._
-        with-inputs.niri-nix.nixosModules.default
+        inputs.niri-nix.nixosModules.default
       ];
       options = {
         wm.niri.enable = lib.mkOption {

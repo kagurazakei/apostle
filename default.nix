@@ -1,10 +1,11 @@
 let
   username = "antonio";
-  sources = import ./npins;
-  inputs = import ./inputs.nix;
-  nixpkgs = import sources.nixpkgs { };
+  sources = import ./.tack;
+  inputs = import ./.tack;
+  lib = inputs.nixpkgs.lib;
+  nixpkgs = import sources.nixpkgs { inherit lib; };
   utils = import ./utils;
-  with-inputs = import ./follows.nix { inherit sources inputs; };
+  # with-inputs = import ./follows.nix { inherit sources inputs; };
   modules = {
     imports = utils.recursiveImport {
       dirs = [
@@ -23,11 +24,11 @@ let
       specialArgs = {
         inherit
           self
+          lib
           utils
           inputs
           sources
           username
-          with-inputs
           ;
         pkgs = nixpkgs;
       };

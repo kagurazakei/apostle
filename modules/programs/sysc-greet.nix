@@ -1,6 +1,5 @@
 {
   inputs,
-  with-inputs,
   lib,
   ...
 }:
@@ -12,7 +11,7 @@
       ...
     }:
     {
-      imports = [ with-inputs.sysc-greet.nixosModules.default ];
+      imports = [ inputs.sysc-greet.nixosModules.default ];
       options = {
         dm.sysc-greet.enable = lib.mkOption {
           type = lib.types.bool;

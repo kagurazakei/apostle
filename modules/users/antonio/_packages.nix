@@ -61,8 +61,9 @@ builtins.attrValues {
     imagemagick
     resvg
     noctalia-shell
+    zathura
     ;
-
+  inherit (pkgs.zathuraPkgs) zathura_pdf_mupdf;
   inherit (pkgs)
     libnotify
     imv

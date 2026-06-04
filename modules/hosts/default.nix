@@ -13,6 +13,7 @@ let
       system = self.modules.hosts.${hostname}.system or "x86_64-linux";
     in
     nixosSystem {
+      inherit lib;
       modules = [
         self.modules.hosts.${hostname}
         {
@@ -24,6 +25,7 @@ let
           self
           inputs
           system
+          lib
           ;
       };
     };
