@@ -1,22 +1,11 @@
 {
   inputs,
-  utils,
   with-inputs,
   ...
 }:
-let
-in
 {
   modules.hjem._ =
     { pkgs, ... }:
-    let
-      qtengineOut = utils._flakeToNix {
-        src = inputs.qtengine;
-        overrides = {
-          nixpkgs = pkgs.path; # all qt apps need "follows"
-        };
-      };
-    in
     {
       imports = [ inputs.hjem.finixModules.default ];
 
