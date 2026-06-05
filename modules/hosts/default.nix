@@ -13,7 +13,7 @@ let
       system = self.modules.hosts.${hostname}.system or "x86_64-linux";
     in
     nixosSystem {
-      modules = with finix.nixosModules; [
+      modules = [
         self.modules.hosts.${hostname}
         {
           nixpkgs.overlays = import ../../overlays { inherit inputs; };
