@@ -7,9 +7,9 @@
 }:
 
 {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+  # imports = [
+  #   (modulesPath + "/installer/scan/not-detected.nix")
+  # ];
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -64,6 +64,4 @@
     { device = "/dev/disk/by-uuid/9eb2259b-6399-4bfd-af3e-c0d9a71dadfe"; }
   ];
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

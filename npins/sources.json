@@ -81,6 +81,19 @@
       "url": "https://github.com/lonerOrz/nyx-loner/archive/18f497bb4af42b5ec581903747a9164bfeedcce7.tar.gz",
       "hash": "sha256-03tIZq8Dsg/RYxE724R0EvMCAj0NOS+gQkUxH1HwPFg="
     },
+    "community-modules": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "finix-community",
+        "repo": "community-modules"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "042d36e779b221c23aae1df3d05ff6dd149359cb",
+      "url": "https://github.com/finix-community/community-modules/archive/042d36e779b221c23aae1df3d05ff6dd149359cb.tar.gz",
+      "hash": "sha256-yJJlxq3MW98/FoskUzdRS+ULK74cganQT7vHYmPgmNQ="
+    },
     "crane": {
       "type": "Git",
       "repository": {
@@ -125,9 +138,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "498455b1140a4ee643d8d9bf4b97a2f13b187dad",
-      "url": "https://github.com/finix-community/finix/archive/498455b1140a4ee643d8d9bf4b97a2f13b187dad.tar.gz",
-      "hash": "sha256-SEJRBVnp4rEKevJ1Epvaozax9U91hxft/mm5ftpj+QE="
+      "revision": "43c3ed25c38b477cbd4d059b5bb490228d3ac67c",
+      "url": "https://github.com/finix-community/finix/archive/43c3ed25c38b477cbd4d059b5bb490228d3ac67c.tar.gz",
+      "hash": "sha256-UC9Gn3FpSTFI3frmGSFqC5B9A04iLEnLB/lplcdLeGU="
     },
     "fish": {
       "type": "Git",
@@ -196,9 +209,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "77bf113e3ce91c6632def66222198561437853dc",
-      "url": "https://github.com/feel-co/hjem/archive/77bf113e3ce91c6632def66222198561437853dc.tar.gz",
-      "hash": "sha256-Zh9+WMsxDbLVWwhccXjLW+PYO/5ZyUFQLZdYydycbx8="
+      "revision": "ffa433dd86e761de45ef985d4293f31a4d2a775d",
+      "url": "https://github.com/feel-co/hjem/archive/ffa433dd86e761de45ef985d4293f31a4d2a775d.tar.gz",
+      "hash": "sha256-NhtWx0youXYRvcqtL+sjdqoZinMcnjcwRsh6eBJUZLg="
     },
     "hjem-impure": {
       "type": "Git",
@@ -304,9 +317,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "43b7138226a3e7207c6a23dfb72c6604117a2b0f",
-      "url": "https://github.com/nixos/nixpkgs/archive/43b7138226a3e7207c6a23dfb72c6604117a2b0f.tar.gz",
-      "hash": "sha256-PI0UWtPOT1OxeBVS5/LEGK9LM3SwyUgrcUXZAi/vU+g="
+      "revision": "e8a1394ebfa6a0267ac1c26959e5672e755f6f85",
+      "url": "https://github.com/nixos/nixpkgs/archive/e8a1394ebfa6a0267ac1c26959e5672e755f6f85.tar.gz",
+      "hash": "sha256-quhmCnVkBYGLiBkRsSr8p4lgMf4dkfhDEnOOaTeL6w0="
     },
     "mnw": {
       "type": "Git",
@@ -440,9 +453,9 @@
       },
       "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "29916453413845e54a65b8a1cf996842300cd299",
-      "url": "https://github.com/nixos/nixpkgs/archive/29916453413845e54a65b8a1cf996842300cd299.tar.gz",
-      "hash": "sha256-Ap9KJX+5xHIn3bPIpfNgT6MEXdAECECwo4/rmlQD74M="
+      "revision": "331800de5053fcebacf6813adb5db9c9dca22a0c",
+      "url": "https://github.com/nixos/nixpkgs/archive/331800de5053fcebacf6813adb5db9c9dca22a0c.tar.gz",
+      "hash": "sha256-x5UQuRsH3MqI0U9afaXSNqzTPSeZlRLvFAav2Ux1pNw="
     },
     "npins": {
       "type": "Git",
@@ -616,6 +629,19 @@
       "revision": "0560f04d2158f9f64244b779b5893b0e0c02c53a",
       "url": "https://github.com/kagurazakei/sysc-greet/archive/0560f04d2158f9f64244b779b5893b0e0c02c53a.tar.gz",
       "hash": "sha256-1tV2Pf341XN82MMt672r/8z3L0ynVxF7J1VqyYzTguA="
+    },
+    "tuigreet": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NotAShelf",
+        "repo": "tuigreet"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "dc41006d4a4366f732a1a75a20b989fc1e42c0a6",
+      "url": "https://github.com/NotAShelf/tuigreet/archive/dc41006d4a4366f732a1a75a20b989fc1e42c0a6.tar.gz",
+      "hash": "sha256-ZZk1ccebBjK3pzHVsDU4+fvX/c1fePZ3Tic96/OkfpA="
     },
     "viu": {
       "type": "GitRelease",

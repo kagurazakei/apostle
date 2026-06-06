@@ -1,7 +1,6 @@
 {
   modules.hjem.antonio = {
-    xdg.menus.enable = true;
-
+    # xdg.menus.enable = true;
     hjem.users.antonio = {
       xdg.config.files = {
         "xdg-terminals.list".text = "com.mitchellh.ghostty.desktop";

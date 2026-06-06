@@ -48,19 +48,19 @@ in
           "render"
           "libvrtd"
         ];
-        shell = pkgs.master.fish;
-        hashedPasswordFile = config.age.secrets.antonioPass.path;
-        openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEaNh2GVxWz2zLxDa8cMnPtfYQPk1A3xlKKVuKOTNrp2 antonio@hana"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINjywfRHVDeBQBFYZym/c3JDVRwni//tSy5FPKmTgLyN antonio@hana"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDT989Rm6vSVS4cSP2NevoXVS7UnFVYHgfsE6dbM2+s6 hana@antonio"
-        ];
+        shell = pkgs.fish;
+        # hashedPasswordFile = config.age.secrets.antonioPass.path;
+        # openssh.authorizedKeys.keys = [
+        #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEaNh2GVxWz2zLxDa8cMnPtfYQPk1A3xlKKVuKOTNrp2 antonio@hana"
+        #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINjywfRHVDeBQBFYZym/c3JDVRwni//tSy5FPKmTgLyN antonio@hana"
+        #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDT989Rm6vSVS4cSP2NevoXVS7UnFVYHgfsE6dbM2+s6 hana@antonio"
+        # ];
       };
       programs.fish = {
         enable = true;
         package = lib.mkForce pkgs.master.fish;
       };
-      programs.gpu-screen-recorder.enable = true;
+      # programs.gpu-screen-recorder.enable = true;
 
       # Hjem dotfiles
       hj.files = {
@@ -68,7 +68,7 @@ in
       };
 
       # AccountsService configuration - FIXED: use iconSource directly
-      systemd.tmpfiles.rules = [
+      finit.tmpfiles.rules = [
         # AccountsService user file
         "f+ /var/lib/AccountsService/users/${username} 0600 root root - \
 [User]\nIcon=/var/lib/AccountsService/icons/${username}\n"

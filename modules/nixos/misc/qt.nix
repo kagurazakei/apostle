@@ -8,7 +8,7 @@
       ...
     }:
     {
-      qt.enable = true;
+      # qt.enable = true;
 
       environment.systemPackages = with pkgs; [
         wlsunset
@@ -39,9 +39,6 @@
         libsForQt5.qtdeclarative
         zpkgs.qt6ct
       ];
-      environment.variables = {
-        QML2_IMPORT_PATH = "${pkgs.kdePackages.kirigami}/${pkgs.kdePackages.qtbase.qtQmlPrefix}";
-      };
       hjem.users.${username}.packages = with pkgs; [
         quickshell
         kdePackages.kdialog

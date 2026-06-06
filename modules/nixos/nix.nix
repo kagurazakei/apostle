@@ -1,12 +1,14 @@
 {
   modules.nixos.nix =
-    { config, pkgs, ... }:
     {
-      documentation.enable = false;
-      nixpkgs.config.allowUnfree = true;
-      nix = {
-        channel.enable = false;
-        nixPath = [ "nixpkgs=/etc/nixos/nixpkgs" ];
+      config,
+      pkgs,
+      ...
+    }:
+    {
+      services.nix-daemon = {
+        # channel.enable = false;
+        # nixPath = [ "nixpkgs=/etc/nixos/nixpkgs" ];
         package = pkgs.lixPackageSets.git.lix;
         settings = {
           experimental-features = [
@@ -52,25 +54,6 @@
             "niri-nix.cachix.org-1:SvFtqpDcf7Sm1SMJdby1/+Y+6f3Yt3/3PMcSTKPJNJ0="
           ];
         };
-
-        optimise = {
-          automatic = true;
-          persistent = true;
-          dates = "weekly";
-        };
-
-        gc = {
-          automatic = false;
-          persistent = true;
-          dates = "weekly";
-          options = "--delete-older-than 30d";
-        };
-
-        extraOptions = ''
-          allow-import-from-derivation = false
-          !include ${config.age.secrets.secret2.path}
-          connect-timeout = 60
-        '';
       };
     };
 }

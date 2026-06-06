@@ -5,17 +5,6 @@
       pkgs,
       ...
     }:
-    let
-      hanaKey = config.services.openssh.knownHosts.hana.publicKey;
-      kaguraKey = config.services.openssh.knownHosts.kagura.publicKey;
-      signKey =
-        if config.networking.hostName == "hana" then
-          hanaKey
-        else if config.networking.hostName == "kagura" then
-          kaguraKey
-        else
-          null;
-    in
     {
       hj.rum.environment.hideWarning = true;
       hj.rum.programs.git = {
@@ -25,7 +14,7 @@
           user = {
             name = "kagurazakei";
             email = "maotsugiri@gmail.com";
-            signingKey = signKey;
+            # signingKey = signKey;
           };
           column = {
             ui = "auto";

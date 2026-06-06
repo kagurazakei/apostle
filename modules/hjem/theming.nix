@@ -163,23 +163,23 @@
           ]
           ++ cfg.qt.packages;
         };
-        programs.dconf.profiles.${cfg.username}.databases = [
-          {
-            settings = {
-              "org/gnome/desktop/interface" = {
-                cursor-theme = cfg.cursor.name;
-                cursor-size = lib.gvariant.mkUint32 cfg.cursor.size;
-
-                gtk-theme = cfg.gtk.name;
-                color-scheme = "prefer-dark";
-
-                icon-theme = cfg.iconTheme.name;
-                font-name = "${cfg.qt.font.family} ${toString cfg.qt.font.size}";
-                #accentcolor
-              };
-            };
-          }
-        ];
+        # programs.dconf.profiles.${cfg.username}.databases = [
+        #   {
+        #     settings = {
+        #       "org/gnome/desktop/interface" = {
+        #         cursor-theme = cfg.cursor.name;
+        #         cursor-size = lib.gvariant.mkUint32 cfg.cursor.size;
+        #
+        #         gtk-theme = cfg.gtk.name;
+        #         color-scheme = "prefer-dark";
+        #
+        #         icon-theme = cfg.iconTheme.name;
+        #         font-name = "${cfg.qt.font.family} ${toString cfg.qt.font.size}";
+        #         #accentcolor
+        #       };
+        #     };
+        #   }
+        # ];
       };
     };
 }

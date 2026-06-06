@@ -48,22 +48,23 @@
       config = lib.mkIf (config.wm.hyprland.enable) {
         programs.hyprland = {
           enable = true;
-          withUWSM = true;
-          xwayland.enable = true;
+          package = lib.mkForce pkgs.hyprland;
+          # withUWSM = true;
+          # xwayland.enable = true;
         }
         // lib.optionalAttrs (config.wm.hyprland.buildFromSrc) {
           package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
           portalPackage =
             inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         };
-        xdg.portal = {
-          config.hyprland = {
-            default = [
-              "kde"
-              "hyprland"
-            ];
-          };
-        };
+        # xdg.portal = {
+        #   config.hyprland = {
+        #     default = [
+        #       "kde"
+        #       "hyprland"
+        #     ];
+        #   };
+        # };
 
         #polkit
         environment.systemPackages = [

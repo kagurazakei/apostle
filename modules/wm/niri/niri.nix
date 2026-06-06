@@ -22,7 +22,6 @@
     {
       imports = [
         self.modules.wm._
-        with-inputs.niri-nix.nixosModules.default
       ];
       options = {
         wm.niri.enable = lib.mkOption {
@@ -38,21 +37,21 @@
       config = (lib.mkIf config.wm.niri.enable) {
         programs.niri = {
           enable = true;
-          useNautilus = false;
-          withUWSM = false;
-          withXDG = false;
+          # useNautilus = false;
         }
         // lib.optionalAttrs (config.wm.niri.buildFromSrc) {
-          package = pkgs.niri-unstable;
+          package = (inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default).overrideAttrs (o: {
+            doCheck = false; # iynaix better not lie
+          });
         };
 
-        xdg.portal = {
-          config.niri = {
-            "org.freedesktop.impl.portal.FileChooser" = lib.mkForce "kde";
-            # "org.freedesktop.impl.portal.ScreenCast" = "gnome";
-            # "org.freedesktop.portal.ScreenCast" = "gnome";
-          };
-        };
+        # xdg.portal = {
+        #   config.niri = {
+        #     "org.freedesktop.impl.portal.FileChooser" = lib.mkForce "kde";
+        #     # "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+        #     # "org.freedesktop.portal.ScreenCast" = "gnome";
+        #   };
+        # };
 
         environment.systemPackages = [
           pkgs.fuzzel

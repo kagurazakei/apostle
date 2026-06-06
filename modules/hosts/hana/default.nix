@@ -1,5 +1,8 @@
 {
   self,
+  lib,
+  pkgs,
+  config,
   ...
 }:
 let
@@ -16,14 +19,14 @@ in
       self.modules.programs.dots_impure
       self.modules.programs.dots_yazi
       self.modules.programs.spicetify
-      self.modules.programs.sysc-greet
-      self.modules.programs.qylock
-      self.modules.programs.ambxst
+      # self.modules.programs.sysc-greet
+      self.modules.programs.greetd
+      # self.modules.programs.ambxst
       self.modules.programs.git
       self.modules.programs.dolphin
       self.modules.programs.fish
-      self.modules.programs.impermanence
-      self.modules.programs.agenix
+      # self.modules.programs.impermanence
+      # self.modules.programs.agenix
       self.modules.programs.yazi
       self.modules.programs.mpv
       self.modules.nixos.trash
@@ -35,63 +38,102 @@ in
       self.modules.nixos.locale
       self.modules.nixos.networking
       self.modules.nixos.nix
-      self.modules.nixos.nix-index-database
+      # self.modules.nixos.nix-index-database
       self.modules.nixos.misc
       self.modules.nixos.packages
       self.modules.nixos.nvidia
       self.modules.nixos.amd
       self.modules.nixos.kernel
       self.modules.nixos.security
-      self.modules.services.scheduler
+      # self.modules.services.scheduler
       self.modules.services.openssh
-      self.modules.services.flatpak
+      # self.modules.services.flatpak
       self.modules.wm._
       self.modules.wm.hyprland
       self.modules.wm.niri
-      self.modules.wm.mango
+      # self.modules.wm.mango
 
       self.modules.hjem._
       self.modules.hjem.antonio
 
       ./+hardware.nix
     ];
-    greeny = {
-      secrets = {
-        antonioPass = {
-          file = self.paths.secrets + /hana-user.age;
-          owner = "antonio";
-        };
-        tailAuth = {
-          file = self.paths.secrets + /tailscale.age;
-          owner = "antonio";
-        };
-        secret2 = {
-          file = self.paths.secrets + /hana-access-token.age;
-          owner = "antonio";
-          mode = "0500";
-          path = "/etc/nix/nix-access-token.conf";
-        };
-        recovery = {
-          file = self.paths.secrets + /recovery.age;
-          owner = "antonio";
-          mode = "0500";
-          path = "/etc/keys/recovery.txt";
-        };
-        anilist = {
-          file = self.paths.secrets + /anilist.age;
-          owner = "antonio";
-          mode = "0500";
-          path = "/etc/keys/anilist.txt";
-        };
-        ssh-kagura = {
-          file = self.paths.secrets + /ssh-hana.age;
-          owner = "antonio";
-          mode = "0500";
-          path = "/etc/keys/ssh-hana";
-        };
-      };
-    };
+    # greeny = {
+    #   secrets = {
+    #     antonioPass = {
+    #       file = self.paths.secrets + /hana-user.age;
+    #       owner = "antonio";
+    #     };
+    #     tailAuth = {
+    #       file = self.paths.secrets + /tailscale.age;
+    #       owner = "antonio";
+    #     };
+    #     secret2 = {
+    #       file = self.paths.secrets + /hana-access-token.age;
+    #       owner = "antonio";
+    #       mode = "0500";
+    #       path = "/etc/nix/nix-access-token.conf";
+    #     };
+    #     recovery = {
+    #       file = self.paths.secrets + /recovery.age;
+    #       owner = "antonio";
+    #       mode = "0500";
+    #       path = "/etc/keys/recovery.txt";
+    #     };
+    #     anilist = {
+    #       file = self.paths.secrets + /anilist.age;
+    #       owner = "antonio";
+    #       mode = "0500";
+    #       path = "/etc/keys/anilist.txt";
+    #     };
+    #     ssh-kagura = {
+    #       file = self.paths.secrets + /ssh-hana.age;
+    #       owner = "antonio";
+    #       mode = "0500";
+    #       path = "/etc/keys/ssh-hana";
+    #     };
+    #   };
+    # };
     networking.hostName = hostname;
-    system.stateVersion = "26.05";
+    # system.stateVersion = "26.05";
+    finit.runlevel = 3;
+    programs.mangowc.enable = true;
+    services = {
+      polkit.enable = true;
+
+      sysklogd.enable = true;
+
+      dbus.enable = true;
+
+      acpid.enable = true;
+
+      udev.enable = true;
+
+      dhcpcd.enable = true;
+      networkmanager.enable = lib.mkForce true;
+      openssh.enable = true;
+
+      seatd.enable = true;
+
+      chrony.enable = true;
+
+      fcron.enable = true;
+
+      rtkit.enable = true;
+
+      elogind.enable = true;
+    };
+    specialisation.elogind = {
+      services.mdevd.enable = lib.mkForce false;
+      services.udev.enable = lib.mkForce true;
+
+      services.elogind.enable = lib.mkForce true;
+      services.seatd.enable = lib.mkForce false;
+
+      services.fwupd.enable = true;
+      services.udisks2.enable = true;
+    };
+    programs.gnome-keyring.enable = true;
+    programs.xwayland-satellite.enable = true;
   };
 }

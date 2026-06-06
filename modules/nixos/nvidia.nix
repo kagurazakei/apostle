@@ -35,7 +35,7 @@
           cfg = config.nixos.graphics.nvidia;
         in
         {
-          nix.settings = {
+          services.nix-daemon.settings = {
             extra-substituters = [
               "https://cuda-maintainers.cachix.org"
               "https://aseipp-nix-cache.global.ssl.fastly.net"
@@ -59,25 +59,25 @@
             mesa
             zenith-nvidia
           ];
-          boot = {
-            initrd.kernelModules = [
-              "nvidia"
-              "nvidia_modeset"
-              "nvidia_uvm"
-              "nvidia_drm"
-            ];
-            kernelModules = [
-              "nvidia"
-              "nvidia_modeset"
-              "nvidia_uvm"
-              "nvidia_drm"
-            ];
-
-            kernelParams = [
-              "nvidia-drm.modeset=1"
-              "nvidia-drm.fbdev=1"
-            ];
-          };
+          # boot = {
+          # initrd.kernelModules = [
+          #   "nvidia"
+          #   "nvidia_modeset"
+          #   "nvidia_uvm"
+          #   "nvidia_drm"
+          # ];
+          # kernelModules = [
+          #   "nvidia"
+          #   "nvidia_modeset"
+          #   "nvidia_uvm"
+          #   "nvidia_drm"
+          # ];
+          #
+          # kernelParams = [
+          #   "nvidia-drm.modeset=1"
+          #   "nvidia-drm.fbdev=1"
+          # ];
+          # };
 
           hardware.graphics = {
             enable = true;
@@ -94,7 +94,7 @@
           };
           hardware.nvidia = {
             modesetting.enable = true;
-            dynamicBoost.enable = true;
+            # dynamicBoost.enable = true;
             powerManagement = {
               enable = true;
               finegrained = cfg.hybrid.enable;
@@ -103,8 +103,6 @@
             # Use the NVidia open source kernel module (not to be confused with the
             # independent third-party "nouveau" open source driver).
             open = false;
-
-            nvidiaSettings = true;
             package =
               if config.networking.hostName == "hana" then
                 config.boot.kernelPackages.nvidiaPackages.legacy_580

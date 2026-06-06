@@ -3,7 +3,7 @@
     { pkgs, lib, ... }:
     {
       fonts = {
-        fontDir.enable = true;
+        fonts.enable = true;
         fontconfig = {
           defaultFonts = {
             serif = [

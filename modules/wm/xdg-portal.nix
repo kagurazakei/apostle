@@ -1,6 +1,6 @@
 {
   modules.wm._ =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     let
       noRounding = ''
         * {
@@ -23,27 +23,24 @@
         xdg.config.files."gtk-4.0/gtk.css".text = noRounding;
         xdg.config.files."gtk-3.0/gtk.css".text = noRounding;
       };
-      programs.uwsm = {
-        enable = true;
-        waylandCompositors = {
-          hyprland = {
-            prettyName = "Hyprland";
-            comment = "Hyprland compositor managed by UWSM";
-            binPath = "/run/current-system/sw/bin/start-hyprland";
-          };
-          niri = {
-            prettyName = "Niri The Goat";
-            comment = "Niri compositor managed by UWSM";
-            binPath = "/run/current-system/sw/bin/niri-session";
-          };
-        };
-      };
+      # programs.uwsm = {
+      #   enable = true;
+      #   waylandCompositors = {
+      #     hyprland = {
+      #       prettyName = "Hyprland";
+      #       comment = "Hyprland compositor managed by UWSM";
+      #       binPath = "/run/current-system/sw/bin/start-hyprland";
+      #     };
+      #     niri = {
+      #       prettyName = "Niri The Goat";
+      #       comment = "Niri compositor managed by UWSM";
+      #       binPath = "/run/current-system/sw/bin/niri-session";
+      #     };
+      #   };
+      # };
       xdg.portal = {
-        enable = true;
-        configPackages = [
-          pkgs.kdePackages.xdg-desktop-portal-kde
-        ];
-        extraPortals = [
+        enable = lib.mkForce true;
+        portals = lib.mkForce [
           pkgs.kdePackages.xdg-desktop-portal-kde
           pkgs.xdg-desktop-portal-gtk
         ];

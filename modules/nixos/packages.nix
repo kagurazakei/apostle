@@ -24,12 +24,12 @@
         };
       };
       config = {
-        programs.direnv = {
-          enable = true;
-          loadInNixShell = true;
-          nix-direnv.enable = true;
-          enableFishIntegration = true;
-        };
+        # programs.direnv = {
+        #   enable = true;
+        #   loadInNixShell = true;
+        #   nix-direnv.enable = true;
+        #   enableFishIntegration = true;
+        # };
 
         environment.systemPackages = [
           npins
@@ -50,7 +50,7 @@
             lutui
             touchpad-toggle
             ;
-          inherit (pkgs.master)
+          inherit (pkgs)
             nh
             cachix
             equibop
