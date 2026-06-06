@@ -1,5 +1,5 @@
 let
-  sources = import ../npins;
+  sources = import ../.tack;
   pkgs = import sources.nixpkgs { };
 
   # Helper to concatenate paths

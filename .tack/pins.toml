@@ -1,6 +1,5 @@
 [shorturls]
 gh = "github:{path}"
-amaan = "github:amaanq/{path}"
 manic = "github:manic-systems/{path}"
 [all_follow]
 nixpkgs = ["stable", "nixpkgs", "master"]
@@ -17,7 +16,6 @@ xwayland-satellite = [
 	"xwayland-satellite-stable",
 	"xwayland-satellite-unstable",
 ]
-# sysc-greet = [ "flake-utils", "nixpkgs", "hyprland", "niri-nix" ]
 hjem-rum = "hjem"
 
 [inputs.flake-parts]
@@ -45,12 +43,6 @@ url = "gh:nix-community/fenix"
 [inputs.agenix]
 url = "gh:ryantm/agenix"
 
-[inputs.age-plugin-fido2-hmac]
-url = "amaan:age-plugin-fido2-hmac"
-
-[inputs.tombkey]
-url = "amaan:tombkey"
-
 # build / system --------------------------------------------------------------
 
 [inputs.nixos-core]
@@ -65,41 +57,18 @@ url = "gh:NixOS/nix"
 # build / tooling -------------------------------------------------------------
 
 [inputs.tack]
-url = "manic:tack"
+url = "manic:tack/next"
 
 [inputs.cade]
 url = "manic:cade"
 
-# editor / personal forks -----------------------------------------------------
-
-[inputs.nvim-config]
-url = "amaan:nvim-config"
 
 # misc personal flakes --------------------------------------------------------
-
-[inputs.nirinit]
-url = "amaan:nirinit"
-
-[inputs.bindiff]
-url = "amaan:bindiff"
-
-[inputs.inshellah]
-url = "manic:inshellah"
-
-[inputs.github2forgejo]
-url = "gh:RGBCube/GitHub2Forgejo"
-
-[inputs.opencode-src]
-url = "gh:sst/opencode/v1.15.11"
-flake = false
 
 [inputs.spicetify]
 url = "gh:Gerg-L/spicetify-nix"
 
 # niri / desktop --------------------------------------------------------------
-
-[inputs.niri]
-url = "amaan:niri-flake/default-module"
 
 [inputs.niri-src]
 url = "gh:YaLTeR/niri"
@@ -131,9 +100,6 @@ url = "github:Rexcrazy804/hjem-impure"
 [inputs.hjem]
 url = "github:feel-co/hjem"
 
-[inputs.hjem-rum]
-url = "github:snugnug/hjem-rum"
-
 [inputs.niri-nix]
 url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
 
@@ -156,9 +122,6 @@ type = "fetch"
 [inputs.neovim-nightly]
 url = "gh:nix-community/neovim-nightly-overlay"
 
-[inputs.cat-gtk-themes]
-url = "gh:kagurazakei/cat-gtk-themes"
-
 [inputs.catp-bat]
 url = "gh:catppuccin/bat"
 
@@ -170,9 +133,6 @@ url = "gh:Equicord/Equibop"
 
 [inputs.flake-utils]
 url = "gh:numtide/flake-utils"
-
-[inputs.hyprview]
-url = "gh:kagurazakei/quickshell-overview"
 
 [inputs.impermanence]
 url = "gh:nix-community/impermanence"
@@ -198,12 +158,6 @@ url = "gh:Nixos/nixos-hardware"
 [inputs.rosep-fish]
 url = "gh:rose-pine/fish"
 
-[inputs.rosep-foot]
-url = "gh:rose-pine/foot"
-
-[inputs.rosep-kitty]
-url = "gh:rose-pine/kitty"
-
 [inputs.shizuruPkgs]
 url = "gh:kagurazakei/shizuruPkgs"
 
@@ -215,3 +169,26 @@ url = "gh:kagurazakei/waifu-cursors"
 
 [inputs.zenNvim]
 url = "gh:nendix/zen.nvim"
+
+[inputs.rosep-kitty]
+url = "gh:rose-pine/kitty"
+type = "fetch"
+
+[inputs.rosep-foot]
+url = "gh:rose-pine/foot"
+type = "fetch"
+
+[inputs.hyprview]
+url = "github:kagurazakei/quickshell-overview"
+type = "fetch"
+
+[inputs.npins]
+url = "gh:andir/npins"
+type = "fetch"
+
+[inputs.cat-gtk-themes]
+url = "gh:kagurazakei/cat-gtk-themes"
+type = "fetch"
+
+[inputs.hjem-rum]
+url = "github:snugnug/hjem-rum"

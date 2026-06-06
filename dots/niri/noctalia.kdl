@@ -19,31 +19,31 @@ workspace "stash" {
 spawn-sh-at-startup "niri-scratchpad daemon"
 binds {
     Ctrl+Alt+L hotkey-overlay-title="Lock Screen" {
-        spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"
+        spawn "noctalia" "msg" "session" "lock"
     }
     Mod+B hotkey-overlay-title="Wallpaper Browser" {
-        spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle"
+        spawn "noctalia" "msg" "panel-toggle" "wallpaper"
     }
-    Mod+Backspace hotkey-overlay-title="Dashboard: Toggle" {
-        spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
+    Mod+Backspace hotkey-overlay-title="Power Toggle" {
+        spawn "noctalia" "msg" "panel-toggle" "session"
     }
     Mod+M hotkey-overlay-title="Dashboard: Toggle" {
-        spawn "noctalia-shell" "ipc" "call" "settings" "toggle" ""
+        spawn "noctalia" "msg" "panel-toggle" "control-center"
     }
     Mod+N hotkey-overlay-title="Bar: Toggle (Primary)" {
-        spawn "noctalia-shell" "ipc" "call" "bar" "toggle"
+        spawn "walker"
     }
     Mod+V hotkey-overlay-title="Clipboard: Toggle" {
-        spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"
+        spawn "noctalia" "msg" "panel-toggle" "clipboard"
     }
     Mod+X hotkey-overlay-title="Power Menu: Toggle" {
         spawn "dms" "ipc" "call" "powermenu" "toggle"
     }
     XF86MonBrightnessDown hotkey-overlay-title="Brightness Down (10%)" {
-        spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"
+        spawn "noctalia" "msg" "brightness-down"
     }
     XF86MonBrightnessUp hotkey-overlay-title="Brightness Down (10%)" {
-        spawn "noctalia-shell" "ipc" "call" "brightness" "increase"
+        spawn "noctalia" "msg" "brightness-up"
     }
     Mod+D {
         spawn "fuzzel"
@@ -55,13 +55,13 @@ binds {
         spawn "fuzzel-clip"
     }
     XF86AudioLowerVolume allow-when-locked=true {
-        spawn "noctalia-shell" "ipc" "call" "volume" "decrease"
+        spawn "noctalia" "msg" "volume-down"
     }
     XF86AudioMute allow-when-locked=true {
-        spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"
+        spawn "noctalia" "msg" "volume-mute"
     }
     XF86AudioRaiseVolume allow-when-locked=true {
-        spawn "noctalia-shell" "ipc" "call" "volume" "increase"
+        spawn "noctalia" "msg" "volume-up"
     }
     Mod+T {
         spawn "dolphin"

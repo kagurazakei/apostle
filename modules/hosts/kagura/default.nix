@@ -19,7 +19,7 @@ in
       self.modules.programs.qylock
       self.modules.programs.sysc-greet
       self.modules.programs.ambxst
-      # self.modules.programs.git
+      self.modules.programs.git
       self.modules.programs.dolphin
       self.modules.programs.fish
       self.modules.programs.impermanence

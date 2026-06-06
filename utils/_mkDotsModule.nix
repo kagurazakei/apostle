@@ -1,6 +1,6 @@
 let
-  sources = import ../npins;
-  pkgs = import sources.nixpkgs { };
+  sources = import ../.tack;
+  pkgs = import sources.nixpkgs { inherit sources; };
   isFunction = f: builtins.isFunction f;
 in
 username: dots:

@@ -1,4 +1,8 @@
-{ inputs, zpkgs, ... }:
+{
+  inputs,
+  zpkgs,
+  ...
+}:
 {
   modules.nixos.packages =
     {

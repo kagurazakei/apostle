@@ -131,7 +131,7 @@ in
     "fuzzel/noctalia" = "/fuzzel/noctalia";
     "foot/foot.ini" = "/foot/foot.ini";
     "foot/rose-pine.ini" = { ... }: inputs.rosep-foot + "/rose-pine";
-    "wallpapers/nix-logo.png" = { ... }: inputs.walls + "/nix-logo.png";
+    # "wallpapers/nix-logo.png" = { ... }: sources.walls + "/nix-logo.png";
     ".face.icon" = "/profile.png";
     "zathura/binds" = "/zathura/binds";
     "zathura/options" = "/zathura/options";

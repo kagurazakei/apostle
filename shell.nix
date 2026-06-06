@@ -1,9 +1,8 @@
 let
-  src = import ./npins;
+  src = import ./.tack;
   pkgs = import src.nixpkgs { };
 in
 pkgs.mkShell {
-  NPINS_DIRECTORY = "npins";
   IMPURE = "true";
 
   buildInputs = [
@@ -16,7 +15,7 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    export NIX_PATH="nixpkgs=$(npins get-path nixpkgs)"
+        export NIX_PATH="nixpkgs=${src.nixpkgs}"
     echo "Dev shell ready. Available: opt, start, npins"
   '';
 }

@@ -1,7 +1,17 @@
 {
   modules.nixos.nix =
-    { config, pkgs, ... }:
     {
+      config,
+      pkgs,
+      inputs,
+      ...
+    }:
+    {
+      imports = [ inputs.tack.nixosModules.default ];
+      programs.tack = {
+        enable = true;
+        nixConfTokens = true;
+      };
       documentation.enable = false;
       nixpkgs.config.allowUnfree = true;
       nix = {
