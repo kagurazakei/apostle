@@ -1,6 +1,5 @@
 {
   self,
-  inputs,
   utils,
   username,
   ...
@@ -16,12 +15,13 @@
       lib,
       pkgs,
       config,
+      niri-nix,
       ...
     }:
     {
       imports = [
         self.modules.wm._
-        inputs.niri-nix.nixosModules.default
+        niri-nix.nixosModules.default
       ];
       options = {
         wm.niri.enable = lib.mkOption {

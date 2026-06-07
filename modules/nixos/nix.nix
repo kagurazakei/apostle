@@ -3,11 +3,18 @@
     {
       config,
       pkgs,
-      inputs,
+      tack,
+      nixos-core,
       ...
     }:
     {
-      imports = [ inputs.tack.nixosModules.default ];
+      imports = [
+        tack.nixosModules.default
+        nixos-core.nixosModules.default
+      ];
+      system.nixos-core = {
+        enable = true;
+      };
       programs.tack = {
         enable = true;
         nixConfTokens = true;

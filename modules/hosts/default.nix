@@ -1,7 +1,7 @@
 {
   self,
-  inputs,
   lib,
+  inputs,
   ...
 }:
 let
@@ -27,7 +27,8 @@ let
           system
           lib
           ;
-      };
+      }
+      // inputs;
     };
 
   hosts = builtins.attrNames self.modules.hosts;

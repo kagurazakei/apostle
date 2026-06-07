@@ -1,6 +1,5 @@
 {
   self,
-  inputs,
   utils,
   username,
   ...
@@ -24,6 +23,7 @@
       lib,
       config,
       inputs,
+      hyprland,
       ...
     }:
     let
@@ -52,9 +52,8 @@
           xwayland.enable = true;
         }
         // lib.optionalAttrs (config.wm.hyprland.buildFromSrc) {
-          package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-          portalPackage =
-            inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+          package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+          portalPackage = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         };
         xdg.portal = {
           config.hyprland = {
