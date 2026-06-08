@@ -115,10 +115,6 @@ url = "gh:viu-media/viu"
 [inputs.qylock-nix]
 url = "gh:kagurazakei/qylock-nix"
 
-[inputs.viu-fetch]
-url = "gh:viu-media/viu"
-type = "fetch"
-
 [inputs.neovim-nightly]
 url = "gh:nix-community/neovim-nightly-overlay"
 

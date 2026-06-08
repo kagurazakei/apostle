@@ -3,7 +3,7 @@
   python312Packages,
   mpv,
   writeShellScriptBin,
-  sources ? import ../.tack,
+  sources,
 }:
 
 let
