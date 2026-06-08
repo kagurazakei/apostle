@@ -6,7 +6,6 @@
 }:
 let
   nixosSystem = inputs.nixpkgs.lib.nixosSystem;
-  hosts = builtins.attrNames self.modules.hosts;
 
   mkHost =
     hostname:
@@ -17,7 +16,9 @@ let
       inherit lib;
       modules = [
         self.modules.hosts.${hostname}
-        { nixpkgs.overlays = import ../../overlays { inherit inputs; }; }
+        {
+          nixpkgs.overlays = import ../../overlays { inherit inputs; };
+        }
       ];
       specialArgs = {
         inherit
@@ -29,6 +30,8 @@ let
       }
       // inputs;
     };
+
+  hosts = builtins.attrNames self.modules.hosts;
 in
 {
   nC = lib.genAttrs hosts mkHost;

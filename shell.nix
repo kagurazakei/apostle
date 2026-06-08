@@ -15,7 +15,7 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-        export NIX_PATH="nixpkgs=${src.nixpkgs}"
+    export NIX_PATH="nixpkgs=${src.nixpkgs}"
     echo "Dev shell ready. Available: opt, start, npins"
   '';
 }
