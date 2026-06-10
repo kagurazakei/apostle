@@ -27,7 +27,7 @@ let
           inputs
           username
           ;
-        pkgs = nixpkgs;
+        inherit (nixpkgs) pkgs;
       };
     }).config;
 in

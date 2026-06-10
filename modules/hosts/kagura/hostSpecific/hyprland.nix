@@ -1,7 +1,7 @@
 {
   modules.hosts.kagura = {
     wm.hyprland = {
-      enable = true;
+      enable = false;
       buildFromSrc = false;
     };
   };

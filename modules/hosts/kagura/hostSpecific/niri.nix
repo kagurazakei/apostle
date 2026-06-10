@@ -1,8 +1,8 @@
 {
   modules.hosts.kagura = {
     wm.niri = {
-      enable = true;
-      buildFromSrc = true;
+      enable = false;
+      buildFromSrc = false;
     };
   };
 }
