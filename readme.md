@@ -1,6 +1,6 @@
 <div align="center">
 <h2>Apostle</h2>
-<p>My Nixos configuration<br>(npins + dendritic pattern)<br>FlakeLess Config</p>
+<p>My Nixos configuration<br>(tack + dendritic pattern)<br>FlakeLess Config</p>
 </div>
 
 <br>
@@ -29,6 +29,7 @@ The entry point is [./modules/hosts](modules/hosts)
 
 ## Features
 + [modules/hosts/default.nix](modules/hosts/default.nix) Automatic host creation
++ [.tack](.tack/default.nix) Alternative for Flake 
 + [utils/_recursiveImport](utils/_recursiveImport.nix) 
     + see [./default.nix](default.nix) for example usage
 + [Impure symlink](utils/_mkStoreSymlink.nix) dotfiles experience like in traditional UNIX systems
@@ -43,5 +44,6 @@ The entry point is [./modules/hosts](modules/hosts)
 + [Rexcrazy804/Zaphkiel](https://github.com/Rexcrazy804/Zaphkiel)
 + [denful/dendritic-unflake](https://github.com/denful/dendritic-unflake)
 + [Iamvismorf/Greenhouse](https://github.com/Iamvismorf/Greenhouse.git)
++ [manic-systems/tack](https://github.com/manic-systems/tack)
 + [pinning with npins blog by Jade](https://jade.fyi/blog/pinning-nixos-with-npins/)
 + [pinning with npins blog by piegames](https://piegames.de/dumps/pinning-nixos-with-npins-revisited/)
