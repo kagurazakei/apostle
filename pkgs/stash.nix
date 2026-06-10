@@ -1,7 +1,7 @@
 {
   pkgs,
   symlinkJoin,
-  inputs ? import ../inputs.nix,
+  inputs ? import ../.tack,
 }:
 let
   stp = inputs.stash.packages.${pkgs.stdenv.hostPlatform.system}.default;

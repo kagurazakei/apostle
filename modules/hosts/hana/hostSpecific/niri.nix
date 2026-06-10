@@ -1,7 +1,7 @@
 {
   modules.hosts.hana = {
     wm.niri = {
-      enable = true;
+      enable = false;
       buildFromSrc = false;
     };
   };

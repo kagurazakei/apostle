@@ -50,27 +50,15 @@ in
     #todo: no idea what this is
     startAttrs = inputs.mnw.lib.npinsToPluginsAttrs pkgs ./start-plugins.json;
     optAttrs = inputs.mnw.lib.npinsToPluginsAttrs pkgs ./opt-plugins.json;
-    start =
-      builtins.attrValues {
-        # inherit (pkgs.vimPlugins) lze lzextras;
-        inherit (pkgs.vimPlugins)
-          nvim-web-devicons
-          plenary-nvim
-          snacks-nvim
-          statuscol-nvim
-          ;
-      }
-      ++ [
-        {
-          name = "zen.nvim";
-          src = pkgs.fetchFromGitHub {
-            owner = "nendix";
-            repo = "zen.nvim";
-            rev = inputs.zenNvim.revision;
-            hash = inputs.zenNvim.hash;
-          };
-        }
-      ];
+    start = builtins.attrValues {
+      # inherit (pkgs.vimPlugins) lze lzextras;
+      inherit (pkgs.vimPlugins)
+        nvim-web-devicons
+        plenary-nvim
+        snacks-nvim
+        statuscol-nvim
+        ;
+    };
     opt =
       builtins.attrValues {
         inherit (pkgs.vimPlugins) conform-nvim;

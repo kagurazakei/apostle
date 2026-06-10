@@ -18,14 +18,9 @@
     {
       services.greetd = {
         enable = true;
-        # useTextGreeter = true;
         settings.default_session = {
           command = getExe tuigreet;
           user = "greeter";
-        };
-        settings.initial_session = {
-          command = "niri --session";
-          user = "antonio";
         };
       };
       environment.etc."tuigreet/config.toml".source =

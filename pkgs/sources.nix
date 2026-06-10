@@ -1,1 +1,1 @@
-{...}: import ../npins
+{ ... }: import ../.tack

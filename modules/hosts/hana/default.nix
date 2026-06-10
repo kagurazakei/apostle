@@ -108,19 +108,14 @@ in
       acpid.enable = true;
 
       udev.enable = true;
-
+      iwd.enable = true;
       dhcpcd.enable = true;
       networkmanager.enable = lib.mkForce true;
       openssh.enable = true;
-
       seatd.enable = true;
-
       chrony.enable = true;
-
       fcron.enable = true;
-
       rtkit.enable = true;
-
       elogind.enable = true;
     };
     specialisation.elogind = {
@@ -135,5 +130,7 @@ in
     };
     programs.gnome-keyring.enable = true;
     programs.xwayland-satellite.enable = true;
+    programs.niri.enable = true;
+    programs.hyprland.enable = true;
   };
 }

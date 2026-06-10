@@ -6,10 +6,10 @@
       ...
     }:
     let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+      spicePkgs = inputs.spicetify.legacyPackages.${pkgs.system};
     in
     {
-      imports = [ inputs.spicetify-nix.nixosModules.spicetify ];
+      imports = [ inputs.spicetify.nixosModules.spicetify ];
       programs.spicetify = {
         enable = true;
         enabledExtensions = with spicePkgs.extensions; [

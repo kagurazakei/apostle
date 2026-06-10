@@ -10,6 +10,19 @@ let
     hostname:
     let
       system = self.modules.hosts.${hostname}.system or "x86_64-linux";
+      channelOverlay = final: prev: {
+        inherit stable master;
+        inherit (prev.stdenv.hostPlatform) system;
+      };
+      stable = import inputs.stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      master = import inputs.master {
+        inherit system;
+        config.allowUnfree = true;
+      };
       basepkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -19,24 +32,6 @@ let
           inputs.neovim-nightly.overlays.default
           channelOverlay
         ];
-      };
-      channelOverlay =
-        final: prev:
-        let
-          inherit (prev.stdenv.hostPlatform) system;
-        in
-        {
-          inherit stable master;
-          customPackage = if system == "x86_64-linux" then final.hello else final.hello-native;
-        };
-      stable = import inputs.stable {
-        inherit system;
-        config.allowUnfree = true;
-      };
-
-      master = import inputs.master {
-        inherit system;
-        config.allowUnfree = true;
       };
       pkgs = basepkgs // {
         stable = stable;
@@ -60,7 +55,8 @@ let
       specialArgs = {
         inherit self inputs system;
         modulesPath = toString inputs.nixpkgs + "/nixos/modules";
-      };
+      }
+      // inputs;
     };
 
   hosts = builtins.attrNames self.modules.hosts;
