@@ -1,6 +1,4 @@
 let
-  sources = import ../.tack;
-  pkgs = import sources.nixpkgs { };
   isFunction = f: builtins.isFunction f;
 in
 username: dots:

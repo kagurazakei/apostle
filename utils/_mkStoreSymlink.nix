@@ -1,8 +1,6 @@
 let
   sources = import ../.tack;
   pkgs = import sources.nixpkgs { };
-
-  # Helper to concatenate paths
   concat =
     base: suffix:
     if builtins.isString base && builtins.isString suffix then
@@ -15,7 +13,6 @@ let
 in
 pathOrParts:
 let
-  # Handle different input types
   finalPath =
     if builtins.isFunction pathOrParts then
       pathOrParts concat
