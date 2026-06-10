@@ -11,7 +11,7 @@ in
 {
   modules.hosts.${hostname} = {
     imports = [
-      self.modules.nixos.misc_steam
+      # self.modules.nixos.misc_steam
       self.modules.programs.dots_fish
       self.modules.programs.dots_hyprland
       self.modules.programs.dots_niri
@@ -29,7 +29,7 @@ in
       # self.modules.programs.agenix
       self.modules.programs.yazi
       self.modules.programs.mpv
-      self.modules.nixos.trash
+      # self.modules.nixos.trash
       self.modules.nixos.audio
       self.modules.nixos.bluetooth
       self.modules.nixos.bootloader
@@ -42,7 +42,7 @@ in
       self.modules.nixos.misc
       self.modules.nixos.packages
       self.modules.nixos.nvidia
-      self.modules.nixos.amd
+      # self.modules.nixos.amd
       self.modules.nixos.kernel
       self.modules.nixos.security
       # self.modules.services.scheduler
@@ -98,35 +98,22 @@ in
     # system.stateVersion = "26.05";
     finit.runlevel = 3;
     programs.mangowc.enable = true;
+    hardware.nvidia = {
+      enable = true;
+    };
     services = {
       polkit.enable = true;
-
       sysklogd.enable = true;
-
       dbus.enable = true;
-
-      acpid.enable = true;
-
       udev.enable = true;
       iwd.enable = true;
       dhcpcd.enable = true;
-      networkmanager.enable = lib.mkForce true;
       openssh.enable = true;
       seatd.enable = true;
       chrony.enable = true;
       fcron.enable = true;
       rtkit.enable = true;
       elogind.enable = true;
-    };
-    specialisation.elogind = {
-      services.mdevd.enable = lib.mkForce false;
-      services.udev.enable = lib.mkForce true;
-
-      services.elogind.enable = lib.mkForce true;
-      services.seatd.enable = lib.mkForce false;
-
-      services.fwupd.enable = true;
-      services.udisks2.enable = true;
     };
     programs.gnome-keyring.enable = true;
     programs.xwayland-satellite.enable = true;

@@ -93,12 +93,13 @@
             ];
           };
           hardware.nvidia = {
+            enable = true;
             modesetting.enable = true;
             # dynamicBoost.enable = true;
-            powerManagement = {
-              enable = true;
-              finegrained = cfg.hybrid.enable;
-            };
+            # powerManagement = {
+            #   enable = true;
+            #   finegrained = cfg.hybrid.enable;
+            # };
 
             # Use the NVidia open source kernel module (not to be confused with the
             # independent third-party "nouveau" open source driver).

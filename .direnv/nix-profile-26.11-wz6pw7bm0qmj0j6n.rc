@@ -36,7 +36,7 @@ NIX_CC='/nix/store/788mx070y81zjlg5ipcl0cra3afviw9k-gcc-wrapper-15.2.0'
 export NIX_CC
 NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu='1'
 export NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-NIX_CFLAGS_COMPILE=' -frandom-seed=xzfj3x6vgx'
+NIX_CFLAGS_COMPILE=' -frandom-seed=aqgwjyx1jh'
 export NIX_CFLAGS_COMPILE
 NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
@@ -49,8 +49,6 @@ NIX_STORE='/nix/store'
 export NIX_STORE
 NM='nm'
 export NM
-NPINS_DIRECTORY='npins'
-export NPINS_DIRECTORY
 OBJCOPY='objcopy'
 export OBJCOPY
 OBJDUMP='objdump'
@@ -171,7 +169,7 @@ export propagatedNativeBuildInputs
 declare -a propagatedTargetDepFiles=('propagated-target-target-deps' )
 shell='/nix/store/gik3rh1vz2jlgnifb9dh6vc6sxwwz9jj-bash-5.3p9/bin/bash'
 export shell
-shellHook='export NIX_PATH="nixpkgs=$(npins get-path nixpkgs)"'$'\x0a''echo "Dev shell ready. Available: opt, start, npins"'$'\x0a'''
+shellHook='export NIX_PATH="nixpkgs=/nix/store/wz6pw7bm0qmj0j6n8i2craddlhj662l5-source"'$'\x0a''echo "Dev shell ready. Available: opt, start, npins"'$'\x0a'''
 export shellHook
 stdenv='/nix/store/jci7gw90lh2vdjaxkb6pzf9xp4v08wzs-stdenv-linux'
 export stdenv

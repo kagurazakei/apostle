@@ -1,5 +1,5 @@
 {
-  modules.nixos.trash = {
-    programs.nano.enable = false;
-  };
+  # modules.nixos.trash = {
+  #   programs.nano.enable = false;
+  # };
 }

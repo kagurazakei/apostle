@@ -18,6 +18,7 @@
     "usb_storage"
     "sd_mod"
   ];
+  hardware.firmware = [ pkgs.linux-firmware ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];

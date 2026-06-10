@@ -37,10 +37,25 @@ let
         stable = stable;
         master = master;
       };
+      finix-modules = with inputs.finix.nixosModules; [
+        nix-daemon
+        openssh
+        sysklogd
+        limine
+        sudo
+        polkit
+        getty
+        bash
+        dhcpcd
+        iwd
+        niri
+        mango
+        hyprland
+      ];
     in
     nixosSystem {
       inherit lib;
-      modules = [
+      modules = with inputs.finix.nixosModules; [
         {
           nixpkgs.pkgs = inputs.nixpkgs.lib.mkDefault pkgs;
         }
@@ -49,8 +64,65 @@ let
         }
         self.modules.hosts.${hostname}
         inputs.community-modules.nixosModules.pipewire
-      ]
-      ++ builtins.attrValues inputs.finix.nixosModules;
+        anacron
+        dhcpcd
+        iwd
+        atd
+        bash
+        bluetooth
+        brightnessctl
+        chronyd
+        ddccontrol
+        dma
+        networkmanager
+        dropbear
+        earlyoom
+        fcron
+        fish
+        flatpak
+        fprintd
+        fstrim
+        fwupd
+        getty
+        gnome-keyring
+        greetd
+        gvfs
+        hyprland
+        hyprlock
+        illum
+        incus
+        labwc
+        xserver
+        lemurs
+        limine
+        mangowc
+        mariadb
+        nftables
+        niri
+        nix-daemon
+        nzbget
+        openssh
+        pmount
+        polkit
+        power-profiles-daemon
+        regreet
+        rtkit
+        seahorse
+        sudo
+        sway
+        sysklogd
+        system76-scheduler
+        thermald
+        tzupdate
+        udisks2
+        upower
+        uptime-kuma
+        virtualbox
+        xwayland-satellite
+        zerotierone
+        zfs
+        zzz
+      ];
 
       specialArgs = {
         inherit self inputs system;
