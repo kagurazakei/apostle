@@ -4,10 +4,10 @@
       enable = false;
     };
     dm.sysc-greet = {
-      enable = false;
+      enable = true;
     };
     dm.noctalia-greeter = {
-      enable = true;
+      enable = false;
     };
   };
 }

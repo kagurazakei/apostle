@@ -387,9 +387,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "649e645e16e615ee86ced2203b50ba19f908f4e0",
-    "narHash": "sha256-QliO/8DtNRgs9tAtEtZHHJ97Cc+itKUyrFOGemRkV3Q=",
-    "lastModified": 1780887479
+    "rev": "8315ae53c25eb8b04445da654f39f763b9692720",
+    "narHash": "sha256-sPIzpQDEx4HnCGMPBrdYaCPoBJmz+UZaqI2uodxmy5o=",
+    "lastModified": 1781151567
   },
   "tuigreet": {
     "type": "github",
