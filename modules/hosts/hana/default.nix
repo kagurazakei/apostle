@@ -16,8 +16,6 @@ in
       self.modules.programs.dots_impure
       self.modules.programs.dots_yazi
       self.modules.programs.spicetify
-      self.modules.programs.sysc-greet
-      self.modules.programs.qylock
       self.modules.programs.ambxst
       self.modules.programs.git
       self.modules.programs.dolphin
@@ -45,6 +43,9 @@ in
       self.modules.services.scheduler
       self.modules.services.openssh
       self.modules.services.flatpak
+      self.modules.services._sysc-greet
+      self.modules.services._greetd
+      self.modules.services.noctalia-greeter
       self.modules.wm._
       self.modules.wm.hyprland
       self.modules.wm.niri

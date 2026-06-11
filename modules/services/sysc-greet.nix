@@ -4,7 +4,7 @@
   ...
 }:
 {
-  modules.programs.sysc-greet =
+  modules.services._sysc-greet =
     {
       config,
       pkgs,

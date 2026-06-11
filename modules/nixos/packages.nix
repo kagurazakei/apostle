@@ -59,12 +59,12 @@
             cachix
             equibop
             ayugram-desktop
+            neovide
             ;
           inherit (pkgs)
             zed-editor
             ffmpeg
             nix-init
-            neovide
             git
             gh
             just
@@ -80,7 +80,10 @@
             rose-pine-icon-theme
             rose-pine-gtk-theme
             vscodium
+            noctalia-shell
+            zathura
             ;
+          inherit (pkgs.zathuraPkgs) zathura_pdf_mupdf;
         };
       };
     };

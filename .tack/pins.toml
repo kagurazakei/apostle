@@ -62,7 +62,6 @@ url = "manic:tack/next"
 [inputs.cade]
 url = "manic:cade"
 
-
 # misc personal flakes --------------------------------------------------------
 
 [inputs.spicetify]
@@ -74,10 +73,10 @@ url = "gh:Gerg-L/spicetify-nix"
 url = "gh:YaLTeR/niri"
 
 [inputs.noctalia-shell]
-url = "gh:noctalia-dev/noctalia-shell"
+url = "gh:noctalia-dev/noctalia-shell/legacy-v4"
 
 [inputs.noctalia]
-url = "gh:noctalia-dev/noctalia-shell/v5"
+url = "gh:noctalia-dev/noctalia-shell"
 
 
 [inputs.tuigreet]
@@ -111,9 +110,6 @@ url = "github:kagurazakei/ambxst"
 
 [inputs.viu]
 url = "gh:viu-media/viu"
-
-[inputs.qylock-nix]
-url = "gh:kagurazakei/qylock-nix"
 
 [inputs.neovim-nightly]
 url = "gh:nix-community/neovim-nightly-overlay"
@@ -188,3 +184,10 @@ type = "fetch"
 
 [inputs.hjem-rum]
 url = "github:snugnug/hjem-rum"
+
+[inputs.walls]
+url = "git+https://github.com/kagurazakei/walls.git"
+type = "fetch"
+
+[inputs.noctalia-greeter]
+url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"

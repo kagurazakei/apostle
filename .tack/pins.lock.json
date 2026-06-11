@@ -187,9 +187,9 @@
     "type": "github",
     "owner": "xddxdd",
     "repo": "nix-cachyos-kernel",
-    "rev": "b1982d2b70cc2e08b7be1fcf74ed790b45324f5c",
-    "narHash": "sha256-jeunKHAE1KwFHNxQHyYrKAxetIVyXevgiEb0ywwpCso=",
-    "lastModified": 1780858410
+    "rev": "889464fbe0d872b40c15f3b9c9e5b83a7797fa00",
+    "narHash": "sha256-6d1UzDpFSbh9xd9Yu2wehC2OsmrJIFmWnoEZ/h8gtZ4=",
+    "lastModified": 1781033818
   },
   "nix-flatpak": {
     "type": "github",
@@ -259,17 +259,25 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia-shell",
-    "rev": "732922d9616d976894ba78df3dfd3e01cba806a8",
-    "narHash": "sha256-O0FYdPuez9StxHuS0vzsA1gSfAZgDx701A9RGTBHZco=",
-    "lastModified": 1780888601
+    "rev": "6f980dd05f22489ab65a1004c33f290c5222aee5",
+    "narHash": "sha256-IbA269PBkZ0o4K8qTfuHeB5NCktV8igx8Yn4Cj2jkb8=",
+    "lastModified": 1781143636
+  },
+  "noctalia-greeter": {
+    "type": "git",
+    "url": "https://github.com/noctalia-dev/noctalia-greeter.git",
+    "ref": "HEAD",
+    "rev": "5f7aacec183b3f7af62de1a4462298898fead014",
+    "narHash": "sha256-iwaBR+kIYVuB1CvHDCMQ1CVvyOKqnY2r/a2l4z7TqB8=",
+    "lastModified": 1781119975
   },
   "noctalia-shell": {
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia-shell",
-    "rev": "5311e14d2000af2f523789c76a3d869dcb42f130",
-    "narHash": "sha256-pthUzeY81Gx1PTKCP4gYTwZYUxNpKZh2pOLPa9ZyofI=",
-    "lastModified": 1780803063
+    "rev": "f816591afc2f2f606d1f0cf70b51e95c04a7a8aa",
+    "narHash": "sha256-2oJuPyt+4dd+ZzO7TFqpmkSAAYpRg9SF4eV8kJGl6Tk=",
+    "lastModified": 1780949817
   },
   "npins": {
     "type": "github",
@@ -294,14 +302,6 @@
     "rev": "b66495fcc5022681b56b61f928c7acbe910e722c",
     "narHash": "sha256-7HgdJBG4BgAPDyHKKxWtxj7nziqsQo6zQCXtwy+L9fs=",
     "lastModified": 1780303737
-  },
-  "qylock-nix": {
-    "type": "github",
-    "owner": "kagurazakei",
-    "repo": "qylock-nix",
-    "rev": "4b16639a1ed025aa0ad7fc2299d0bdb42e546655",
-    "narHash": "sha256-ElhjD0b/xcjZCoWASuThL8i3nOBirPxeuB6YUcVvd3k=",
-    "lastModified": 1775328158
   },
   "rosep-fish": {
     "type": "github",
@@ -414,6 +414,14 @@
     "rev": "8e692c1daacf241b3d76ea3b2024f0fa4d662531",
     "narHash": "sha256-68QmW2WK0OxyMlcdTxhjCRY4SMmKWy+eDF8yA6dkx4c=",
     "lastModified": 1771429565
+  },
+  "walls": {
+    "type": "git",
+    "url": "https://github.com/kagurazakei/walls.git",
+    "ref": "HEAD",
+    "rev": "bbab47e790694112fe01550e9af5455a04a5b8c4",
+    "narHash": "sha256-C8rWrCFN5v+WtY2TqJzkD74BU+BO2nXGVtIgQs0P9V8=",
+    "lastModified": 1777095775
   },
   "watt": {
     "type": "github",

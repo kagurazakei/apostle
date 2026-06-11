@@ -48,8 +48,8 @@
         xdg.portal = {
           config.niri = {
             "org.freedesktop.impl.portal.FileChooser" = lib.mkForce "kde";
-            # "org.freedesktop.impl.portal.ScreenCast" = "gnome";
-            # "org.freedesktop.portal.ScreenCast" = "gnome";
+            "org.freedesktop.impl.portal.ScreenCast" = lib.mkForce "gnome";
+            "org.freedesktop.portal.ScreenCast" = lib.mkForce "gnome";
           };
         };
 

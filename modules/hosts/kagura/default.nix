@@ -16,9 +16,9 @@ in
       self.modules.programs.dots_impure
       self.modules.programs.dots_yazi
       self.modules.programs.spicetify
-      self.modules.programs.qylock
-      self.modules.programs.sysc-greet
-      self.modules.programs.ambxst
+      self.modules.services._greetd
+      self.modules.services._sysc-greet
+      # self.modules.programs.ambxst
       self.modules.programs.git
       self.modules.programs.dolphin
       self.modules.programs.fish
@@ -65,7 +65,7 @@ in
           path = "/etc/keys/tailAuth.txt";
         };
         secret2 = {
-          file = self.paths.secrets + /kagura-access-token.age;
+          file = self.paths.secrets + /kagura-access-token-2.age;
           owner = "antonio";
           mode = "0500";
           path = "/etc/nix/nix-access-token.conf";
@@ -83,7 +83,7 @@ in
           path = "/etc/keys/anilist.txt";
         };
         ssh-kagura = {
-          file = self.paths.secrets + /ssh-kagura.age;
+          file = self.paths.secrets + /kagura-ssh.age;
           owner = "antonio";
           mode = "0500";
           path = "/etc/keys/ssh-kagura";

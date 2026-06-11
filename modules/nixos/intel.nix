@@ -46,9 +46,15 @@
       };
 
       config = {
-        hardware.graphics.extraPackages = cfg.runtimePackages ++ cfg.driverPackages;
+        hardware.graphics = {
+          enable = true;
+          enable32Bit = true;
+          extraPackages = cfg.runtimePackages ++ cfg.driverPackages;
+        };
+        chaotic.mesa-git = {
+          enable = true;
+        };
         environment.systemPackages = with pkgs; [
-          mesa
           intel-gpu-tools
           libva-utils
           vulkan-loader

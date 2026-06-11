@@ -6,13 +6,16 @@ let
   ];
   kagura = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINjywfRHVDeBQBFYZym/c3JDVRwni//tSy5FPKmTgLyN antonio@hana"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEaNh2GVxWz2zLxDa8cMnPtfYQPk1A3xlKKVuKOTNrp2 antonio@hana"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBZ/2mQLJkKdNyfUvXI4KTneGLe6i7WXk+7Kl6ceeA7j maotsugiri@gmail.com"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDT989Rm6vSVS4cSP2NevoXVS7UnFVYHgfsE6dbM2+s6 hana@antonio"
   ];
-in {
+in
+{
   "kagura-user.age".publicKeys = kagura ++ hana;
   "kagura-access-token.age".publicKeys = kagura ++ hana;
-  "ssh-kagura.age".publicKeys = kagura ++ hana;
+  "kagura-access-token-2.age".publicKeys = kagura ++ hana;
+  "kagura-ssh.age".publicKeys = kagura ++ hana;
   "anilist.age".publicKeys = kagura ++ hana;
   "recovery.age".publicKeys = kagura ++ hana;
   "hana-user.age".publicKeys = kagura ++ hana;

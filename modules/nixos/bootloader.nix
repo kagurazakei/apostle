@@ -8,15 +8,30 @@
       ];
       boot = {
         consoleLogLevel = 0;
-        loader.efi = {
-          canTouchEfiVariables = true;
-        };
-        loader.timeout = 0;
-        loader.systemd-boot = {
-          enable = true;
-          consoleMode = "max";
-          configurationLimit = 8;
-          editor = false;
+        loader = {
+          efi.canTouchEfiVariables = true;
+          limine = {
+            enable = true;
+            maxGenerations = 8;
+            style = {
+              wallpaperStyle = "centered";
+              wallpapers = [
+                "${inputs.walls}/nix-logo.png"
+              ];
+              interface = {
+                resolution = "max";
+                helpHidden = true;
+                branding = "Limine Bootloader";
+              };
+              graphicalTerminal = {
+                font.scale = "2x2";
+                margin = -1;
+                marginGradient = -1;
+                background = "33080808";
+                foreground = "B9C1D6";
+              };
+            };
+          };
         };
         tmp = {
           useTmpfs = false;

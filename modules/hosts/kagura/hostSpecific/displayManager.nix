@@ -1,6 +1,6 @@
 {
   modules.hosts.kagura = {
-    dm.qylock = {
+    dm.tuigreet = {
       enable = false;
     };
     dm.sysc-greet = {

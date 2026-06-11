@@ -1,6 +1,6 @@
 { username, ... }:
 {
-  modules.programs.dms-greeter =
+  modules.services.dms-greeter =
     {
       pkgs,
       ...
