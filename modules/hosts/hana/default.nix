@@ -16,7 +16,6 @@ in
       self.modules.programs.dots_impure
       self.modules.programs.dots_yazi
       self.modules.programs.spicetify
-      self.modules.programs.ambxst
       self.modules.programs.git
       self.modules.programs.dolphin
       self.modules.programs.fish
