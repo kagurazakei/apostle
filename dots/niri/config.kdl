@@ -166,11 +166,16 @@ binds {
         spawn "/home/antonio/.local/bin/brightness" "--inc"
     }
 }
+spawn-at-startup "uwsm" "finalize"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "systemctl" "--user" "start" "hjem-impure.service" "--now"
 spawn-at-startup "systemctl" "--user" "start" "arRPC.service" "--now"
-spawn-at-startup "noctalia-shell" "--no-duplicate"
+spawn-at-startup "app2unit" "-t" "service" "-s" "noctalia-shell"
+spawn-at-startup "app2unit" "-t" "service" "-s" "foot" "--server"
+spawn-at-startup "app2unit" "-t" "service" "-s" "stash" "watch"
+spawn-at-startup "app2unit" "-t" "service" "-s" "noctalia-shell"
+spawn-at-startup "app2unit" "-t" "service" "-s" "nm-applet"
 spawn-at-startup "niri-scratchpad" "daemon"
 //This was a nightmare to make but here
 // original code from; https://github.com/XansiVA
