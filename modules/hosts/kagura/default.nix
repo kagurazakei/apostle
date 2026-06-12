@@ -65,7 +65,7 @@ in
           path = "/etc/keys/tailAuth.txt";
         };
         secret2 = {
-          file = self.paths.secrets + /kagura-access-token-2.age;
+          file = self.paths.secrets + /kagura-access-token.age;
           owner = "antonio";
           mode = "0500";
           path = "/etc/nix/nix-access-token.conf";

@@ -66,7 +66,7 @@ in
           owner = "antonio";
         };
         secret2 = {
-          file = self.paths.secrets + /kagura-access-token-2.age;
+          file = self.paths.secrets + /kagura-access-token.age;
           owner = "antonio";
           mode = "0500";
           path = "/etc/nix/nix-access-token.conf";
@@ -83,7 +83,7 @@ in
           mode = "0500";
           path = "/etc/keys/anilist.txt";
         };
-        ssh-kagura = {
+        ssh-hana = {
           file = self.paths.secrets + /ssh-hana.age;
           owner = "antonio";
           mode = "0500";
