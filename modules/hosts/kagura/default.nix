@@ -18,7 +18,7 @@ in
       self.modules.programs.spicetify
       self.modules.services._greetd
       self.modules.services._sysc-greet
-      # self.modules.programs.ambxst
+      self.modules.programs.noctalia
       self.modules.programs.git
       self.modules.programs.dolphin
       self.modules.programs.fish

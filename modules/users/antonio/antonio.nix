@@ -51,10 +51,10 @@ in
         shell = pkgs.master.fish;
         hashedPasswordFile = config.age.secrets.antonioPass.path;
         openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEaNh2GVxWz2zLxDa8cMnPtfYQPk1A3xlKKVuKOTNrp2 antonio@hana"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINjywfRHVDeBQBFYZym/c3JDVRwni//tSy5FPKmTgLyN antonio@hana"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDT989Rm6vSVS4cSP2NevoXVS7UnFVYHgfsE6dbM2+s6 hana@antonio"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEaNh2GVxWz2zLxDa8cMnPtfYQPk1A3xlKKVuKOTNrp2 antonio@hana"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA0lIiKvQGtuJjjub0DnaLVP+qZjmt2ABkfrhXSXXPjk hana@hana"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0ziYD0mB2r6UgxR0F+sAMnjQXDqNKnlcmSNUdLutBZ sops-nix-user@hana"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEaNh2GVxWz2zLxDa8cMnPtfYQPk1A3xlKKVuKOTNrp2 nixos@kagura"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDPWjEDWkrz5r7pzJCjOPmrseoYeoRCZegA3yI3QIrnz sops-nix-user@kagura"
         ];
       };
       programs.fish = {

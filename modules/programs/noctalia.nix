@@ -3,11 +3,13 @@
     { noctalia, ... }:
     {
       hjem.extraModules = [ noctalia.hjemModules.default ];
-      programs.noctalia = {
-        enable = true;
-        systemd = {
+      hj = {
+        programs.noctalia = {
           enable = true;
-          target = "graphical-session.desktop";
+          systemd = {
+            enable = true;
+            target = "graphical-session.target";
+          };
         };
       };
     };

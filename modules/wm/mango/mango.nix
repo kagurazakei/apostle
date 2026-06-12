@@ -1,5 +1,4 @@
 {
-  self,
   utils,
   username,
   zpkgs,
@@ -43,6 +42,7 @@
       };
     in
     {
+
       options.wm.mango = {
         enable = mkOption {
           type = lib.types.bool;
@@ -83,16 +83,18 @@
           wlr.enable = true;
           configPackages = [ cfg.package ];
           extraPortals = [
+            pkgs.kdePackages.xdg-desktop-portal-kde
             pkgs.xdg-desktop-portal-gtk
+            pkgs.xdg-desktop-portal-gnome
             pkgs.xdg-desktop-portal-wlr
           ];
           config.mango = {
             # borrowed from config for sway
-            default = [ "gtk" ];
+            default = [ "kde" ];
             "org.freedesktop.impl.portal.ScreenCast" = "wlr";
             "org.freedesktop.impl.portal.Screenshot" = "wlr";
             "org.freedesktop.impl.portal.Inhibit" = "none";
-            "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+            "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
           };
         };
 

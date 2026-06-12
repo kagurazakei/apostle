@@ -259,9 +259,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia-shell",
-    "rev": "6f980dd05f22489ab65a1004c33f290c5222aee5",
-    "narHash": "sha256-IbA269PBkZ0o4K8qTfuHeB5NCktV8igx8Yn4Cj2jkb8=",
-    "lastModified": 1781143636
+    "rev": "885b5f12594ae92a97f861897f90549a820ca4e6",
+    "narHash": "sha256-hmX11Y/byBxhHc6MDpUOkDrBDHmSh6tSOjkjpwyNV/8=",
+    "lastModified": 1781228354
   },
   "noctalia-greeter": {
     "type": "git",

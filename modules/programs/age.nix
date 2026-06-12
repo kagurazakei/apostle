@@ -15,9 +15,10 @@
         (pkgs.callPackage "${inputs.agenix}/pkgs/agenix.nix" { })
       ];
       age.identityPaths = [
-        "/persistent/etc/sops-nix/keys.txt"
+        "/persistent/etc/sops-nix/sops-key"
         "/persistent/etc/sops-nix/id_ed25519"
       ]
+      ++ builtins.map (username: "/home/${username}/.ssh/sops-key") [ username ]
       ++ builtins.map (username: "/home/${username}/.ssh/id_ed25519") [ username ];
 
     };
