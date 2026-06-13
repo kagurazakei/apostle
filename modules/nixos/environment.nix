@@ -11,7 +11,6 @@
 
       environment.etc = {
         "nixos/nixpkgs".source = builtins.storePath pkgs.path;
-        # "/xdg/menus/applications.menu".text = builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; #dolphin fix
       };
     };
 }

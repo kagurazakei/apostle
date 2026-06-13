@@ -55,6 +55,14 @@
     "narHash": "sha256-D+BsdpxmtUwtqGoY0IXPhHgTlmqgcZKCEo1oMyn7ep0=",
     "lastModified": 1780532242
   },
+  "dolphin-overlay": {
+    "type": "github",
+    "owner": "kagurazakei",
+    "repo": "dolphin-overlay",
+    "rev": "2879437ff23bd8f41976fc667fd73bfbaa9726a5",
+    "narHash": "sha256-2Cyki4eu/hbfh1mVKBoWZbRMvu8M+l58wCkWLzAKq/4=",
+    "lastModified": 1780795543
+  },
   "equibop": {
     "type": "github",
     "owner": "Equicord",

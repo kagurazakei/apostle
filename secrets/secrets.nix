@@ -2,10 +2,12 @@ let
   hana = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA0lIiKvQGtuJjjub0DnaLVP+qZjmt2ABkfrhXSXXPjk nixos@hana"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0ziYD0mB2r6UgxR0F+sAMnjQXDqNKnlcmSNUdLutBZ sops-nix-user@hana"
+    "age1plxxpd5v45wrp0pufvjyunv7a43hxkl69vvjw4w4vm5y3qfr2ydqnrfd2s"
   ];
   kagura = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEaNh2GVxWz2zLxDa8cMnPtfYQPk1A3xlKKVuKOTNrp2 nixos@kagura"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDPWjEDWkrz5r7pzJCjOPmrseoYeoRCZegA3yI3QIrnz sops-nix-user@kagura"
+    "age1plxxpd5v45wrp0pufvjyunv7a43hxkl69vvjw4w4vm5y3qfr2ydqnrfd2s"
   ];
 in
 {

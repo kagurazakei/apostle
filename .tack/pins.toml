@@ -191,3 +191,6 @@ url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"
 
 [inputs.noctalia]
 url = "gh:noctalia-dev/noctalia-shell"
+
+[inputs.dolphin-overlay]
+url = "gh:kagurazakei/dolphin-overlay"

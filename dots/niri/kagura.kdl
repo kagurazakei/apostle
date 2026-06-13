@@ -174,7 +174,10 @@ spawn-at-startup "app2unit" "-t" "service" "-b" "b" "stash" "watch"
 spawn-at-startup "app2unit" "-t" "service" "-s" "s" "hjem-impure"
 spawn-at-startup "app2unit" "-t" "service" "-s" "s" "arrpc"
 spawn-at-startup "app2unit" "-t" "service" "-s" "a" "nm-applet"
-spawn-at-startup "uwsm" "-t" "service" "noctalia"
+spawn-at-startup "app2unit" "-t" "service" "-s" "b" "noctalia"
+spawn-at-startup "systemctl" "--user" "start" "xdg-desktop-portal-kde"
+spawn-at-startup "systemctl" "--user" "start" "xdg-desktop-portal"
+spawn-at-startup "systemctl" "--user" "start" "xdg-desktop-portal-wlr"
 //This was a nightmare to make but here
 // original code from; https://github.com/XansiVA
 animations {

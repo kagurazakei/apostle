@@ -6,24 +6,49 @@
       ...
     }:
     {
-      environment.systemPackages = with pkgs.kdePackages; [
-        dolphin
-        dolphin-plugins
-        gwenview
-        ark
-        kservice
-        kde-cli-tools
-        ffmpegthumbs
-        kio
-        kio-extras
-        kio-fuse
-        kimageformats
-        kdegraphics-thumbnailers
-        kirigami
-      ];
+      environment.systemPackages =
+        with pkgs.kdePackages;
+        [
+          dolphin
+          gwenview
+          ark
+          kservice
+          kde-cli-tools
+          ffmpegthumbs
+          kio
+          kio-extras
+          kio-fuse
+          kimageformats
+          kdegraphics-thumbnailers
+          kirigami
+        ]
+        ++ [ pkgs.udiskie ];
+      hj = {
+        systemd.services = {
+          udiskie = {
+            description = "Udiskie Systemd Service";
+            after = [ "graphical-session.target" ];
+            partOf = [ "graphical-session.target" ];
+            serviceConfig = {
+              ExecStart = "${pkgs.udiskie}/bin/udiskie";
+              Restart = "on-failure";
+            };
+          };
+        };
+      };
+      services.udisks2 = {
+        enable = true;
+      };
       hj.xdg.config.files = {
+        "udiskie/config.yml".text = ''
+          program_options:
+          automount: true
+          tray: auto
+          notify: true
+          file_manager: ${pkgs.kdePackages.dolphin}/bin/dolphin
+          udisks_version: 2
+        '';
         "dolphinrc".source = config.impure-dots + "/dolphinrc";
-        "menus/applications.menu".source = config.impure-dots + "/menus/applications.menu";
         "kdeglobals".source = config.impure-dots + "/kdeglobals";
       };
     };
