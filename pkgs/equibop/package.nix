@@ -5,11 +5,10 @@
   makeWrapper,
   makeDesktopItem,
   copyDesktopItems,
-  electron_41,
+  electron,
   python3Packages,
   pipewire,
   libpulseaudio,
-  jq,
   autoPatchelfHook,
   bun,
   nodejs,
@@ -17,31 +16,24 @@
   withMiddleClickScroll ? false,
   sources,
 }:
-let
-  electron = electron_41;
-in
 stdenv.mkDerivation (finalAttrs: {
   pname = "equibop";
   version = "nightly";
+
   src = sources.equibop;
+
   postPatch = ''
     substituteInPlace scripts/build/build.mts \
-      --replace-fail 'gitHash = execSync("git rev-parse HEAD", { encoding: "utf-8" }).trim();' 'gitHash = "${finalAttrs.src.hash}"'
+      --replace-fail 'gitHash = execSync("git rev-parse HEAD", { encoding: "utf-8" }).trim();' 'gitHash = "nightly"'
 
     # disable auto updates
     substituteInPlace src/main/updater.ts \
       --replace-fail 'const isOutdated = autoUpdater.checkForUpdates().then(res => Boolean(res?.isUpdateAvailable));' 'const isOutdated = false;'
-
-    # disable auto update for bun
-    substituteInPlace scripts/build/compileArrpc.mts \
-      --replace-fail -baseline ""
   '';
-
-  node-modules = callPackage ./node-modules.nix { };
+  node-modules = callPackage ./node-modules.nix { inherit sources; };
 
   nativeBuildInputs = [
     bun
-    jq
     nodejs
     # XXX: Equibop *does not* ship venmic as a prebuilt node module. The package
     # seems to build with or without this hook, but I (NotAShelf) don't have the
@@ -69,22 +61,15 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   # electron builds must be writable to support electron fuses
-  preBuild = ''
-    # Validate electron version matches upstream package.json
-    if [ "`jq -r '.devDependencies.electron' < package.json | cut -d. -f1 | tr -d '^'`" != "${lib.versions.major electron.version}" ]
-    then
-      echo "ERROR: electron version mismatch between package.json and nixpkgs"
-      exit 1
-    fi
-  ''
-  + lib.optionalString stdenv.hostPlatform.isDarwin ''
-    cp -r ${electron.dist}/Electron.app .
-    chmod -R u+w Electron.app
-  ''
-  + lib.optionalString stdenv.hostPlatform.isLinux ''
-    cp -r ${electron.dist} electron-dist
-    chmod -R u+w electron-dist
-  '';
+  preBuild =
+    lib.optionalString stdenv.hostPlatform.isDarwin ''
+      cp -r ${electron.dist}/Electron.app .
+      chmod -R u+w Electron.app
+    ''
+    + lib.optionalString stdenv.hostPlatform.isLinux ''
+      cp -r ${electron.dist} electron-dist
+      chmod -R u+w electron-dist
+    '';
 
   buildPhase = ''
     runHook preBuild
@@ -128,10 +113,7 @@ stdenv.mkDerivation (finalAttrs: {
   postFixup = ''
     makeWrapper ${electron}/bin/electron $out/bin/equibop \
       --add-flags $out/opt/Equibop/resources/app.asar \
-      ${lib.optionalString withTTS ''
-        --run 'if [[ "''${NIXOS_SPEECH:-default}" != "False" ]]; then NIXOS_SPEECH=True; else unset NIXOS_SPEECH; fi' \
-        --add-flags "\''${NIXOS_SPEECH:+--enable-speech-dispatcher}" \
-      ''} \
+      ${lib.optionalString withTTS "--add-flags \"--enable-speech-dispatcher\""} \
       ${lib.optionalString withMiddleClickScroll "--add-flags \"--enable-blink-features=MiddleClickAutoscroll\""} \
       --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-wayland-ime=true}}"
   '';
@@ -174,7 +156,6 @@ stdenv.mkDerivation (finalAttrs: {
     maintainers = with lib.maintainers; [
       NotAShelf
       rexies
-      PerchunPak
     ];
     mainProgram = "equibop";
     # I am not confident in my ability to support Darwin, please PR if this is important to you

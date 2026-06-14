@@ -111,9 +111,6 @@ url = "gh:catppuccin/bat"
 [inputs.chaotic]
 url = "gh:chaotic-cx/nyx/nyxpkgs-unstable"
 
-[inputs.equibop]
-url = "gh:Equicord/Equibop"
-
 [inputs.flake-utils]
 url = "gh:numtide/flake-utils"
 
@@ -194,3 +191,7 @@ url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
 
 [inputs.quickshell]
 url = "gh:quickshell-mirror/quickshell"
+
+[inputs.equibop]
+url = "gh:Equicord/Equibop"
+type = "fetch"

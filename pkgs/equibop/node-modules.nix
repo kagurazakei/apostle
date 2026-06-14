@@ -1,25 +1,19 @@
-# fixed output derrivation adapted from
+# fixed output derivation adapted from
 # https://github.com/NixOS/nixpkgs/blob/28c3f83a9a77e3ada57afb71cc4052d2c435597a/pkgs/by-name/op/opencode/package.nix#L59-L122
 {
   lib,
   stdenvNoCC,
   bun,
   writableTmpDirAsHomeHook,
+  sources,
 }:
 let
-  sources = import ../../npins;
   equibop = sources.equibop;
-  srcPath =
-    if builtins.isPath equibop then
-      equibop
-    else if builtins.hasAttr "outPath" equibop then
-      equibop.outPath
-    else if builtins.hasAttr "src" equibop then
-      equibop.src
-    else
-      equibop;
 
-  version = if builtins.hasAttr "version" equibop then equibop.version else "latest";
+  # equibop is a string path from .tack - use it directly
+  srcPath = equibop; # No hasAttr checks needed
+
+  version = "nightly";
 in
 stdenvNoCC.mkDerivation {
   name = "equibop-modules-${version}";
@@ -70,6 +64,7 @@ stdenvNoCC.mkDerivation {
     }
     .${stdenvNoCC.hostPlatform.system}
       or (throw "Unsupported system ${stdenvNoCC.hostPlatform.system}");
+
   outputHashAlgo = "sha256";
   outputHashMode = "recursive";
 }
