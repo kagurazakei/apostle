@@ -44,7 +44,7 @@
             gtk-themes
             viu
             stash
-            rumda
+            equibop
             ;
           inherit (zpkgs.scripts)
             npins-ui
@@ -57,12 +57,13 @@
           inherit (pkgs.master)
             nh
             cachix
-            equibop
             ayugram-desktop
             neovide
             ;
           inherit (pkgs)
+            cacert
             zed-editor
+            zed-discord-presence
             ffmpeg
             nix-init
             git
@@ -82,6 +83,8 @@
             vscodium
             noctalia-shell
             zathura
+            nixd
+            nil
             ;
           inherit (pkgs.zathuraPkgs) zathura_pdf_mupdf;
         };

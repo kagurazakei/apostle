@@ -51,7 +51,6 @@
           substituters = [
             "https://kagurazakei.cachix.org"
             "https://nix-community.cachix.org"
-            "https://cache.garnix.io"
             "https://loneros.cachix.org"
             "https://heitor.cachix.org"
             "https://attic.xuyh0120.win/lantian"
@@ -61,7 +60,6 @@
           trusted-public-keys = [
             "kagurazakei.cachix.org-1:L150C/szoC/r6LOupCWQRU5IqdWIBl926O1HpiBVEkw="
             "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-            "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
             "loneros.cachix.org-1:dVCECfW25sOY3PBHGBUwmQYrhRRK2+p37fVtycnedDU="
             "heitor.cachix.org-1:IZ1ydLh73kFtdv+KfcsR4WGPkn+/I926nTGhk9O9AxI="
             "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="

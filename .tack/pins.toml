@@ -87,17 +87,11 @@ url = "gh:notashelf/watt"
 [inputs.qtengine]
 url = "gh:kossLAN/qtengine"
 
-[inputs.quickshell]
-url = "git+https://git.outfoxxed.me/quickshell/quickshell.git"
-
 [inputs.hjem-impure]
 url = "github:Rexcrazy804/hjem-impure"
 
 [inputs.hjem]
 url = "github:feel-co/hjem"
-
-[inputs.niri-nix]
-url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
 
 [inputs.sysc-greet]
 url = "github:kagurazakei/sysc-greet/master"
@@ -194,3 +188,9 @@ url = "gh:noctalia-dev/noctalia-shell"
 
 [inputs.dolphin-overlay]
 url = "gh:kagurazakei/dolphin-overlay"
+
+[inputs.niri-nix]
+url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
+
+[inputs.quickshell]
+url = "gh:quickshell-mirror/quickshell"

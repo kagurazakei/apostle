@@ -66,7 +66,7 @@
 
         #polkit
         environment.systemPackages = [
-          pkgs.libsForQt5.qt5.qtwayland
+          pkgs.qt5.qtwayland
         ]
         ++ builtins.attrValues {
           inherit hyprview;

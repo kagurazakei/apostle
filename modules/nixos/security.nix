@@ -1,8 +1,12 @@
 {
   modules.nixos.security =
-    { ... }:
+    { pkgs, ... }:
     {
       security = {
+
+        pki.certificateFiles = [
+          "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+        ];
         sudo = {
           enable = true;
           wheelNeedsPassword = false;

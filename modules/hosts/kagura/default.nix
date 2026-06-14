@@ -8,7 +8,7 @@ in
 {
   modules.hosts.${hostname} = {
     imports = [
-      self.modules.nixos.misc_steam
+      self.modules.programs.agenix
       self.modules.programs.dots_fish
       self.modules.programs.dots_hyprland
       self.modules.programs.dots_niri
@@ -16,8 +16,6 @@ in
       self.modules.programs.dots_impure
       self.modules.programs.dots_yazi
       self.modules.programs.spicetify
-      self.modules.services._greetd
-      self.modules.services._sysc-greet
       self.modules.programs.noctalia
       self.modules.programs.git
       self.modules.programs.dolphin
@@ -36,6 +34,7 @@ in
       self.modules.nixos.nix
       self.modules.nixos.nix-index-database
       self.modules.nixos.misc
+      self.modules.nixos.misc_steam
       self.modules.nixos.packages
       self.modules.nixos.intel
       self.modules.nixos.kernel
@@ -43,7 +42,8 @@ in
       self.modules.services.scheduler
       self.modules.services.openssh
       self.modules.services.flatpak
-      self.modules.programs.agenix
+      self.modules.services._greetd
+      self.modules.services._sysc-greet
       self.modules.wm._
       self.modules.wm.hyprland
       self.modules.wm.niri

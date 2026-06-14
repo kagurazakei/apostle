@@ -3,7 +3,6 @@
   modules.nixos.misc =
     {
       pkgs,
-      lib,
       config,
       ...
     }:
@@ -32,11 +31,11 @@
         kdePackages.kirigami
         kdePackages.kirigami-addons
         kdePackages.breeze
-        libsForQt5.qt5.qtgraphicaleffects
+        qt5.qtgraphicaleffects
         qt5.qtbase
         qt5.qtdeclarative
         qt5.qtgraphicaleffects
-        libsForQt5.qtdeclarative
+        qt5.qtdeclarative
         zpkgs.qt6ct
       ];
       environment.variables = {
@@ -56,11 +55,11 @@
         kdePackages.kirigami
         kdePackages.kirigami-addons
         kdePackages.breeze
-        libsForQt5.qt5.qtgraphicaleffects
+        qt5.qtgraphicaleffects
         qt5.qtbase
         qt5.qtdeclarative
         qt5.qtgraphicaleffects
-        libsForQt5.qtdeclarative
+        qt5.qtdeclarative
         (catppuccin-papirus-folders.override {
           flavor = "mocha";
           accent = "red";
