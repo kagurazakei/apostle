@@ -1,6 +1,7 @@
 [shorturls]
 gh = "github:{path}"
 manic = "github:manic-systems/{path}"
+
 [all_follow]
 nixpkgs = ["stable", "nixpkgs", "master"]
 fenix = "fenix"
@@ -13,8 +14,8 @@ git-hooks = ["git-hooks-nix"]
 nixpkgs-lib = "nixpkgs-lib"
 rust-analyzer-src = "rust-analyzer"
 xwayland-satellite = [
-	"xwayland-satellite-stable",
-	"xwayland-satellite-unstable",
+  "xwayland-satellite-stable",
+  "xwayland-satellite-unstable",
 ]
 hjem-rum = "hjem"
 
@@ -29,15 +30,11 @@ url = "gh:oxalica/rust-overlay"
 [inputs.nixpkgs]
 url = "gh:nixos/nixpkgs/nixos-unstable"
 
-[inputs.stable]
-url = "gh:nixos/nixpkgs/nixos-26.05"
-
 [inputs.master]
 url = "gh:nixos/nixpkgs/master"
 
 [inputs.fenix]
 url = "gh:nix-community/fenix"
-
 # secrets / identity ----------------------------------------------------------
 
 [inputs.agenix]
@@ -75,7 +72,6 @@ url = "gh:YaLTeR/niri"
 [inputs.noctalia-shell]
 url = "gh:noctalia-dev/noctalia-shell/legacy-v4"
 
-
 [inputs.tuigreet]
 url = "gh:notashelf/tuigreet"
 
@@ -87,14 +83,21 @@ url = "gh:notashelf/watt"
 [inputs.qtengine]
 url = "gh:kossLAN/qtengine"
 
+[inputs.quickshell]
+url = "git+https://git.outfoxxed.me/quickshell/quickshell.git"
+
 [inputs.hjem-impure]
 url = "github:Rexcrazy804/hjem-impure"
 
 [inputs.hjem]
 url = "github:feel-co/hjem"
 
+[inputs.niri-nix]
+url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
+
 [inputs.sysc-greet]
 url = "github:kagurazakei/sysc-greet/master"
+follow = { nixpkgs = "nixpkgs", hyprland = "hyprland", niri-nix = "niri-nix" }
 
 [inputs.ambxst]
 url = "github:kagurazakei/ambxst"
@@ -186,12 +189,12 @@ url = "gh:noctalia-dev/noctalia-shell"
 [inputs.dolphin-overlay]
 url = "gh:kagurazakei/dolphin-overlay"
 
-[inputs.niri-nix]
-url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
-
-[inputs.quickshell]
-url = "gh:quickshell-mirror/quickshell"
+[inputs.stable]
+url = "gh:nixos/nixpkgs/nixos-26.05"
 
 [inputs.equibop]
 url = "gh:Equicord/Equibop"
 type = "fetch"
+
+[inputs.nixos-stable]
+url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"

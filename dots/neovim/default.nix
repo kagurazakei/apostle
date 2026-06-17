@@ -6,6 +6,9 @@
 }:
 let
   fs = lib.fileset;
+  up = n: builtins.foldl' (dir: _: builtins.dirOf dir) toString ./. (builtins.genList (_: null) n);
+  repoRoot = up 2;
+  impureDir = repoRoot + "/dots/neovim/nvim";
 in
 {
   aliases = [ "vim" ];
@@ -45,7 +48,7 @@ in
         fileset = fs.fromSource (lib.sources.cleanSource ./nvim);
       };
 
-      impure = "/home/antonio/apostle/dots/neovim/nvim";
+      impure = impureDir;
     };
     #todo: no idea what this is
     startAttrs = inputs.mnw.lib.npinsToPluginsAttrs pkgs ./start-plugins.json;

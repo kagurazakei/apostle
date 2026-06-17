@@ -44,3 +44,6 @@ ToolButtonStyle=IconOnly
 
 [UiSettings]
 ColorScheme=DankMatugen
+
+[VersionControl]
+enabledPlugins=Mercurial,Dropbox,Bazaar,Git,Subversion

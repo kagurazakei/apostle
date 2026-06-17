@@ -40,32 +40,8 @@
           cursors
         ]
         ++ builtins.attrValues {
-          inherit (zpkgs)
-            gtk-themes
-            viu
-            stash
-            equibop
-            ;
-          inherit (zpkgs.scripts)
-            npins-ui
-            npins-show
-            npins-helper
-            nixy
-            lutui
-            touchpad-toggle
-            ;
-          inherit (pkgs.master)
-            nh
-            cachix
-            ayugram-desktop
-            neovide
-            ;
           inherit (pkgs)
-            cacert
-            zed-editor
-            zed-discord-presence
             ffmpeg
-            nix-init
             git
             gh
             just
@@ -82,9 +58,9 @@
             rose-pine-gtk-theme
             vscodium
             noctalia-shell
+            tmux
+            tmuxp
             zathura
-            nixd
-            nil
             ;
           inherit (pkgs.zathuraPkgs) zathura_pdf_mupdf;
         };

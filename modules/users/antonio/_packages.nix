@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  zpkgs,
   self,
 }:
 let
@@ -8,7 +9,28 @@ let
 
 in
 builtins.attrValues {
-  inherit (pkgs) awww waypaper;
+  inherit (pkgs) awww;
+  inherit (zpkgs)
+    gtk-themes
+    viu
+    stash
+    equibop
+    quickshell
+    ;
+  inherit (zpkgs.scripts)
+    npins-ui
+    npins-show
+    npins-helper
+    nixy
+    lutui
+    touchpad-toggle
+    ;
+  inherit (pkgs.master)
+    nh
+    cachix
+    ayugram-desktop
+    neovide
+    ;
   inherit (pkgs)
     inkscape
     fuzzel
@@ -17,14 +39,20 @@ builtins.attrValues {
     git
     komikku
     nwg-look
+    mangayomi
     ;
   inherit (pkgs)
+    zed-editor
+    zed-discord-presence
+    nil
+    nixd
     btop
     bottom
     sysstat
     eza
     tree
     fastfetch
+    microfetch
     bat
     zoxide
     hyprshot

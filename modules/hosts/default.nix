@@ -2,6 +2,7 @@
   self,
   inputs,
   lib,
+  zpkgs,
   ...
 }:
 let
@@ -25,6 +26,7 @@ let
           self
           inputs
           system
+          zpkgs
           ;
       }
       // inputs;

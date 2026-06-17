@@ -3,13 +3,13 @@
     {
       pkgs,
       config,
+      zpkgs,
       ...
     }:
     {
       environment.systemPackages =
         with pkgs.kdePackages;
         [
-          dolphin
           gwenview
           ark
           kservice
@@ -22,7 +22,10 @@
           kdegraphics-thumbnailers
           kirigami
         ]
-        ++ [ pkgs.udiskie ];
+        ++ [
+          pkgs.udiskie
+          zpkgs.dolphin
+        ];
       hj = {
         systemd.services = {
           udiskie = {

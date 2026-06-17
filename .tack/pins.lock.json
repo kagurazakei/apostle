@@ -195,9 +195,9 @@
     "type": "github",
     "owner": "xddxdd",
     "repo": "nix-cachyos-kernel",
-    "rev": "636da48ce0cf6c6487940e43cc49b73a7f6e00a2",
-    "narHash": "sha256-xlbs7ktpl2Vi/+atLzMSXXuoEZPk8LJt6JNv9xjVeWU=",
-    "lastModified": 1781376913
+    "rev": "4039d20f1495f2c521e7d12723a0c45348b118e8",
+    "narHash": "sha256-gYE/0gtSedmA21UWRZ2DA+iXhySh1JGKOssuqejV7cQ=",
+    "lastModified": 1781463250
   },
   "nix-flatpak": {
     "type": "github",
@@ -387,9 +387,9 @@
     "type": "github",
     "owner": "kagurazakei",
     "repo": "sysc-greet",
-    "rev": "0560f04d2158f9f64244b779b5893b0e0c02c53a",
-    "narHash": "sha256-1tV2Pf341XN82MMt672r/8z3L0ynVxF7J1VqyYzTguA=",
-    "lastModified": 1778922021
+    "rev": "b483088666174157eec2e6d85ea42483a084866c",
+    "narHash": "sha256-LRBbVghgRXGq0NAOvaXk7p61+3iiA94o8tRbHrOBJp4=",
+    "lastModified": 1781660403
   },
   "tack": {
     "type": "github",

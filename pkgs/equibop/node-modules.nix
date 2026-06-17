@@ -1,19 +1,21 @@
-# fixed output derivation adapted from
+# fixed output derrivation adapted from
 # https://github.com/NixOS/nixpkgs/blob/28c3f83a9a77e3ada57afb71cc4052d2c435597a/pkgs/by-name/op/opencode/package.nix#L59-L122
 {
   lib,
   stdenvNoCC,
   bun,
   writableTmpDirAsHomeHook,
-  sources,
 }:
 let
+  sources = import ../../.tack;
   equibop = sources.equibop;
-
-  # equibop is a string path from .tack - use it directly
-  srcPath = equibop; # No hasAttr checks needed
-
-  version = "nightly";
+  srcPath = equibop;
+  version =
+    let
+      pathStr = builtins.toString equibop;
+      match = builtins.match ".*-equibop-([0-9]+\\.[0-9]+\\.[0-9]+).*" pathStr;
+    in
+    if match != null then builtins.elemAt match 0 else "nightly";
 in
 stdenvNoCC.mkDerivation {
   name = "equibop-modules-${version}";
@@ -64,7 +66,6 @@ stdenvNoCC.mkDerivation {
     }
     .${stdenvNoCC.hostPlatform.system}
       or (throw "Unsupported system ${stdenvNoCC.hostPlatform.system}");
-
   outputHashAlgo = "sha256";
   outputHashMode = "recursive";
 }

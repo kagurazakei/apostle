@@ -133,11 +133,13 @@ ForegroundVisited=217,242,224
 [General]
 ColorScheme=Noctalia
 Name=noctalia
+TerminalApplication=kitty
 
 [Icons]
-Theme=oomox-tokyodark-terminal
+Theme=Papirus-Dark
 
 [KDE]
+ShowDeleteCommand=false
 contrast=4
 widgetStyle=qt6ct-style
 
@@ -150,13 +152,17 @@ Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
 Show Speedbar=true
-Show hidden files=false
+Show hidden files=true
 Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=222
 View Style=DetailTree
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
 
 [WM]
 activeBackground=0,127,206

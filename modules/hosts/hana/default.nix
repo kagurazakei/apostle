@@ -23,6 +23,7 @@ in
       self.modules.programs.agenix
       self.modules.programs.yazi
       self.modules.programs.mpv
+      self.modules.programs.noctalia
       self.modules.nixos.trash
       self.modules.nixos.audio
       self.modules.nixos.bluetooth
@@ -64,6 +65,7 @@ in
         tailAuth = {
           file = self.paths.secrets + /tailscale.age;
           owner = "antonio";
+          path = "/etc/keys/tailAuth.txt";
         };
         secret2 = {
           file = self.paths.secrets + /kagura-access-token.age;

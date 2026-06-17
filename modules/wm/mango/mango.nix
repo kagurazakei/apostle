@@ -13,6 +13,7 @@
     "mango/rules.conf" = "/mango/rules.conf";
     "mango/hardware.conf" = d: d.dotsDir + "/mango/${d.lib.toLower d.config.networking.hostName}.conf";
     "mango/config.conf" = "/mango/config.conf";
+    "mango/noctalia.conf" = "/mango/noctalia.conf";
   };
 
   modules.wm.mango =

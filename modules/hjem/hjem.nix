@@ -6,7 +6,7 @@
   modules.hjem._ =
     { pkgs, ... }:
     {
-      imports = [ inputs.hjem.nixosModules.default ];
+      imports = [ (import inputs.hjem { inherit pkgs; }).nixosModules.default ];
 
       hjem = {
         linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
