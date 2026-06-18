@@ -103,6 +103,12 @@
     "narHash": "sha256-kTwur1wV+01SdqskVMSo6JMEpg71ps3HpbFY2GsflKs=",
     "lastModified": 1778507602
   },
+  "helium": {
+    "type": "tarball",
+    "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1043354934/21d16cd6-a929-4214-b74e-106aae698a6b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-06-18T11%3A47%3A29Z&rscd=attachment%3B+filename%3Dhelium-0.13.3.1-arm64_linux.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-06-18T10%3A47%3A24Z&ske=2026-06-18T11%3A47%3A29Z&sks=b&skv=2018-11-09&sig=EWc7OOodTjbDyEwMNWBtM7fDxUBOjxj3LKYlyW%2Bw6x8%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4MTc4NDAzOSwibmJmIjoxNzgxNzgwNDM5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.NSEDq-ZLCd_VceIloRa3cB7sjRnq7R6JPz2x_gve1Jw&response-content-disposition=attachment%3B%20filename%3Dhelium-0.13.3.1-arm64_linux.tar.xz&response-content-type=application%2Foctet-stream",
+    "narHash": "sha256-EFmMIIqn8ht8+re1Sg1aTTjbr8d3fH5ToY76uWczNI8=",
+    "lastModified": 1781215737
+  },
   "hjem": {
     "type": "github",
     "owner": "feel-co",
@@ -155,9 +161,9 @@
     "type": "github",
     "owner": "nixos",
     "repo": "nixpkgs",
-    "rev": "1da598155d27977d91c47e51a9c84ce91f2717fd",
-    "narHash": "sha256-zhobUMYLMkOBMRBYCwsEj8iCcWg9d9e8RLmw/ZsgdyY=",
-    "lastModified": 1781408823
+    "rev": "63275d309e82d1aeb6e7c447c59306eff3eb11ea",
+    "narHash": "sha256-qX5gNC5jSmJQHXSo+nRXlSCWYY1QmS98f7HQQdXckUc=",
+    "lastModified": 1781770107
   },
   "mnw": {
     "type": "github",
@@ -251,9 +257,9 @@
     "type": "github",
     "owner": "nixos",
     "repo": "nixpkgs",
-    "rev": "9ae611a455b90cf061d8f332b977e387bda8e1ca",
-    "narHash": "sha256-md8WlXOlfnIeHeOScMTTHFyf2d6iaTwPl2apR5EQ3P4=",
-    "lastModified": 1781074563
+    "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
+    "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
+    "lastModified": 1781577229
   },
   "nixpkgs-lib": {
     "type": "github",

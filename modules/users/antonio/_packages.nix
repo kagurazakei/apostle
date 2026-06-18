@@ -16,6 +16,7 @@ builtins.attrValues {
     stash
     equibop
     quickshell
+    helium
     ;
   inherit (zpkgs.scripts)
     npins-ui
