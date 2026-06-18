@@ -5,13 +5,14 @@
 
 <br>
 
-![](assets/rice-3.png)
+![Desktop Overview](assets/mango-1.png)
 <br>
-![](assets/rice-2.png)
+![Neovim(handle by mnw)](assets/mango-2.png)
 <br>
-![](assets/rice-1.png)
-![](assets/rice-4.png)
+![Kitty&Yazi](assets/mango-3.png)
+![Komikku](assets/mango-4.png)
 <br>
+![Librewolf(textfox)&Equibop(system-24)](assets/mango-5.png)
 <br>
 
 > [!WARNING]
