@@ -2,12 +2,12 @@
   self,
   inputs,
   utils,
+  zpkgs,
   ...
 }:
 let
   username = "antonio";
   dots = "${self.paths.dots}";
-  iconSource = dots + "/images/profile.png"; # Define once
 in
 {
   modules.hjem.${username} =
@@ -48,35 +48,13 @@ in
           "render"
           "libvrtd"
         ];
-        shell = pkgs.fish;
-        # hashedPasswordFile = config.age.secrets.antonioPass.path;
-        # openssh.authorizedKeys.keys = [
-        #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEaNh2GVxWz2zLxDa8cMnPtfYQPk1A3xlKKVuKOTNrp2 antonio@hana"
-        #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINjywfRHVDeBQBFYZym/c3JDVRwni//tSy5FPKmTgLyN antonio@hana"
-        #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDT989Rm6vSVS4cSP2NevoXVS7UnFVYHgfsE6dbM2+s6 hana@antonio"
-        # ];
+        shell = pkgs.master.fish;
       };
       programs.fish = {
         enable = true;
         package = lib.mkForce pkgs.master.fish;
       };
-      # programs.gpu-screen-recorder.enable = true;
-
       # Hjem dotfiles
-      hj.files = {
-        ".face.icon".source = iconSource;
-      };
-
-      # AccountsService configuration - FIXED: use iconSource directly
-      finit.tmpfiles.rules = [
-        # AccountsService user file
-        "f+ /var/lib/AccountsService/users/${username} 0600 root root - \
-[User]\nIcon=/var/lib/AccountsService/icons/${username}\n"
-
-        # Symlink icon - use iconSource directly, not config.hj
-        "L+ /var/lib/AccountsService/icons/${username} - - - - ${iconSource}"
-      ];
-
       hjem.users.${username} = {
         clobberFiles = true;
         user = username;
@@ -84,13 +62,23 @@ in
         impure = {
           enable = true;
           dotsDir = dots;
-          dotsDirImpure = "/home/antonio/apostle/dots";
+          dotsDirImpure = "/home/antonio/Apostle/dots";
           parseAttrs = [
             config.hjem.users.${username}.xdg.config.files
             config.hjem.users.${username}.xdg.state.files
           ];
         };
-        packages = import ./_packages.nix { inherit inputs pkgs self; };
+        packages = import ./_packages.nix {
+          inherit
+            inputs
+            pkgs
+            self
+            zpkgs
+            ;
+        };
+        files = {
+          ".face.icon".source = self.paths.dots + "/profile.png";
+        };
         xdg.config.files = {
           "htop".source = utils.mkStoreSymlink self.paths.dots + "/htop";
           "booru".source = utils.mkStoreSymlink self.paths.dots + "/booru";
@@ -126,12 +114,15 @@ in
     "carapace/carapace.toml" = "/carapace/carapace.toml";
     "equibop/settings.json" = "/equibop/settings.json";
     "equibop/themes" = "/equibop/themes";
-    "applications.menu" = "/menus/applications.menu";
     "fuzzel/fuzzel.ini" = "/fuzzel/fuzzel.ini";
     "fuzzel/noctalia" = "/fuzzel/noctalia";
     "foot/foot.ini" = "/foot/foot.ini";
     "foot/rose-pine.ini" = { ... }: inputs.rosep-foot + "/rose-pine";
-    "wallpapers/nix-logo.png" = { ... }: inputs.walls + "/nix-logo.png";
+    # "wallpapers/nix-logo.png" = { ... }: sources.walls + "/nix-logo.png";
     ".face.icon" = "/profile.png";
+    "zathura/binds" = "/zathura/binds";
+    "zathura/options" = "/zathura/options";
+    "zathura/theme" = "/zathura/theme";
+    "zathura/zathurarc" = "/zathura/zathurarc";
   };
 }

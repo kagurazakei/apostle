@@ -1,29 +1,22 @@
-# # fixed output derrivation adapted from
-# # https://github.com/NixOS/nixpkgs/blob/28c3f83a9a77e3ada57afb71cc4052d2c435597a/pkgs/by-name/op/opencode/package.nix#L59-L122
+# fixed output derrivation adapted from
+# https://github.com/NixOS/nixpkgs/blob/28c3f83a9a77e3ada57afb71cc4052d2c435597a/pkgs/by-name/op/opencode/package.nix#L59-L122
 {
   lib,
   stdenvNoCC,
   bun,
   writableTmpDirAsHomeHook,
+  sources,
 }:
 let
-  sources = import ../../npins;
   equibop = sources.equibop;
-  srcPath =
-    if builtins.isPath equibop then
-      equibop
-    else if builtins.hasAttr "outPath" equibop then
-      equibop.outPath
-    else if builtins.hasAttr "src" equibop then
-      equibop.src
-    else
-      equibop;
-  version = if builtins.hasAttr "version" equibop then equibop.version else "latest";
+  srcPath = equibop;
+  version = "nightly";
 in
 stdenvNoCC.mkDerivation {
   name = "equibop-modules-${version}";
   src = srcPath;
   inherit version;
+
   impureEnvVars = lib.fetchers.proxyImpureEnvVars ++ [
     "GIT_PROXY_COMMAND"
     "SOCKS_SERVER"
@@ -61,10 +54,9 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
-  # Use fake hash to get the correct one
   outputHash =
     {
-      x86_64-linux = "sha256-Mx1fx8vARi5OMCTFNfYMov7r7dIewvqBFduswCVO4YA=";
+      x86_64-linux = "sha256-dLATw5Mb9grQnI/JTdlRdNP2JETELeqY8aXqb5dCXOA=";
       aarch64-linux = "sha256-UsccQFaSSjhmv1+oF2FZcRG8xtWBCcPD+tizbdQ7SSI=";
     }
     .${stdenvNoCC.hostPlatform.system}

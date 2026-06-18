@@ -1,4 +1,7 @@
-{ inputs, zpkgs, ... }:
+{
+  inputs,
+  ...
+}:
 {
   modules.nixos.packages =
     {
@@ -24,42 +27,13 @@
         };
       };
       config = {
-        # programs.direnv = {
-        #   enable = true;
-        #   loadInNixShell = true;
-        #   nix-direnv.enable = true;
-        #   enableFishIntegration = true;
-        # };
-
         environment.systemPackages = [
           npins
           cursors
         ]
         ++ builtins.attrValues {
-          inherit (zpkgs)
-            gtk-themes
-            viu
-            stash
-            rumda
-            ;
-          inherit (zpkgs.scripts)
-            npins-ui
-            npins-show
-            npins-helper
-            nixy
-            lutui
-            touchpad-toggle
-            ;
           inherit (pkgs)
-            nh
-            cachix
-            equibop
-            ;
-          inherit (pkgs)
-            zed-editor
             ffmpeg
-            nix-init
-            neovide
             git
             gh
             just
@@ -75,7 +49,10 @@
             rose-pine-icon-theme
             rose-pine-gtk-theme
             vscodium
+            noctalia-shell
+            zathura
             ;
+          inherit (pkgs.zathuraPkgs) zathura_pdf_mupdf;
         };
       };
     };

@@ -1,6 +1,7 @@
 [shorturls]
 gh = "github:{path}"
 manic = "github:manic-systems/{path}"
+
 [all_follow]
 nixpkgs = ["stable", "nixpkgs", "master"]
 fenix = "fenix"
@@ -13,8 +14,8 @@ git-hooks = ["git-hooks-nix"]
 nixpkgs-lib = "nixpkgs-lib"
 rust-analyzer-src = "rust-analyzer"
 xwayland-satellite = [
-	"xwayland-satellite-stable",
-	"xwayland-satellite-unstable",
+  "xwayland-satellite-stable",
+  "xwayland-satellite-unstable",
 ]
 hjem-rum = "hjem"
 
@@ -29,15 +30,11 @@ url = "gh:oxalica/rust-overlay"
 [inputs.nixpkgs]
 url = "gh:nixos/nixpkgs/nixos-unstable"
 
-[inputs.stable]
-url = "gh:nixos/nixpkgs/nixos-26.05"
-
 [inputs.master]
 url = "gh:nixos/nixpkgs/master"
 
 [inputs.fenix]
 url = "gh:nix-community/fenix"
-
 # secrets / identity ----------------------------------------------------------
 
 [inputs.agenix]
@@ -73,11 +70,7 @@ url = "gh:Gerg-L/spicetify-nix"
 url = "gh:YaLTeR/niri"
 
 [inputs.noctalia-shell]
-url = "gh:noctalia-dev/noctalia-shell"
-
-[inputs.noctalia]
-url = "gh:noctalia-dev/noctalia-shell/v5"
-
+url = "gh:noctalia-dev/noctalia-shell/legacy-v4"
 
 [inputs.tuigreet]
 url = "gh:notashelf/tuigreet"
@@ -104,15 +97,17 @@ url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
 
 [inputs.sysc-greet]
 url = "github:kagurazakei/sysc-greet/master"
+follow = { nixpkgs = "nixpkgs", hyprland = "hyprland", niri-nix = "niri-nix" }
+
+[inputs.sysc-greet-org]
+url = "github:Nomadcxx/sysc-greet/master"
+follow = { nixpkgs = "nixpkgs", hyprland = "hyprland", niri-nix = "niri-nix" }
 
 [inputs.ambxst]
 url = "github:kagurazakei/ambxst"
 
 [inputs.viu]
 url = "gh:viu-media/viu"
-
-[inputs.qylock-nix]
-url = "gh:kagurazakei/qylock-nix"
 
 [inputs.neovim-nightly]
 url = "gh:nix-community/neovim-nightly-overlay"
@@ -122,9 +117,6 @@ url = "gh:catppuccin/bat"
 
 [inputs.chaotic]
 url = "gh:chaotic-cx/nyx/nyxpkgs-unstable"
-
-[inputs.equibop]
-url = "gh:Equicord/Equibop"
 
 [inputs.flake-utils]
 url = "gh:numtide/flake-utils"
@@ -191,6 +183,33 @@ url = "github:snugnug/hjem-rum"
 [inputs.walls]
 url = "git+https://github.com/kagurazakei/walls.git"
 type = "fetch"
+
+[inputs.noctalia-greeter]
+url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"
+
+[inputs.noctalia]
+url = "gh:noctalia-dev/noctalia-shell"
+
+[inputs.dolphin-overlay]
+url = "gh:kagurazakei/dolphin-overlay"
+
+[inputs.stable]
+url = "gh:nixos/nixpkgs/nixos-26.05"
+
+[inputs.equibop]
+url = "gh:Equicord/Equibop"
+type = "fetch"
+
+[inputs.kservice]
+url = "https://invent.kde.org/frameworks/kservice/-/archive/kf5/kservice-kf5.tar.gz"
+type = "fetch"
+
+[inputs.nixos-stable]
+url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
+
+[inputs.helium]
+url = "https://github.com/imputnet/helium-linux/releases/download/0.13.3.1/helium-0.13.3.1-x86_64_linux.tar.xz"
+type = "fixed"
 
 [inputs.finix]
 url = "gh:finix-community/finix"

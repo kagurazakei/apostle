@@ -11,113 +11,117 @@ in
 {
   modules.hosts.${hostname} = {
     imports = [
-      # self.modules.nixos.misc_steam
       self.modules.programs.dots_fish
       self.modules.programs.dots_hyprland
       self.modules.programs.dots_niri
       self.modules.programs.dots_mango
       self.modules.programs.dots_impure
       self.modules.programs.dots_yazi
-      self.modules.programs.spicetify
-      # self.modules.programs.sysc-greet
-      self.modules.programs.greetd
-      # self.modules.programs.ambxst
-      self.modules.programs.git
-      self.modules.programs.dolphin
-      self.modules.programs.fish
-      # self.modules.programs.impermanence
-      # self.modules.programs.agenix
-      self.modules.programs.yazi
-      self.modules.programs.mpv
-      # self.modules.nixos.trash
-      self.modules.nixos.audio
-      self.modules.nixos.bluetooth
-      self.modules.nixos.bootloader
-      self.modules.nixos.env
-      self.modules.nixos.fonts
-      self.modules.nixos.locale
-      self.modules.nixos.networking
-      self.modules.nixos.nix
-      # self.modules.nixos.nix-index-database
-      self.modules.nixos.misc
       self.modules.nixos.packages
-      self.modules.nixos.nvidia
-      # self.modules.nixos.amd
-      self.modules.nixos.kernel
-      self.modules.nixos.security
-      # self.modules.services.scheduler
-      self.modules.services.openssh
-      # self.modules.services.flatpak
       self.modules.wm._
       self.modules.wm.hyprland
       self.modules.wm.niri
-      # self.modules.wm.mango
-
       self.modules.hjem._
       self.modules.hjem.antonio
-
       ./+hardware.nix
     ];
-    # greeny = {
-    #   secrets = {
-    #     antonioPass = {
-    #       file = self.paths.secrets + /hana-user.age;
-    #       owner = "antonio";
-    #     };
-    #     tailAuth = {
-    #       file = self.paths.secrets + /tailscale.age;
-    #       owner = "antonio";
-    #     };
-    #     secret2 = {
-    #       file = self.paths.secrets + /hana-access-token.age;
-    #       owner = "antonio";
-    #       mode = "0500";
-    #       path = "/etc/nix/nix-access-token.conf";
-    #     };
-    #     recovery = {
-    #       file = self.paths.secrets + /recovery.age;
-    #       owner = "antonio";
-    #       mode = "0500";
-    #       path = "/etc/keys/recovery.txt";
-    #     };
-    #     anilist = {
-    #       file = self.paths.secrets + /anilist.age;
-    #       owner = "antonio";
-    #       mode = "0500";
-    #       path = "/etc/keys/anilist.txt";
-    #     };
-    #     ssh-kagura = {
-    #       file = self.paths.secrets + /ssh-hana.age;
-    #       owner = "antonio";
-    #       mode = "0500";
-    #       path = "/etc/keys/ssh-hana";
-    #     };
-    #   };
-    # };
-    networking.hostName = hostname;
-    # system.stateVersion = "26.05";
     finit.runlevel = 3;
-    programs.mangowc.enable = true;
-    hardware.nvidia = {
+    programs.gnome-keyring.enable = true;
+    programs.xwayland-satellite.enable = true;
+
+    services.earlyoom.enable = lib.mkDefault true;
+    services.earlyoom.extraArgs = [
+      "-r"
+      "3600"
+    ];
+    services.nix-daemon = {
       enable = true;
+      settings = {
+        deprecated-features = [ "broken-string-escape" ];
+        experimental-features = [
+          "nix-command"
+          "flakes"
+          "pipe-operator"
+        ];
+        auto-optimise-store = true;
+        require-sigs = true;
+        sandbox = true;
+        sandbox-fallback = false;
+        download-attempts = 3;
+        show-trace = true;
+        trusted-users = [
+          "root"
+          "antonio"
+          "@wheel"
+        ];
+        allowed-users = [
+          "@wheel"
+          "antonio"
+          "root"
+        ];
+        substituters = [
+          "https://kagurazakei.cachix.org"
+          "https://nix-community.cachix.org"
+          "https://heitor.cachix.org"
+          "https://attic.xuyh0120.win/lantian"
+          "https://hyprland.cachix.org"
+          "https://niri-nix.cachix.org"
+        ];
+        trusted-public-keys = [
+          "kagurazakei.cachix.org-1:L150C/szoC/r6LOupCWQRU5IqdWIBl926O1HpiBVEkw="
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+          "heitor.cachix.org-1:IZ1ydLh73kFtdv+KfcsR4WGPkn+/I926nTGhk9O9AxI="
+          "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          "niri-nix.cachix.org-1:SvFtqpDcf7Sm1SMJdby1/+Y+6f3Yt3/3PMcSTKPJNJ0="
+        ];
+      };
     };
+    programs = {
+      sudo.enable = true;
+      mangowc.enable = true;
+      niri.enable = true;
+      bash.enable = true;
+    };
+
     services = {
+      autologin = {
+        enable = true;
+        user = "antonio";
+        command = "${pkgs.dbus}/bin/dbus-run-session mango";
+      };
       polkit.enable = true;
       sysklogd.enable = true;
       dbus.enable = true;
-      udev.enable = true;
-      iwd.enable = true;
-      dhcpcd.enable = true;
-      openssh.enable = true;
-      seatd.enable = true;
-      chrony.enable = true;
       fcron.enable = true;
+      fwupd.enable = true;
       rtkit.enable = true;
+      udisks2.enable = true;
+      udev.enable = true;
+      dhcpcd.enable = true;
+      networkmanager.enable = true;
       elogind.enable = true;
+      greetd = {
+        enable = true;
+        settings = {
+          default_session = {
+            command = "${pkgs.tuigreet}/bin/tuigreet";
+          };
+        };
+      };
     };
-    programs.gnome-keyring.enable = true;
-    programs.xwayland-satellite.enable = true;
-    programs.niri.enable = true;
-    programs.hyprland.enable = true;
+    fonts = {
+      fontconfig.enable = true;
+      enableDefaultPackages = true;
+      packages = with pkgs; [
+        nerd-fonts.jetbrains-mono
+      ];
+    };
+    xdg.autostart.enable = lib.mkDefault true;
+    xdg.icons.enable = lib.mkDefault true;
+    xdg.mime.enable = lib.mkDefault true;
+    xdg.portal.enable = lib.mkDefault true;
+    networking.hostName = "${hostname}"; # Define your hostname.
+    time.timeZone = "Asia/Yangon";
   };
 }
