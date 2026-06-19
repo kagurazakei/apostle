@@ -434,9 +434,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "41a153cdc1aa446480b2b652a967652ad62609bf",
-      "url": "https://github.com/andir/npins/archive/41a153cdc1aa446480b2b652a967652ad62609bf.tar.gz",
-      "hash": "sha256-OkPEh0axWs3gUoUyplQexYpEXxyCDYWm5BQpwB2PIqA="
+      "revision": "b7799bca849009ea150a91d9045aa7183f02bdec",
+      "url": "https://github.com/andir/npins/archive/b7799bca849009ea150a91d9045aa7183f02bdec.tar.gz",
+      "hash": "sha256-2DZ7zcCZlnwTsj8cDKg+i/Pb7plU/GPtO1pFPsnNBGE="
     },
     "nyx-loner": {
       "type": "Git",
