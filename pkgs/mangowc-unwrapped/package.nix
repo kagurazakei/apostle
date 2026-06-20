@@ -1,29 +1,29 @@
-# adapted from
-# https://github.com/DreamMaoMao/mangowc/blob/main/nix/default.nix
 {
-  sources,
   lib,
   libX11,
   libinput,
   libxcb,
+  libdrm,
   libxkbcommon,
   pcre2,
+  pango,
+  cjson,
   pixman,
   pkg-config,
   stdenv,
   wayland,
   wayland-protocols,
   wayland-scanner,
-  xcbutilwm,
+  libxcb-wm,
   xwayland,
   meson,
   ninja,
   scenefx,
   wlroots_0_19,
   libGL,
-  cjson,
   enableXWayland ? true,
   debug ? false,
+  sources,
 }:
 stdenv.mkDerivation {
   pname = "mango-unwrapped";
@@ -31,18 +31,9 @@ stdenv.mkDerivation {
 
   src = sources.mango;
 
-  # patches = [
-  #   (fetchpatch {
-  #     # fixes hot reloading crashes with animated xcursors
-  #     name = "fix-animated-cursor-hot-reload";
-  #     url = "https://github.com/DreamMaoMao/mangowc/commit/0f861e79a0d5a53a4a0df3b6226bd1d5452ca37b.patch";
-  #     hash = "sha256-r7KPgMc/XxfNKHDgNca1O0BCZleBFmA6I8y6fiLxipY=";
-  #   })
-  # ];
-
-  mesonFlags = with lib; [
-    (mesonEnable "xwayland" enableXWayland)
-    (mesonBool "asan" debug)
+  mesonFlags = [
+    (lib.mesonEnable "xwayland" enableXWayland)
+    (lib.mesonBool "asan" debug)
   ];
 
   nativeBuildInputs = [
@@ -57,17 +48,19 @@ stdenv.mkDerivation {
     libxcb
     libxkbcommon
     pcre2
+    pango
+    cjson
     pixman
     wayland
     wayland-protocols
     wlroots_0_19
     scenefx
     libGL
-    cjson
+    libdrm
   ]
   ++ lib.optionals enableXWayland [
     libX11
-    xcbutilwm
+    libxcb-wm
     xwayland
   ];
 
@@ -78,8 +71,8 @@ stdenv.mkDerivation {
 
   meta = {
     mainProgram = "mango";
-    description = "A streamlined but feature-rich Wayland compositor";
-    homepage = "https://github.com/DreamMaoMao/mango";
+    description = "Practical and Powerful wayland compositor (dwm but wayland)";
+    homepage = "https://github.com/mangowm/mango";
     license = lib.licenses.gpl3Plus;
     maintainers = [ ];
     platforms = lib.platforms.unix;

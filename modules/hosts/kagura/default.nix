@@ -1,9 +1,12 @@
 {
   self,
+  username,
   ...
 }:
 let
   hostname = "kagura";
+  dots = "${self.paths.dots}";
+  iconSource = dots + "/images/profile.png"; # Define once
 in
 {
   modules.hosts.${hostname} = {
@@ -55,5 +58,12 @@ in
     };
     networking.hostName = hostname;
     system.stateVersion = "26.05";
+    systemd.tmpfiles.rules = [
+      # AccountsService user file
+      "f+ /var/lib/AccountsService/users/${username} 0600 root root - \
+[User]\nIcon=/var/lib/AccountsService/icons/${username}\n"
+      "L+ /var/lib/AccountsService/icons/${username} - - - - ${iconSource}"
+    ];
+
   };
 }

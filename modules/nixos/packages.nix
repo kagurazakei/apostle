@@ -1,6 +1,5 @@
 {
   inputs,
-  zpkgs,
   ...
 }:
 {
@@ -52,7 +51,6 @@
             wl-clipboard
             cliphist
             libnotify
-            firefox_nightly
             gtk-engine-murrine
             rose-pine-icon-theme
             rose-pine-gtk-theme

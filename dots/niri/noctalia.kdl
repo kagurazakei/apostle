@@ -21,14 +21,17 @@ binds {
     Ctrl+Alt+L hotkey-overlay-title="Lock Screen" {
         spawn "noctalia" "msg" "session" "lock"
     }
-    Mod+B hotkey-overlay-title="Wallpaper Browser" {
+    Mod+W hotkey-overlay-title="Wallpaper Browser" {
         spawn "noctalia" "msg" "panel-toggle" "wallpaper"
+    }
+    Mod+B hotkey-overlay-title="Wallpaper Browser" {
+        spawn "noctalia" "msg" "panel-toggle" "control-center"
     }
     Mod+Backspace hotkey-overlay-title="Power Toggle" {
         spawn "noctalia" "msg" "panel-toggle" "session"
     }
     Mod+M hotkey-overlay-title="Dashboard: Toggle" {
-        spawn "noctalia" "msg" "panel-toggle" "control-center"
+        spawn "noctalia" "msg" "panel-toggle" "launcher"
     }
     Mod+N hotkey-overlay-title="Bar: Toggle (Primary)" {
         spawn "walker"

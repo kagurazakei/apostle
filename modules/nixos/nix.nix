@@ -20,7 +20,15 @@
         nixConfTokens = true;
       };
       documentation.enable = false;
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs = {
+        config.allowUnfree = true;
+        config.permittedInsecurePackages = [
+          "librewolf-unwrapped-151.0.2-1"
+          "librewolf-151.0.2-1"
+          "librewolf-bin-unwrapped-151.0.1-2"
+          "librewolf-bin-151.0.1-2"
+        ];
+      };
       nix = {
         channel.enable = false;
         nixPath = [ "nixpkgs=/etc/nixos/nixpkgs" ];

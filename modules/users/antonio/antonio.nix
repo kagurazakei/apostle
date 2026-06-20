@@ -2,14 +2,9 @@
   self,
   inputs,
   utils,
-  zpkgs,
+  username,
   ...
 }:
-let
-  username = "antonio";
-  dots = "${self.paths.dots}";
-  iconSource = dots + "/images/profile.png"; # Define once
-in
 {
   modules.hjem.${username} =
     {
@@ -21,8 +16,6 @@ in
     {
       imports = [
         self.modules.hjem.theming
-        (lib.mkAliasOptionModule [ "hj" ] [ "hjem" "users" "${username}" ])
-        (lib.mkAliasOptionModule [ "impure-dots" ] [ "hjem" "users" "${username}" "impure" "dotsDir" ])
       ];
       theming = {
         inherit username;
@@ -64,91 +57,5 @@ in
       };
       programs.gpu-screen-recorder.enable = true;
 
-      # Hjem dotfiles
-      hj.files = {
-        ".face.icon".source = iconSource;
-      };
-
-      # AccountsService configuration - FIXED: use iconSource directly
-      systemd.tmpfiles.rules = [
-        # AccountsService user file
-        "f+ /var/lib/AccountsService/users/${username} 0600 root root - \
-[User]\nIcon=/var/lib/AccountsService/icons/${username}\n"
-
-        # Symlink icon - use iconSource directly, not config.hj
-        "L+ /var/lib/AccountsService/icons/${username} - - - - ${iconSource}"
-      ];
-
-      hjem.users.${username} = {
-        clobberFiles = true;
-        user = username;
-        directory = config.users.users.${username}.home;
-        impure = {
-          enable = true;
-          dotsDir = dots;
-          dotsDirImpure = "/home/antonio/Apostle/dots";
-          parseAttrs = [
-            config.hjem.users.${username}.xdg.config.files
-            config.hjem.users.${username}.xdg.state.files
-          ];
-        };
-        packages = import ./_packages.nix {
-          inherit
-            inputs
-            pkgs
-            self
-            zpkgs
-            ;
-        };
-        xdg.config.files = {
-          "htop".source = utils.mkStoreSymlink self.paths.dots + "/htop";
-          "booru".source = utils.mkStoreSymlink self.paths.dots + "/booru";
-          "uwsm".source = utils.mkStoreSymlink self.paths.dots + "/uwsm";
-          "yazi/theme.toml".text = lib.mkForce ''
-            [icon]
-            prepend_dirs = [
-              { name = "desktop", text = "" },
-              { name = "dev", text = "" },
-              { name = "documents", text = "" },
-              { name = "downloads", text = "" },
-              { name = "music", text = "" },
-              { name = "games", text = "󰊴" },
-              { name = "pictures", text = "" },
-              { name = "videos", text = "" },
-            ]
-            [flavor]
-            dark = "oxocarbon"
-          '';
-        };
-      };
     };
-  modules.programs.dots_impure = utils.mkDotsModule username {
-    "nixpkgs" = "/nixpkgs";
-    "fastfetch" = "/fastfetch";
-    "swappy/config" = "/swappy/config";
-    "lazygit" = "/lazygit";
-    "bottom" = "/bottom";
-    "btop" = "/btop";
-    "kitty/kitty.conf" = d: d.dotsDir + "/kitty/${d.lib.toLower d.config.networking.hostName}.conf";
-    "kitty/themes/rose-pine.conf" = { ... }: inputs.rosep-kitty + "/dist/rose-pine.conf";
-    "kitty/themes/oxocarbon.conf" = "/kitty/themes/oxocarbon.conf";
-    "kitty/scroll_mark.py" = "/kitty/scroll_mark.py";
-    "kitty/pass_keys.py" = "/kitty/pass_keys.py";
-    "kitty/relative_resize.py" = "/kitty/relative_resize.py";
-    "kitty/neighboring_window.py" = "/kitty/neighboring_window.py";
-    "kitty/kitty-open-helper.sh" = "/kitty/kitty-open-helper.sh";
-    "carapace/carapace.toml" = "/carapace/carapace.toml";
-    "equibop/settings.json" = "/equibop/settings.json";
-    "equibop/themes" = "/equibop/themes";
-    "fuzzel/fuzzel.ini" = "/fuzzel/fuzzel.ini";
-    "fuzzel/noctalia" = "/fuzzel/noctalia";
-    "foot/foot.ini" = "/foot/foot.ini";
-    "foot/rose-pine.ini" = { ... }: inputs.rosep-foot + "/rose-pine";
-    # "wallpapers/nix-logo.png" = { ... }: sources.walls + "/nix-logo.png";
-    ".face.icon" = "/profile.png";
-    "zathura/binds" = "/zathura/binds";
-    "zathura/options" = "/zathura/options";
-    "zathura/theme" = "/zathura/theme";
-    "zathura/zathurarc" = "/zathura/zathurarc";
-  };
 }
