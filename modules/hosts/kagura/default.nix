@@ -51,6 +51,12 @@ in
           mode = "0500";
           path = "/etc/keys/ssh-kagura";
         };
+        cachix = {
+          file = self.paths.secrets + /cachix-token.age;
+          owner = "antonio";
+          mode = "0500";
+          path = "/etc/keys/cachix.dhall";
+        };
       };
     };
     nixos = {

@@ -50,6 +50,12 @@ in
           mode = "0500";
           path = "/etc/keys/ssh-hana";
         };
+        cachix = {
+          file = self.paths.secrets + /cachix-token.age;
+          owner = "antonio";
+          mode = "0500";
+          path = "/etc/keys/cachix.dhall";
+        };
       };
     };
     networking.hostName = hostname;

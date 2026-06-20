@@ -4,10 +4,12 @@
 
     hjem.users.antonio = {
       xdg.config.files = {
-        "xdg-terminals.list".text = "com.mitchellh.ghostty.desktop";
+        "xdg-terminals.list".text = "kitty.desktop";
       };
       xdg.mime-apps.default-applications = {
         "application/xml" = [ "nvim.desktop" ];
+        "application/toml" = [ "nvim.desktop" ];
+        "application/yml" = [ "nvim.desktop" ];
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
         "text/plain" = [ "nvim.desktop" ];
         "text/x-csrc" = [ "nvim.desktop" ];
