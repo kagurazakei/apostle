@@ -1,7 +1,7 @@
-{ utils, username, ... }:
+{ myLibs, username, ... }:
 {
 
-  modules.programs.dots_yazi = utils.mkDotsModule username {
+  modules.programs.dots_yazi = myLibs.mkDotsModule username {
     "yazi/init.lua" = "/yazi/init.lua";
     "yazi/yazi.toml" = "/yazi/yazi.toml";
     "yazi/keymap.toml" = "/yazi/keymap.toml";

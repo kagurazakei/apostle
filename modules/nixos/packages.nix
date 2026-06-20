@@ -1,6 +1,5 @@
 {
   inputs,
-  zpkgs,
   ...
 }:
 {
@@ -10,6 +9,7 @@
       lib,
       config,
       system,
+      tack,
       ...
     }:
     let
@@ -21,6 +21,9 @@
       cursors = inputs.waifu-cursors.packages.${system}.all;
     in
     {
+      imports = [
+        tack.nixosModules.default
+      ];
       options = {
         nixos.packages.npins.buildFromSrc = lib.mkOption {
           type = lib.types.bool;
@@ -34,7 +37,10 @@
           nix-direnv.enable = true;
           enableFishIntegration = true;
         };
-
+        programs.tack = {
+          enable = true;
+          nixConfTokens = true;
+        };
         environment.systemPackages = [
           npins
           cursors
@@ -52,7 +58,6 @@
             wl-clipboard
             cliphist
             libnotify
-            firefox_nightly
             gtk-engine-murrine
             rose-pine-icon-theme
             rose-pine-gtk-theme

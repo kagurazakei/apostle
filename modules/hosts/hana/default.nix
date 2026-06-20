@@ -1,9 +1,12 @@
 {
   self,
+  username,
   ...
 }:
 let
   hostname = "hana";
+  dots = "${self.paths.dots}";
+  iconSource = dots + "/images/profile.png"; # Define once
 in
 {
   modules.hosts.${hostname} = {
@@ -47,9 +50,23 @@ in
           mode = "0500";
           path = "/etc/keys/ssh-hana";
         };
+        cachix = {
+          file = self.paths.secrets + /cachix-token.age;
+          owner = "antonio";
+          mode = "0500";
+          path = "/etc/keys/cachix.dhall";
+        };
       };
     };
     networking.hostName = hostname;
     system.stateVersion = "26.11";
+    systemd.tmpfiles.rules = [
+      # AccountsService user file
+      "f+ /var/lib/AccountsService/users/${username} 0600 root root - \
+[User]\nIcon=/var/lib/AccountsService/icons/${username}\n"
+
+      # Symlink icon - use iconSource directly, not config.hj
+      "L+ /var/lib/AccountsService/icons/${username} - - - - ${iconSource}"
+    ];
   };
 }

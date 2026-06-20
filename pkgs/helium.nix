@@ -1,6 +1,6 @@
 {
   pkgs,
-  sources ? import ../.tack,
+  sources,
   ...
 }:
 

@@ -6,7 +6,6 @@ manic = "github:manic-systems/{path}"
 nixpkgs = ["stable", "nixpkgs", "master"]
 fenix = "fenix"
 rust-overlay = "rust-overlay"
-flake-parts = "flake-parts"
 niri-src = ["niri-stable", "niri-unstable"]
 nix = "nix-src"
 crane = "crane"
@@ -18,9 +17,6 @@ xwayland-satellite = [
   "xwayland-satellite-unstable",
 ]
 hjem-rum = "hjem"
-
-[inputs.flake-parts]
-url = "gh:hercules-ci/flake-parts"
 
 [inputs.rust-overlay]
 url = "gh:oxalica/rust-overlay"
@@ -150,9 +146,6 @@ url = "gh:NotAShelf/stash"
 [inputs.waifu-cursors]
 url = "gh:kagurazakei/waifu-cursors"
 
-[inputs.zenNvim]
-url = "gh:nendix/zen.nvim"
-
 [inputs.rosep-kitty]
 url = "gh:rose-pine/kitty"
 type = "fetch"
@@ -185,12 +178,6 @@ url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"
 
 [inputs.noctalia]
 url = "gh:noctalia-dev/noctalia-shell"
-
-[inputs.dolphin-overlay]
-url = "gh:kagurazakei/dolphin-overlay"
-
-[inputs.stable]
-url = "gh:nixos/nixpkgs/nixos-26.05"
 
 [inputs.equibop]
 url = "gh:Equicord/Equibop"

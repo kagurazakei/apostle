@@ -50,11 +50,9 @@ in
 
       impure = impureDir;
     };
-    #todo: no idea what this is
     startAttrs = inputs.mnw.lib.npinsToPluginsAttrs pkgs ./start-plugins.json;
     optAttrs = inputs.mnw.lib.npinsToPluginsAttrs pkgs ./opt-plugins.json;
     start = builtins.attrValues {
-      # inherit (pkgs.vimPlugins) lze lzextras;
       inherit (pkgs.vimPlugins)
         nvim-web-devicons
         plenary-nvim
