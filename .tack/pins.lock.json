@@ -434,13 +434,5 @@
     "rev": "5d1efbc9dc3ab1c10160b656e0247f3325daf0f2",
     "narHash": "sha256-yqY7RtEJGJiENzR0GwL6q69tSAy6xAAmAcLuIhLjPf8=",
     "lastModified": 1779745227
-  },
-  "zenNvim": {
-    "type": "github",
-    "owner": "nendix",
-    "repo": "zen.nvim",
-    "rev": "e552fc12f847113a05589981d02f69c953d6d3e9",
-    "narHash": "sha256-cA7ncwuQf3CM4VCLUhnSCIpDEGmZr+jzFqlQA4l8JFk=",
-    "lastModified": 1779966673
   }
 }

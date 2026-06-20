@@ -146,9 +146,6 @@ url = "gh:NotAShelf/stash"
 [inputs.waifu-cursors]
 url = "gh:kagurazakei/waifu-cursors"
 
-[inputs.zenNvim]
-url = "gh:nendix/zen.nvim"
-
 [inputs.rosep-kitty]
 url = "gh:rose-pine/kitty"
 type = "fetch"

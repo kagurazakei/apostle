@@ -1,7 +1,5 @@
 {
   self,
-  inputs,
-  utils,
   username,
   ...
 }:
@@ -53,9 +51,7 @@
       };
       programs.fish = {
         enable = true;
-        package = lib.mkForce pkgs.master.fish;
       };
       programs.gpu-screen-recorder.enable = true;
-
     };
 }

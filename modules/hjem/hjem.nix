@@ -3,7 +3,7 @@
   self,
   zpkgs,
   lib,
-  utils,
+  myLibs,
   username,
   ...
 }:
@@ -42,9 +42,9 @@
           ".face.icon".source = self.paths.dots + "/profile.png";
         };
         xdg.config.files = {
-          "htop".source = utils.mkStoreSymlink self.paths.dots + "/htop";
-          "booru".source = utils.mkStoreSymlink self.paths.dots + "/booru";
-          "uwsm".source = utils.mkStoreSymlink self.paths.dots + "/uwsm";
+          "htop".source = myLibs.mkStoreSymlink self.paths.dots + "/htop";
+          "booru".source = myLibs.mkStoreSymlink self.paths.dots + "/booru";
+          "uwsm".source = myLibs.mkStoreSymlink self.paths.dots + "/uwsm";
           "yazi/theme.toml".text = lib.mkForce ''
             [icon]
             prepend_dirs = [
