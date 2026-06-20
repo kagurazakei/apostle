@@ -1,8 +1,7 @@
 {
   lib,
   stdenv,
-  fetchFromGitea,
-  sources ? import ../.tack,
+  sources,
   pkg-config,
   cmake,
   ninja,

@@ -22,4 +22,5 @@ in
   "tailscale.age".publicKeys = kagura ++ hana;
   "maxitone.age".publicKeys = kagura ++ hana;
   "cachix-token.age".publicKeys = kagura ++ hana;
+  "tack-token.age".publicKeys = kagura ++ hana;
 }
