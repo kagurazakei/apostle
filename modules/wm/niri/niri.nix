@@ -1,12 +1,12 @@
 {
   self,
-  utils,
+  myLibs,
   username,
   ...
 }:
 {
 
-  modules.programs.dots_niri = utils.mkDotsModule username {
+  modules.programs.dots_niri = myLibs.mkDotsModule username {
     "niri/config.kdl" = d: d.dotsDir + "/niri/${d.lib.toLower d.config.networking.hostName}.kdl";
     "niri/noctalia.kdl" = "/niri/noctalia.kdl";
   };

@@ -39,7 +39,6 @@ in
     "kitty/neighboring_window.py" = "/kitty/neighboring_window.py";
     "kitty/kitty-open-helper.sh" = "/kitty/kitty-open-helper.sh";
     "carapace/carapace.toml" = "/carapace/carapace.toml";
-    "cachix/cachix.dhall" = config.age.secrets.cachix.path;
     "equibop/themes" = "/equibop/themes";
     "fuzzel/fuzzel.ini" = "/fuzzel/fuzzel.ini";
     "fuzzel/noctalia" = "/fuzzel/noctalia";
