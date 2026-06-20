@@ -89,9 +89,9 @@
   },
   "helium": {
     "type": "tarball",
-    "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1043354934/21d16cd6-a929-4214-b74e-106aae698a6b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-06-19T15%3A27%3A24Z&rscd=attachment%3B+filename%3Dhelium-0.13.3.1-arm64_linux.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-06-19T14%3A27%3A03Z&ske=2026-06-19T15%3A27%3A24Z&sks=b&skv=2018-11-09&sig=EXQds2%2BR%2FoFZuEjpnla14f0HI2dP6Oscy03NIiyxjEw%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4MTg4MzM0NywibmJmIjoxNzgxODc5NzQ3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.aiOiP86gQB7JcHcV-F6p0G8M4pEUXU_mElvkebgNGpE&response-content-disposition=attachment%3B%20filename%3Dhelium-0.13.3.1-arm64_linux.tar.xz&response-content-type=application%2Foctet-stream",
-    "narHash": "sha256-EFmMIIqn8ht8+re1Sg1aTTjbr8d3fH5ToY76uWczNI8=",
-    "lastModified": 1781215737
+    "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1043354934/51ae3208-cf78-4380-a6ed-3d28baaa2d9b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-06-20T11%3A27%3A41Z&rscd=attachment%3B+filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-06-20T10%3A26%3A55Z&ske=2026-06-20T11%3A27%3A41Z&sks=b&skv=2018-11-09&sig=As2HpT8YBdn1NqMsLY8pJbqqEJm5OMUFd7My4i3K5uc%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4MTk1NTQ2MiwibmJmIjoxNzgxOTUxODYyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.Vss-IadPg0Eda3kaOfKmLzmhW2RbvFObvOIiBWvfXOI&response-content-disposition=attachment%3B%20filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&response-content-type=application%2Foctet-stream",
+    "narHash": "sha256-HiX4xrtSv4mgtdq4evSFZqBoVsDu1bhfStJT8QJ0WpI=",
+    "lastModified": 1781727245
   },
   "hjem": {
     "type": "github",

@@ -40,11 +40,13 @@
         };
         files = {
           ".face.icon".source = self.paths.dots + "/profile.png";
+
         };
         xdg.config.files = {
           "htop".source = myLibs.mkStoreSymlink self.paths.dots + "/htop";
           "booru".source = myLibs.mkStoreSymlink self.paths.dots + "/booru";
           "uwsm".source = myLibs.mkStoreSymlink self.paths.dots + "/uwsm";
+          "cachix/cachix.dhall".source = config.age.secrets.cachix.path;
           "yazi/theme.toml".text = lib.mkForce ''
             [icon]
             prepend_dirs = [
