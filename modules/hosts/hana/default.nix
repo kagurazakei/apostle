@@ -18,6 +18,7 @@ in
       self.modules.programs.dots_impure
       self.modules.programs.dots_yazi
       self.modules.nixos.packages
+      self.modules.nixos.environments
       self.modules.wm._
       self.modules.wm.hyprland
       self.modules.wm.niri
@@ -26,6 +27,10 @@ in
       ./+hardware.nix
     ];
     finit.runlevel = 3;
+    hardware.firmware = with pkgs; [
+      linux-firmware
+      sof-firmware
+    ];
     programs.gnome-keyring.enable = true;
     programs.xwayland-satellite.enable = true;
 
@@ -36,6 +41,7 @@ in
     ];
     services.nix-daemon = {
       enable = true;
+      package = pkgs.lixPackageSets.git.lix;
       settings = {
         deprecated-features = [ "broken-string-escape" ];
         experimental-features = [

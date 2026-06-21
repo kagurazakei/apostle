@@ -7,9 +7,13 @@
         VISUAL.default = "nvim";
         SUDO_EDITOR.default = "nvim";
       };
+      environment.etc.subuid.mode = "0444";
+      environment.etc.subgid.mode = "0444";
+
+      environment.etc.subuid.text = "antonio:100000:65536";
+      environment.etc.subgid.text = "antonio:100000:65536";
       environment.etc = {
         "nixos/nixpkgs".source = builtins.storePath pkgs.path;
-        # "/xdg/menus/applications.menu".text = builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; #dolphin fix
       };
     };
 }
