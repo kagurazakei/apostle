@@ -347,6 +347,14 @@
     "narHash": "sha256-GyRyflUVp1BHg6S0emZ6ViALx8L130npnfyZQmdxhfA=",
     "lastModified": 1762352814
   },
+  "run0-sudo-shim": {
+    "type": "github",
+    "owner": "amaanq",
+    "repo": "run0-sudo-shim",
+    "rev": "129847a8d38fec9fc2e907f7c865b727d345edbb",
+    "narHash": "sha256-+b+IfaJE/IgYe/ErkHfndGFO+m56a4e9P79zJcwHMzY=",
+    "lastModified": 1773024505
+  },
   "rust-analyzer": {
     "type": "github",
     "owner": "rust-lang",
@@ -391,9 +399,9 @@
     "type": "github",
     "owner": "kagurazakei",
     "repo": "sysc-greet",
-    "rev": "b483088666174157eec2e6d85ea42483a084866c",
-    "narHash": "sha256-LRBbVghgRXGq0NAOvaXk7p61+3iiA94o8tRbHrOBJp4=",
-    "lastModified": 1781660403
+    "rev": "375f359f05e3293b797ed796bc8fa846c36a6fcd",
+    "narHash": "sha256-vWrW/H8wyt/D2efhVcFo8P0MpLgYVbsTymWGM7wUmIs=",
+    "lastModified": 1782024523
   },
   "tack": {
     "type": "github",

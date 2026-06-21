@@ -26,17 +26,6 @@
             }
           );
         };
-        systemd.services = {
-          arrpc = {
-            description = "arRPC Systemd Service";
-            after = [ "graphical-session.target" ];
-            partOf = [ "graphical-session.target" ];
-            serviceConfig = {
-              ExecStart = "${pkgs.arrpc}/bin/arrpc";
-              Restart = "on-failure";
-            };
-          };
-        };
       };
     };
 }

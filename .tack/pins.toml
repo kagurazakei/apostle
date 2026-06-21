@@ -195,3 +195,6 @@ url = "gh:oxcl/nix-flake-helium-browser"
 
 [inputs.nixcord]
 url = "gh:FlameFlag/nixcord"
+
+[inputs.run0-sudo-shim]
+url = "gh:amaanq/run0-sudo-shim"

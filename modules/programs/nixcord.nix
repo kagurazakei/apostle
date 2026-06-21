@@ -1,17 +1,20 @@
-{ self, ... }:
+{ self, username, ... }:
 {
-  modules.programs.nixcord = { nixcord, ... }: {
-    imports = [ nixcord.nixosModule.default ];
+  modules.programs.nixcord = { nixcord, zpkgs, ... }: {
+    imports = [ nixcord.nixosModules.default ];
     programs.nixcord = {
       enable = true;
+      user = "${username}";
       discord = {
         enable = false;
+        branch = "canary";
         equicord.enable = false;
       };
       equibop = {
         enable = true;
-        useSystemEquibop = true;
-        autoScroll = false;
+        package = zpkgs.equibop;
+        autoscroll.enable = false;
+        useSystemEquicord = true;
         settings = {
           discordBranch = "canary";
           minimizeToTray = true;
@@ -25,7 +28,7 @@
         };
       };
       config = {
-        themeLink = [
+        themeLinks = [
           "${self.paths.dots}/equibop/themes/system24-oxo-mocha-theme.css"
           "${self.paths.dots}/equibop/themes/midnight.css"
         ];
@@ -34,7 +37,7 @@
           "system24-oxo-mocha-theme.css"
         ];
         plugins = {
-          alwaysAnimated.enable = true;
+          alwaysAnimate.enable = true;
           crashHandler = {
             enable = true;
             attemptToPreventCrashes = true;
@@ -65,7 +68,7 @@
             eagerLoad = true;
             organizeMenu = true;
           };
-          ClearURLs.enable = true;
+          clearUrls.enable = true;
           consoleJanitor = {
             enable = true;
             disableSpotifyLogger = true;
@@ -80,7 +83,7 @@
           };
           disableDeepLinks.enable = true;
           webContextMenus.enable = true;
-          SaveFavoriteGIFs.enable = true;
+          saveFavoriteGifs.enable = true;
           betterCommands = {
             enable = true;
             autoFillArguments = true;

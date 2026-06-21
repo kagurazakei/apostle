@@ -12,11 +12,10 @@
       self.modules.programs.spicetify
       self.modules.programs.git
       self.modules.programs.dolphin
-      self.modules.programs.equibop
       self.modules.programs.fish
       self.modules.programs.impermanence
       self.modules.programs.librewolf
-      self.modules.programs.helium-browser
+      self.modules.programs.nixcord
       self.modules.programs.agenix
       self.modules.programs.yazi
       self.modules.programs.mpv
