@@ -63,6 +63,14 @@
     "narHash": "sha256-WqfxrVAJvD6Y6ZjkhbvibL6Bps7PL2lx3JBY94Yd6kk=",
     "lastModified": 1780094618
   },
+  "equicord": {
+    "type": "github",
+    "owner": "Equicord",
+    "repo": "Equicord",
+    "rev": "665e43f04818af6f66c0ce1191331e7ab34ca45a",
+    "narHash": "sha256-5mkPy3+F2/RXurt3auyCKRd39ZmFcs891hVjgdMX8Mk=",
+    "lastModified": 1781711229
+  },
   "fenix": {
     "type": "github",
     "owner": "nix-community",

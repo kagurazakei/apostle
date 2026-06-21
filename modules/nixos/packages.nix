@@ -48,6 +48,7 @@
         ++ builtins.attrValues {
           inherit (pkgs)
             ffmpeg
+            arrpc
             git
             gh
             just
