@@ -40,7 +40,6 @@
         };
         files = {
           ".face.icon".source = self.paths.dots + "/profile.png";
-
         };
         xdg.config.files = {
           "htop".source = myLibs.mkStoreSymlink self.paths.dots + "/htop";

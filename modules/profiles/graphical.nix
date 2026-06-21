@@ -16,6 +16,7 @@
       self.modules.programs.fish
       self.modules.programs.impermanence
       self.modules.programs.librewolf
+      self.modules.programs.helium-browser
       self.modules.programs.agenix
       self.modules.programs.yazi
       self.modules.programs.mpv
