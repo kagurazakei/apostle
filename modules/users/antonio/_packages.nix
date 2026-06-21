@@ -14,7 +14,6 @@ builtins.attrValues {
     gtk-themes
     viu
     stash
-    equibop
     quickshell
     helium
     ;

@@ -7,7 +7,6 @@
   modules.hjem.${username} =
     {
       pkgs,
-      lib,
       config,
       ...
     }:
