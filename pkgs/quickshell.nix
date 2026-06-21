@@ -26,7 +26,10 @@
 stdenv.mkDerivation (finalAttrs: {
   pname = "quickshell";
   version = "0.3.0";
+
+  # github mirror: https://github.com/quickshell-mirror/quickshell
   src = sources.quickshell;
+
   nativeBuildInputs = [
     cmake
     ninja

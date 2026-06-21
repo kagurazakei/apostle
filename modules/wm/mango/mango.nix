@@ -1,12 +1,11 @@
 {
-  self,
-  utils,
+  myLibs,
   username,
   zpkgs,
   ...
 }:
 {
-  modules.programs.dots_mango = utils.mkDotsModule username {
+  modules.programs.dots_mango = myLibs.mkDotsModule username {
     "mango/animation.conf" = "/mango/animation.conf";
     "mango/autostart.sh" = "/mango/autostart.sh";
     "mango/bind.conf" = "/mango/bind.conf";

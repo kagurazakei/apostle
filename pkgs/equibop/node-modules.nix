@@ -5,12 +5,17 @@
   stdenvNoCC,
   bun,
   writableTmpDirAsHomeHook,
-  sources,
 }:
 let
+  sources = import ../../.tack;
   equibop = sources.equibop;
   srcPath = equibop;
-  version = "nightly";
+  version =
+    let
+      pathStr = builtins.toString equibop;
+      match = builtins.match ".*-equibop-([0-9]+\\.[0-9]+\\.[0-9]+).*" pathStr;
+    in
+    if match != null then builtins.elemAt match 0 else "nightly";
 in
 stdenvNoCC.mkDerivation {
   name = "equibop-modules-${version}";

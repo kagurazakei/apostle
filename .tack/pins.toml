@@ -6,7 +6,6 @@ manic = "github:manic-systems/{path}"
 nixpkgs = ["stable", "nixpkgs", "master"]
 fenix = "fenix"
 rust-overlay = "rust-overlay"
-flake-parts = "flake-parts"
 niri-src = ["niri-stable", "niri-unstable"]
 nix = "nix-src"
 crane = "crane"
@@ -18,9 +17,6 @@ xwayland-satellite = [
   "xwayland-satellite-unstable",
 ]
 hjem-rum = "hjem"
-
-[inputs.flake-parts]
-url = "gh:hercules-ci/flake-parts"
 
 [inputs.rust-overlay]
 url = "gh:oxalica/rust-overlay"
@@ -63,11 +59,6 @@ url = "manic:cade"
 
 [inputs.spicetify]
 url = "gh:Gerg-L/spicetify-nix"
-
-# niri / desktop --------------------------------------------------------------
-
-[inputs.niri-src]
-url = "gh:YaLTeR/niri"
 
 [inputs.noctalia-shell]
 url = "gh:noctalia-dev/noctalia-shell/legacy-v4"
@@ -187,12 +178,6 @@ type = "fetch"
 [inputs.noctalia-greeter]
 url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"
 
-[inputs.noctalia]
-url = "gh:noctalia-dev/noctalia-shell"
-
-[inputs.dolphin-overlay]
-url = "gh:kagurazakei/dolphin-overlay"
-
 [inputs.stable]
 url = "gh:nixos/nixpkgs/nixos-26.05"
 
@@ -200,19 +185,20 @@ url = "gh:nixos/nixpkgs/nixos-26.05"
 url = "gh:Equicord/Equibop"
 type = "fetch"
 
-[inputs.kservice]
-url = "https://invent.kde.org/frameworks/kservice/-/archive/kf5/kservice-kf5.tar.gz"
-type = "fetch"
-
 [inputs.nixos-stable]
 url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
 
 [inputs.helium]
-url = "https://github.com/imputnet/helium-linux/releases/download/0.13.3.1/helium-0.13.3.1-x86_64_linux.tar.xz"
-type = "fixed"
+url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz"
 
 [inputs.finix]
 url = "gh:finix-community/finix"
 
 [inputs.community-modules]
 url = "gh:finix-community/community-modules"
+
+[inputs.niri-src]
+url = "gh:niri-wm/niri"
+
+[inputs.noctalia]
+url = "gh:noctalia-dev/noctalia-shell"

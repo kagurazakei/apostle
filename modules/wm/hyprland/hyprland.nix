@@ -1,13 +1,12 @@
 {
   self,
-  inputs,
-  utils,
+  myLibs,
   username,
   ...
 }:
 {
 
-  modules.programs.dots_hyprland = utils.mkDotsModule username {
+  modules.programs.dots_hyprland = myLibs.mkDotsModule username {
     "hypr/hyprland.lua" = "/hyprland/hyprland.lua";
     "hypr/keybinds.lua" = "/hyprland/keybinds.lua";
     "hypr/windowRules.lua" = "/hyprland/windowRules.lua";

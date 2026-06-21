@@ -1,10 +1,10 @@
 {
   pkgs,
   symlinkJoin,
-  inputs ? import ../.tack,
+  sources,
 }:
 let
-  stp = inputs.stash.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  stp = sources.stash.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 symlinkJoin {
   inherit (stp) meta version pname;

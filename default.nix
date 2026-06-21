@@ -3,9 +3,9 @@ let
   inputs = import ./.tack;
   lib = inputs.nixpkgs.lib;
   nixpkgs = import inputs.nixpkgs { inherit lib; };
-  utils = import ./utils;
+  myLibs = import ./utils;
   modules = {
-    imports = utils.recursiveImport {
+    imports = myLibs.recursiveImport {
       dirs = [
         ./modules
         ./options
@@ -23,7 +23,7 @@ let
         inherit
           self
           lib
-          utils
+          myLibs
           inputs
           username
           ;

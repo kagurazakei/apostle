@@ -1,12 +1,11 @@
 {
-  utils,
+  myLibs,
   username,
-  self,
   ...
 }:
 {
 
-  modules.programs.dots_fish = utils.mkDotsModule username {
+  modules.programs.dots_fish = myLibs.mkDotsModule username {
     "fish/config.fish" = "/fish/config.fish";
     "fish/user_variables.fish" = "/fish/user_variables.fish";
     "fish/abbreviations.fish" = "/fish/abbreviations.fish";

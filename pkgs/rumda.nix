@@ -21,7 +21,7 @@ let
     kdePackages.kirigami-addons
     kdePackages.qqc2-desktop-style
     kdePackages.qt5compat
-    libsForQt5.qt5.qtgraphicaleffects
+    libsForQt5.qtgraphicaleffects
   ];
 
   fontconfig = makeFontsConf {
