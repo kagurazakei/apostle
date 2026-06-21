@@ -59,8 +59,6 @@
             cliphist
             libnotify
             gtk-engine-murrine
-            rose-pine-icon-theme
-            rose-pine-gtk-theme
             vscodium
             noctalia-shell
             tmux

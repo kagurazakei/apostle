@@ -3,7 +3,7 @@ gh = "github:{path}"
 manic = "github:manic-systems/{path}"
 
 [all_follow]
-nixpkgs = ["stable", "nixpkgs", "master"]
+nixpkgs = ["nixos-stable", "nixpkgs", "master"]
 fenix = "fenix"
 rust-overlay = "rust-overlay"
 niri-src = ["niri-stable", "niri-unstable"]
@@ -187,5 +187,14 @@ type = "fetch"
 url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
 
 [inputs.helium]
-url = "https://github.com/imputnet/helium-linux/releases/download/0.13.3.1/helium-0.13.3.1-arm64_linux.tar.xz"
+url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz"
 type = "fetch"
+
+[inputs.helium-browser]
+url = "gh:oxcl/nix-flake-helium-browser"
+
+[inputs.nixcord]
+url = "gh:FlameFlag/nixcord"
+
+[inputs.run0-sudo-shim]
+url = "gh:amaanq/run0-sudo-shim"

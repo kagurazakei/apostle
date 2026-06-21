@@ -5,7 +5,7 @@
   self,
 }:
 let
-  vixvim = inputs.mnw.lib.wrap { inherit pkgs inputs; } (self.paths.dots + /neovim);
+  sixvim = inputs.mnw.lib.wrap { inherit pkgs inputs; } (self.paths.dots + /neovim);
 
 in
 builtins.attrValues {
@@ -19,9 +19,6 @@ builtins.attrValues {
     helium
     ;
   inherit (zpkgs.scripts)
-    npins-ui
-    npins-show
-    npins-helper
     nixy
     lutui
     touchpad-toggle
@@ -82,7 +79,6 @@ builtins.attrValues {
 
   inherit (pkgs) trashy wl-screenrec;
   inherit (pkgs)
-
     wtype
     socat
     grim
@@ -124,6 +120,5 @@ builtins.attrValues {
   (pkgs.wrapOBS {
     plugins = [ pkgs.obs-studio-plugins.obs-pipewire-audio-capture ];
   })
-  vixvim
-
+  sixvim
 ]
