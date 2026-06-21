@@ -18,6 +18,7 @@
       self.modules.programs.nixcord
       self.modules.programs.agenix
       self.modules.programs.yazi
+      self.modules.programs.zellij
       self.modules.programs.mpv
       self.modules.programs.noctalia
       self.modules.services._sysc-greet

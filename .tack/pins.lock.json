@@ -399,9 +399,9 @@
     "type": "github",
     "owner": "kagurazakei",
     "repo": "sysc-greet",
-    "rev": "375f359f05e3293b797ed796bc8fa846c36a6fcd",
-    "narHash": "sha256-vWrW/H8wyt/D2efhVcFo8P0MpLgYVbsTymWGM7wUmIs=",
-    "lastModified": 1782024523
+    "rev": "50f83d7a33a192eb7575c078de89b2e3b740e3c6",
+    "narHash": "sha256-nu9ot9SpD3wnOrsIy/GBcoa78NPl6z3LsgOHnhp2eQ8=",
+    "lastModified": 1782042427
   },
   "tack": {
     "type": "github",

@@ -8,7 +8,6 @@
       discord = {
         enable = false;
         branch = "canary";
-        equicord.enable = false;
       };
       equibop = {
         enable = true;

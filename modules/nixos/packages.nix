@@ -50,6 +50,7 @@
             ffmpeg
             git
             gh
+            arrpc
             just
             gnupg
             lolcat
@@ -61,8 +62,6 @@
             gtk-engine-murrine
             vscodium
             noctalia-shell
-            tmux
-            tmuxp
             zathura
             ;
           inherit (pkgs.zathuraPkgs) zathura_pdf_mupdf;
