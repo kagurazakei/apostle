@@ -93,6 +93,14 @@
     "narHash": "sha256-HiX4xrtSv4mgtdq4evSFZqBoVsDu1bhfStJT8QJ0WpI=",
     "lastModified": 1781727245
   },
+  "helium-browser": {
+    "type": "github",
+    "owner": "oxcl",
+    "repo": "nix-flake-helium-browser",
+    "rev": "aabc12cf6518480d83b2b5d06d2eecf86a25273f",
+    "narHash": "sha256-v7rAVyX0DGAYqei3FxWPDJLqrzJrEsue2DVBEDApxQo=",
+    "lastModified": 1781783441
+  },
   "hjem": {
     "type": "github",
     "owner": "feel-co",
@@ -220,6 +228,14 @@
     "rev": "fdde24be5ff6b3840c92c84a34c80b1e13fe796e",
     "narHash": "sha256-mU9KVUh8frMXv0cD871fDv2hSd+p/eljbMhRglhQFEw=",
     "lastModified": 1770663017
+  },
+  "nixcord": {
+    "type": "github",
+    "owner": "FlameFlag",
+    "repo": "nixcord",
+    "rev": "d9aad20784cb2fe8142f2e934d29e1c722cc71d6",
+    "narHash": "sha256-Fva6sbK1BiMgi9b+F7zDcBDNUeUlavWpO7hGi27xu4A=",
+    "lastModified": 1781918107
   },
   "nixos-core": {
     "type": "github",
