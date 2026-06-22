@@ -4,30 +4,38 @@ let
   lib = inputs.nixpkgs.lib;
   nixpkgs = import inputs.nixpkgs { inherit lib; };
   myLibs = import ./utils;
-  modules = {
-    imports = myLibs.recursiveImport {
-      dirs = [
-        ./modules
-        ./options
-      ];
-      excludePrefixedWith = [
-        "_"
-        "+"
-      ];
-    };
-  };
-  self =
-    (nixpkgs.lib.evalModules {
-      modules = [ modules ];
-      specialArgs = {
-        inherit
-          self
-          myLibs
-          inputs
-          username
-          ;
-        inherit (nixpkgs) pkgs;
-      };
-    }).config;
+
+  self = lib.pipe null [
+    (
+      _:
+      myLibs.recursiveImport {
+        dirs = [
+          ./modules
+          ./options
+        ];
+        excludePrefixedWith = [
+          "_"
+          "+"
+        ];
+      }
+    )
+    (imports: { imports = imports; })
+    (
+      modules:
+      nixpkgs.lib.evalModules {
+        modules = [ modules ];
+        specialArgs = {
+          inherit
+            self
+            myLibs
+            inputs
+            username
+            ;
+          inherit (nixpkgs) pkgs;
+        };
+      }
+    )
+    (result: result.config)
+  ];
 in
 self

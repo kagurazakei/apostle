@@ -4,7 +4,7 @@
   ...
 }:
 writeShellScriptBin "nixy" ''
-  CONFIG_DIR="$HOME/nixos"
+  CONFIG_DIR="$HOME/Apostle/default.nix"
   HOSTNAME="$(hostname)"
 
   run_command() {
@@ -13,9 +13,9 @@ writeShellScriptBin "nixy" ''
 
   ui() {
     APPS=(
-      "󰑓  Rebuild System        :: sudo nixos-rebuild switch --flake $CONFIG_DIR#$HOSTNAME"
-      "󰦗  Upgrade System        :: sudo nixos-rebuild switch --upgrade --flake $CONFIG_DIR#$HOSTNAME"
-      "󰚰  Update Flake          :: cd $CONFIG_DIR && nix flake update"
+      "󰑓  Rebuild System        :: sudo nixos-rebuild boot --file $CONFIG_DIR --attr nC.$HOSTNAME"
+      "󰦗  Upgrade System        :: sudo nixos-rebuild switch --upgrade --file $CONFIG_DIR --attr nC.$HOSTNAME"
+      "󰚰  Update Tack          :: cd $CONFIG_DIR && tack update"
       "  Collect Garbage       :: sudo nix-collect-garbage -d"
       "󰍜  Clean Boot Menu       :: sudo /run/current-system/bin/switch-to-configuration boot"
       "󰒲  Push & Remote Build   :: cd $CONFIG_DIR && git add . && git commit -m \"update $(date '+%F %T')\" && git push"
@@ -64,10 +64,10 @@ writeShellScriptBin "nixy" ''
   # Direct CLI usage (no UI)
   case "$1" in
     rebuild)
-      sudo nixos-rebuild switch --flake "$CONFIG_DIR#$HOSTNAME"
+      sudo nixos-rebuild boot --file "$CONFIG_DIR" --attr nC."$HOSTNAME"
       ;;
     upgrade)
-      sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$HOSTNAME"
+      sudo nixos-rebuild boot --upgrade --file "$CONFIG_DIR" --attr nC."$HOSTNAME"
       ;;
     update)
       cd "$CONFIG_DIR" && nix flake update

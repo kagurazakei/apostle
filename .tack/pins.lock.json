@@ -415,9 +415,17 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "ddac7ba409c4ccff102f0f844fa1b4359ffeff83",
-    "narHash": "sha256-syDqT551zEuc8cyGDjDldQS+kp0hTB6cIWTa7B2FeWg=",
-    "lastModified": 1781855135
+    "rev": "d61ffcb1ea96fe0bb4157aabc0ad9a337a376417",
+    "narHash": "sha256-HOie9E1cVjloXbRt+Frz8ZalsU/sklhklBr2yHyclm8=",
+    "lastModified": 1782105670
+  },
+  "tack-2": {
+    "type": "github",
+    "owner": "manic-systems",
+    "repo": "tack",
+    "rev": "d61ffcb1ea96fe0bb4157aabc0ad9a337a376417",
+    "narHash": "sha256-HOie9E1cVjloXbRt+Frz8ZalsU/sklhklBr2yHyclm8=",
+    "lastModified": 1782105670
   },
   "tuigreet": {
     "type": "github",

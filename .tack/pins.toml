@@ -14,191 +14,76 @@ nixpkgs-lib = "nixpkgs-lib"
 rust-analyzer-src = "rust-analyzer"
 xwayland-satellite = [
   "xwayland-satellite-stable",
-  "xwayland-satellite-unstable",
+  "xwayland-satellite-unstable"
 ]
 hjem-rum = "hjem"
 
-[inputs.rust-overlay]
-url = "gh:oxalica/rust-overlay"
+[inputs]
+# --- Core toolchain ----------------------------------------------------------
+rust-overlay.url = "gh:oxalica/rust-overlay"
+nixpkgs.url = "gh:nixos/nixpkgs/nixos-unstable"
+master.url = "gh:nixos/nixpkgs/master"
+fenix.url = "gh:nix-community/fenix"
+nixos-stable.url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
 
-# core toolchain --------------------------------------------------------------
+# --- Secrets / identity ------------------------------------------------------
+agenix.url = "gh:ryantm/agenix"
 
-[inputs.nixpkgs]
-url = "gh:nixos/nixpkgs/nixos-unstable"
+# --- Build / system ----------------------------------------------------------
+nixos-core.url = "github:llakala/nixos-core"
+nix-wrappers.url = "gh:midischwarz12/nix-wrappers"
+nix-src.url = "gh:NixOS/nix"
+cade.url = "manic:cade"
+run0-sudo-shim.url = "gh:amaanq/run0-sudo-shim"
+tack.url = "manic:tack"
 
-[inputs.master]
-url = "gh:nixos/nixpkgs/master"
+# --- Misc personal flakes ----------------------------------------------------
+spicetify.url = "gh:Gerg-L/spicetify-nix"
+helium-browser.url = "gh:oxcl/nix-flake-helium-browser"
+nixcord.url = "gh:FlameFlag/nixcord"
 
-[inputs.fenix]
-url = "gh:nix-community/fenix"
-# secrets / identity ----------------------------------------------------------
+# --- Niri / desktop ----------------------------------------------------------
+niri-src.url = "gh:YaLTeR/niri"
+noctalia-shell.url = "gh:noctalia-dev/noctalia-shell/legacy-v4"
+tuigreet.url = "gh:notashelf/tuigreet"
+watt.url = "gh:notashelf/watt"
+noctalia-greeter.url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"
+noctalia.url = "gh:noctalia-dev/noctalia-shell"
 
-[inputs.agenix]
-url = "gh:ryantm/agenix"
+# --- System services ---------------------------------------------------------
+qtengine.url = "gh:kossLAN/qtengine"
+quickshell.url = "git+https://git.outfoxxed.me/quickshell/quickshell.git"
+hjem-impure.url = "github:Rexcrazy804/hjem-impure"
+hjem-rum.url = "github:snugnug/hjem-rum"
+hjem.url = "github:feel-co/hjem"
+niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
+sysc-greet.url = "github:kagurazakei/sysc-greet/master"
+ambxst.url = "github:kagurazakei/ambxst"
+viu.url = "gh:viu-media/viu"
+neovim-nightly.url = "gh:nix-community/neovim-nightly-overlay"
+catp-bat.url = "gh:catppuccin/bat"
+chaotic.url = "gh:chaotic-cx/nyx/nyxpkgs-unstable"
+flake-utils.url = "gh:numtide/flake-utils"
+impermanence.url = "gh:nix-community/impermanence"
+mango.url = "gh:mangowm/mango"
+mnw.url = "gh:Gerg-L/mnw"
+nix-cachyos-kernel.url = "gh:xddxdd/nix-cachyos-kernel"
+nix-flatpak.url = "gh:gmodena/nix-flatpak"
+nix-index-database.url = "gh:nix-community/nix-index-database"
+nixos-hardware.url = "gh:Nixos/nixos-hardware"
+rosep-fish.url = "gh:rose-pine/fish"
+shizuruPkgs.url = "gh:kagurazakei/shizuruPkgs"
+stash.url = "gh:NotAShelf/stash"
+waifu-cursors.url = "gh:kagurazakei/waifu-cursors"
 
-# build / system --------------------------------------------------------------
+# --- Fetch types -------------------------------------------------------------
+rosep-kitty = { url = "gh:rose-pine/kitty", type = "fetch" }
+rosep-foot = { url = "gh:rose-pine/foot", type = "fetch" }
+hyprview = { url = "github:kagurazakei/quickshell-overview", type = "fetch" }
+npins = { url = "gh:andir/npins", type = "fetch" }
+cat-gtk-themes = { url = "gh:kagurazakei/cat-gtk-themes", type = "fetch" }
+walls = { url = "git+https://github.com/kagurazakei/walls.git", type = "fetch" }
+equibop = { url = "gh:Equicord/Equibop", type = "fetch" }
+equicord = { url = "gh:Equicord/Equicord", type = "fetch" }
+helium = { url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz", type = "fetch" }
 
-[inputs.nixos-core]
-url = "github:llakala/nixos-core"
-
-[inputs.nix-wrappers]
-url = "gh:midischwarz12/nix-wrappers"
-
-[inputs.nix-src]
-url = "gh:NixOS/nix"
-
-# build / tooling -------------------------------------------------------------
-
-[inputs.tack]
-url = "manic:tack/next"
-
-[inputs.cade]
-url = "manic:cade"
-
-# misc personal flakes --------------------------------------------------------
-
-[inputs.spicetify]
-url = "gh:Gerg-L/spicetify-nix"
-
-# niri / desktop --------------------------------------------------------------
-
-[inputs.niri-src]
-url = "gh:YaLTeR/niri"
-
-[inputs.noctalia-shell]
-url = "gh:noctalia-dev/noctalia-shell/legacy-v4"
-
-[inputs.tuigreet]
-url = "gh:notashelf/tuigreet"
-
-[inputs.watt]
-url = "gh:notashelf/watt"
-
-# system services -------------------------------------------------------------
-
-[inputs.qtengine]
-url = "gh:kossLAN/qtengine"
-
-[inputs.quickshell]
-url = "git+https://git.outfoxxed.me/quickshell/quickshell.git"
-
-[inputs.hjem-impure]
-url = "github:Rexcrazy804/hjem-impure"
-
-[inputs.hjem]
-url = "github:feel-co/hjem"
-
-[inputs.niri-nix]
-url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
-
-[inputs.sysc-greet]
-url = "github:kagurazakei/sysc-greet/master"
-follow = { nixpkgs = "nixpkgs", hyprland = "hyprland", niri-nix = "niri-nix" }
-
-[inputs.ambxst]
-url = "github:kagurazakei/ambxst"
-
-[inputs.viu]
-url = "gh:viu-media/viu"
-
-[inputs.neovim-nightly]
-url = "gh:nix-community/neovim-nightly-overlay"
-
-[inputs.catp-bat]
-url = "gh:catppuccin/bat"
-
-[inputs.chaotic]
-url = "gh:chaotic-cx/nyx/nyxpkgs-unstable"
-
-[inputs.flake-utils]
-url = "gh:numtide/flake-utils"
-
-[inputs.impermanence]
-url = "gh:nix-community/impermanence"
-
-[inputs.mango]
-url = "gh:mangowm/mango"
-
-[inputs.mnw]
-url = "gh:Gerg-L/mnw"
-
-[inputs.nix-cachyos-kernel]
-url = "gh:xddxdd/nix-cachyos-kernel"
-
-[inputs.nix-flatpak]
-url = "gh:gmodena/nix-flatpak"
-
-[inputs.nix-index-database]
-url = "gh:nix-community/nix-index-database"
-
-[inputs.nixos-hardware]
-url = "gh:Nixos/nixos-hardware"
-
-[inputs.rosep-fish]
-url = "gh:rose-pine/fish"
-
-[inputs.shizuruPkgs]
-url = "gh:kagurazakei/shizuruPkgs"
-
-[inputs.stash]
-url = "gh:NotAShelf/stash"
-
-[inputs.waifu-cursors]
-url = "gh:kagurazakei/waifu-cursors"
-
-[inputs.rosep-kitty]
-url = "gh:rose-pine/kitty"
-type = "fetch"
-
-[inputs.rosep-foot]
-url = "gh:rose-pine/foot"
-type = "fetch"
-
-[inputs.hyprview]
-url = "github:kagurazakei/quickshell-overview"
-type = "fetch"
-
-[inputs.npins]
-url = "gh:andir/npins"
-type = "fetch"
-
-[inputs.cat-gtk-themes]
-url = "gh:kagurazakei/cat-gtk-themes"
-type = "fetch"
-
-[inputs.hjem-rum]
-url = "github:snugnug/hjem-rum"
-
-[inputs.walls]
-url = "git+https://github.com/kagurazakei/walls.git"
-type = "fetch"
-
-[inputs.noctalia-greeter]
-url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"
-
-[inputs.noctalia]
-url = "gh:noctalia-dev/noctalia-shell"
-
-[inputs.equibop]
-url = "gh:Equicord/Equibop"
-type = "fetch"
-
-[inputs.nixos-stable]
-url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
-
-[inputs.helium]
-url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz"
-type = "fetch"
-
-[inputs.helium-browser]
-url = "gh:oxcl/nix-flake-helium-browser"
-
-[inputs.nixcord]
-url = "gh:FlameFlag/nixcord"
-
-[inputs.run0-sudo-shim]
-url = "gh:amaanq/run0-sudo-shim"
-
-[inputs.equicord]
-url = "gh:Equicord/Equicord"
-type = "fetch"
