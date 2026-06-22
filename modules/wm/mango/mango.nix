@@ -95,14 +95,13 @@
             "org.freedesktop.impl.portal.ScreenCast" = "wlr";
             "org.freedesktop.impl.portal.Screenshot" = "wlr";
             "org.freedesktop.impl.portal.Inhibit" = "none";
-            "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+            "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
           };
         };
 
         services.dbus.packages = lib.mkDefault [ pkgs.thunar ];
         security.polkit.enable = true;
         programs.xwayland.enable = true;
-
         services = {
           displayManager.sessionPackages = mkIf (!cfg.withUWSM) [ cfg.package ];
           graphical-desktop.enable = true;

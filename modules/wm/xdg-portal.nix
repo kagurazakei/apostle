@@ -38,6 +38,16 @@
           };
         };
       };
+      xdg = {
+        terminal-exec = {
+          enable = true;
+          settings = {
+            default = [
+              "kitty.desktop"
+            ];
+          };
+        };
+      };
       xdg.portal = {
         enable = true;
         configPackages = [
@@ -47,6 +57,7 @@
           pkgs.kdePackages.xdg-desktop-portal-kde
           pkgs.xdg-desktop-portal-gtk
           pkgs.xdg-desktop-portal-gnome
+          pkgs.xdg-desktop-portal-termfilechooser
         ];
       };
     };
