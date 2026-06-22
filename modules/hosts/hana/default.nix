@@ -46,8 +46,7 @@ in
         };
         ssh-hana = {
           file = self.paths.secrets + /ssh-hana.age;
-          owner = "antonio";
-          mode = "0500";
+          owner = "root";
           path = "/etc/keys/ssh-hana";
         };
         cachix = {

@@ -47,9 +47,8 @@ in
         };
         ssh-kagura = {
           file = self.paths.secrets + /kagura-ssh.age;
-          owner = "antonio";
-          mode = "0500";
           path = "/etc/keys/ssh-kagura";
+          owner = "root";
         };
         cachix = {
           file = self.paths.secrets + /cachix-token.age;
@@ -63,7 +62,7 @@ in
       graphics.intel.hwAccelDriver = "media-driver";
     };
     networking.hostName = hostname;
-    system.stateVersion = "26.05";
+    system.stateVersion = "26.11";
     systemd.tmpfiles.rules = [
       # AccountsService user file
       "f+ /var/lib/AccountsService/users/${username} 0600 root root - \
