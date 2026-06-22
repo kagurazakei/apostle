@@ -1,16 +1,16 @@
 <div align="center">
 <h2>Apostle</h2>
-<p>My Nixos configuration<br>(tack + dendritic pattern)<br>FlakeLess Config</p>
+<p>My finix configuration<br>(tack + dendritic pattern)<br>FlakeLess Config</p>
 </div>
 
 <br>
 
-![](assets/rice-3.png)
+![](assets/mango-2.png)
 <br>
-![](assets/rice-2.png)
+![](assets/mango-3.png)
 <br>
-![](assets/rice-1.png)
-![](assets/rice-4.png)
+![](assets/mango-4.png)
+![](assets/mango-5.png)
 <br>
 <br>
 

@@ -101,11 +101,6 @@ in
     };
 
     services = {
-      autologin = {
-        enable = true;
-        user = "antonio";
-        command = "${pkgs.dbus}/bin/dbus-run-session mango";
-      };
       polkit.enable = true;
       sysklogd.enable = true;
       dbus.enable = true;
