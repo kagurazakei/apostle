@@ -47,6 +47,10 @@
 
       config = {
         hardware.graphics.extraPackages = cfg.runtimePackages ++ cfg.driverPackages;
+        hardware.graphics = {
+          enable = true;
+          enable32Bit = true;
+        };
         environment.systemPackages = with pkgs; [
           mesa
           intel-gpu-tools
@@ -73,13 +77,6 @@
           source = getExe pkgs.btop;
           capabilities = "cap_perfmon+ep";
         };
-
-        environment.sessionVariables = {
-          # not supported yet
-          # ANV_VIDEO_DECODE = 1;
-          LIBVA_DRIVER_NAME = mkIf (cfg.hwAccelDriver == "media-driver") "iHD";
-        };
-
         boot.kernelModules = [ "kvm-intel" ];
       };
     };

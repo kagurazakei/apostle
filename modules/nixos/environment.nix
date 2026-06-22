@@ -6,6 +6,7 @@
         EDITOR.default = "nvim";
         VISUAL.default = "nvim";
         SUDO_EDITOR.default = "nvim";
+        LIBVA_DRIVER_NAME.default = "iHD";
       };
       environment.etc.subuid.mode = "0444";
       environment.etc.subgid.mode = "0444";

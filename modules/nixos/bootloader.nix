@@ -14,23 +14,10 @@
         enable = lib.mkForce true;
         settings.editor_enabled = true; # Disable on systems that need security
         maxGenerations = 8;
-        style = {
-          wallpaperStyle = "centered";
-          wallpapers = [
-            "${inputs.walls}/nix-logo.png"
-          ];
-          interface = {
-            resolution = "max";
-            helpHidden = true;
-            branding = "Limine Bootloader";
-          };
-          graphicalTerminal = {
-            font.scale = "2x2";
-            margin = -1;
-            marginGradient = -1;
-            background = "33080808";
-            foreground = "B9C1D6";
-          };
+        settings = {
+          backdrop = "#1e1e2e";
+          # wallpapers = [ "" ];
+          wallpaper_style = "centered";
         };
       };
       programs.plymouth = {

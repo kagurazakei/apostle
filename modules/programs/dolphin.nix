@@ -27,17 +27,10 @@
           zpkgs.dolphin
         ];
       services.udisks2.enable = true;
-      hj = {
-        systemd.services = {
-          udiskie = {
-            description = "Hjem Udiskie Service";
-            after = [ "graphical-session.target" ];
-            partOf = [ "graphical-session.target" ];
-            serviceConfig = {
-              ExecStart = "${pkgs.udiskie}/bin/udiskie -t";
-              Restart = "on-failure";
-            };
-          };
+      finit.services = {
+        udiskie = {
+          conditions = "service/dbus/ready";
+          command = "${pkgs.udiskie}/bin/udiskie -t";
         };
       };
       hj.xdg.config.files = {

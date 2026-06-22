@@ -20,16 +20,10 @@
           "loglevel=0"
           "nowatchdog"
           "nohibernate"
-          "nvidia-drm.modeset=1"
-          "nvidia-drm.fbdev=1"
         ];
         kernelModules = [
           "drm"
           "i2c-dev"
-          "nvidia"
-          "nvidia_modeset"
-          "nvidia_uvm"
-          "nvidia_drm"
         ];
       };
     };

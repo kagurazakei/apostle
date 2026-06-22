@@ -44,7 +44,7 @@
             wl-clipboard
             cliphist
             libnotify
-            librewolf
+            firefox
             gtk-engine-murrine
             rose-pine-icon-theme
             rose-pine-gtk-theme

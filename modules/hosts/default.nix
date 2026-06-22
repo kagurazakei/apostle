@@ -50,7 +50,7 @@ let
         }
         self.modules.hosts.${hostname}
         inputs.community-modules.nixosModules.pipewire
-        inputs.community-modules.nixosModules.profiles
+        inputs.community-modules.nixosModules.laptop
       ]
       ++ (builtins.attrValues inputs.finix.nixosModules);
       specialArgs = {
