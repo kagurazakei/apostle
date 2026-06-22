@@ -1,10 +1,12 @@
+{
+  inputs,
+  lib,
+  nixpkgs,
+  ...
+}:
 let
   username = "antonio";
-  inputs = import ./.tack;
-  lib = inputs.nixpkgs.lib;
-  nixpkgs = import inputs.nixpkgs { inherit lib; };
   myLibs = import ./utils;
-
   self = lib.pipe null [
     (
       _:

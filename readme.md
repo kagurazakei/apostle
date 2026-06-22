@@ -1,6 +1,6 @@
 <div align="center">
 <h2>Apostle</h2>
-<p>My Nixos configuration<br>(tack + dendritic pattern)<br>FlakeLess Config</p>
+<p>My Nixos configuration<br>(tack + dendritic pattern)<br>FlakeAndTack Config</p>
 </div>
 
 <br>
@@ -10,6 +10,7 @@
 ![Neovim(handle by mnw)](assets/mango-2.png)
 <br>
 ![Kitty&Yazi](assets/mango-3.png)
+<br>
 ![Komikku](assets/mango-4.png)
 <br>
 ![Librewolf(textfox)&Equibop(system-24)](assets/mango-5.png)
