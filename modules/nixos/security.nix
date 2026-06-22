@@ -17,9 +17,6 @@
     {
       environment.systemPackages = [
         run0-sudo-shim'
-        (pkgs.writeShellScriptBin "sudo.orig" ''
-          exec ${pkgs.sudo}/bin/sudo "$@"
-        '')
       ];
       environment.shellAliases.sudo = "${run0-sudo-shim'}/bin/sudo";
       environment.shellAliases.sudoedit = "${run0-sudo-shim'}/bin/sudo -e";

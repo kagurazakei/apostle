@@ -48,7 +48,6 @@
         ++ builtins.attrValues {
           inherit (pkgs)
             ffmpeg
-            arrpc
             git
             gh
             arrpc
@@ -64,6 +63,8 @@
             vscodium
             noctalia-shell
             zathura
+            bottom
+            htop
             ;
           inherit (pkgs.zathuraPkgs) zathura_pdf_mupdf;
         };

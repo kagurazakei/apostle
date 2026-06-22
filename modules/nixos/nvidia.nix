@@ -52,9 +52,6 @@
             vulkan-loader
             vulkan-tools
             libva-utils
-            tmux
-            bottom
-            htop
             egl-wayland
             mesa
             zenith-nvidia

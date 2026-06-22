@@ -27,6 +27,7 @@ builtins.attrValues {
     cachix
     ayugram-desktop
     neovide
+    ghostty
     ;
   inherit (pkgs)
     inkscape
