@@ -3,7 +3,7 @@ gh = "github:{path}"
 manic = "github:manic-systems/{path}"
 
 [all_follow]
-nixpkgs = ["stable", "nixpkgs", "master"]
+nixpkgs = ["nixos-stable", "nixpkgs", "master"]
 fenix = "fenix"
 rust-overlay = "rust-overlay"
 niri-src = ["niri-stable", "niri-unstable"]
@@ -60,6 +60,11 @@ url = "manic:cade"
 [inputs.spicetify]
 url = "gh:Gerg-L/spicetify-nix"
 
+# niri / desktop --------------------------------------------------------------
+
+[inputs.niri-src]
+url = "gh:YaLTeR/niri"
+
 [inputs.noctalia-shell]
 url = "gh:noctalia-dev/noctalia-shell/legacy-v4"
 
@@ -88,10 +93,6 @@ url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
 
 [inputs.sysc-greet]
 url = "github:kagurazakei/sysc-greet/master"
-follow = { nixpkgs = "nixpkgs", hyprland = "hyprland", niri-nix = "niri-nix" }
-
-[inputs.sysc-greet-org]
-url = "github:Nomadcxx/sysc-greet/master"
 follow = { nixpkgs = "nixpkgs", hyprland = "hyprland", niri-nix = "niri-nix" }
 
 [inputs.ambxst]
@@ -145,9 +146,6 @@ url = "gh:NotAShelf/stash"
 [inputs.waifu-cursors]
 url = "gh:kagurazakei/waifu-cursors"
 
-[inputs.zenNvim]
-url = "gh:nendix/zen.nvim"
-
 [inputs.rosep-kitty]
 url = "gh:rose-pine/kitty"
 type = "fetch"
@@ -178,8 +176,8 @@ type = "fetch"
 [inputs.noctalia-greeter]
 url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"
 
-[inputs.stable]
-url = "gh:nixos/nixpkgs/nixos-26.05"
+[inputs.noctalia]
+url = "gh:noctalia-dev/noctalia-shell"
 
 [inputs.equibop]
 url = "gh:Equicord/Equibop"
@@ -190,15 +188,23 @@ url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
 
 [inputs.helium]
 url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz"
+type = "fetch"
+
+[inputs.helium-browser]
+url = "gh:oxcl/nix-flake-helium-browser"
+
+[inputs.nixcord]
+url = "gh:FlameFlag/nixcord"
+
+[inputs.run0-sudo-shim]
+url = "gh:amaanq/run0-sudo-shim"
+
+[inputs.equicord]
+url = "gh:Equicord/Equicord"
+type = "fetch"
 
 [inputs.finix]
 url = "gh:finix-community/finix"
 
 [inputs.community-modules]
 url = "gh:finix-community/community-modules"
-
-[inputs.niri-src]
-url = "gh:niri-wm/niri"
-
-[inputs.noctalia]
-url = "gh:noctalia-dev/noctalia-shell"

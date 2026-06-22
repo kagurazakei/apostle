@@ -52,9 +52,6 @@
             vulkan-loader
             vulkan-tools
             libva-utils
-            tmux
-            bottom
-            htop
             egl-wayland
             mesa
             zenith-nvidia
@@ -95,14 +92,6 @@
           hardware.nvidia = {
             enable = true;
             modesetting.enable = true;
-            # dynamicBoost.enable = true;
-            # powerManagement = {
-            #   enable = true;
-            #   finegrained = cfg.hybrid.enable;
-            # };
-
-            # Use the NVidia open source kernel module (not to be confused with the
-            # independent third-party "nouveau" open source driver).
             open = false;
             package =
               if config.networking.hostName == "hana" then

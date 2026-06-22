@@ -3,7 +3,6 @@
     {
       pkgs,
       config,
-      inputs,
       ...
     }:
     {
@@ -11,7 +10,6 @@
         kernelPackages =
           if config.networking.hostName == "hana" then
             pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-zen4
-          # pkgs.linuxPackages_latest
           else
             pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
         kernel.enable = true;
