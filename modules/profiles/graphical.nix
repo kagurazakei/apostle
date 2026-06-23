@@ -1,33 +1,48 @@
 { self, ... }:
-{
-  modules.profiles.graphical = {
-    imports = [
-      self.modules.nixos.misc_steam
-      self.modules.programs.dots_fish
-      self.modules.programs.dots_hyprland
-      self.modules.programs.dots_niri
-      self.modules.programs.dots_mango
-      self.modules.programs.dots_impure
-      self.modules.programs.dots_yazi
-      self.modules.programs.spicetify
-      self.modules.programs.git
-      self.modules.programs.dolphin
-      self.modules.programs.fish
-      self.modules.programs.impermanence
-      self.modules.programs.librewolf
-      self.modules.programs.nixcord
-      self.modules.programs.agenix
-      self.modules.programs.yazi
-      self.modules.programs.zellij
-      self.modules.programs.mpv
-      self.modules.programs.noctalia
-      self.modules.services._sysc-greet
-      self.modules.services._greetd
-      self.modules.services.noctalia-greeter
-      self.modules.wm._
-      self.modules.wm.hyprland
-      self.modules.wm.niri
-      self.modules.wm.mango
+let
+  modules = {
+    nixos = [ "misc_steam" ];
+    programs = [
+      "dots_fish"
+      "dots_hyprland"
+      "dots_niri"
+      "dots_mango"
+      "dots_impure"
+      "dots_yazi"
+      "spicetify"
+      "git"
+      "dolphin"
+      "fish"
+      "impermanence"
+      "librewolf"
+      "nixcord"
+      "agenix"
+      "yazi"
+      "zellij"
+      "mpv"
+      "noctalia"
+    ];
+    services = [
+      "_sysc-greet"
+      "_greetd"
+      "noctalia-greeter"
+    ];
+    wm = [
+      "_"
+      "hyprland"
+      "niri"
+      "mango"
     ];
   };
+
+  buildProfile = x: {
+    imports =
+      map (m: x.modules.nixos.${m}) modules.nixos
+      ++ map (p: x.modules.programs.${p}) modules.programs
+      ++ map (s: x.modules.services.${s}) modules.services
+      ++ map (w: x.modules.wm.${w}) modules.wm;
+  };
+in
+{
+  modules.profiles.graphical = self |> buildProfile;
 }
