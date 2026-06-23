@@ -6,5 +6,8 @@
     dm.sysc-greet = {
       enable = true;
     };
+    dm.noctalia-greeter = {
+      enable = false;
+    };
   };
 }
