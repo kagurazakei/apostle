@@ -30,11 +30,12 @@ let
     "hjem-impure"
   ];
 
+  getModules = category: names: map (name: category.${name}) names;
   buildBaseProfile = x: {
     imports =
-      (map (m: x.modules.nixos.${m}) nixos)
-      ++ (map (s: x.modules.services.${s}) services)
-      ++ (map (h: x.modules.hjem.${h}) hjem);
+      getModules x.modules.nixos nixos
+      ++ getModules x.modules.services services
+      ++ getModules x.modules.hjem hjem;
   };
 in
 {
