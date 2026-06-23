@@ -1,14 +1,15 @@
 {
   inputs,
-  lib,
   nixpkgs,
   ...
 }:
 let
   username = "antonio";
   myLibs = import ./utils;
-  self = lib.pipe null [
-    (
+
+  self =
+    null
+    |> (
       _:
       myLibs.recursiveImport {
         dirs = [
@@ -21,8 +22,8 @@ let
         ];
       }
     )
-    (imports: { imports = imports; })
-    (
+    |> (imports: { imports = imports; })
+    |> (
       modules:
       nixpkgs.lib.evalModules {
         modules = [ modules ];
@@ -37,7 +38,6 @@ let
         };
       }
     )
-    (result: result.config)
-  ];
+    |> (result: result.config);
 in
 self
