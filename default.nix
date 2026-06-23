@@ -1,12 +1,14 @@
 let
-  username = "antonio";
   inputs = import ./.tack;
   lib = inputs.nixpkgs.lib;
-  nixpkgs = import inputs.nixpkgs { inherit lib; };
+  system = builtins.currentSystem;
+  pkgs = import inputs.nixpkgs { inherit lib system; };
   myLibs = import ./utils;
+  username = "antonio";
 
-  self = lib.pipe null [
-    (
+  self =
+    null
+    |> (
       _:
       myLibs.recursiveImport {
         dirs = [
@@ -19,10 +21,10 @@ let
         ];
       }
     )
-    (imports: { imports = imports; })
-    (
+    |> (imports: { imports = imports; })
+    |> (
       modules:
-      nixpkgs.lib.evalModules {
+      lib.evalModules {
         modules = [ modules ];
         specialArgs = {
           inherit
@@ -30,12 +32,12 @@ let
             myLibs
             inputs
             username
+            system
             ;
-          inherit (nixpkgs) pkgs;
+          inherit pkgs;
         };
       }
     )
-    (result: result.config)
-  ];
+    |> (result: result.config);
 in
 self
