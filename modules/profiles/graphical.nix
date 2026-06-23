@@ -18,7 +18,6 @@ let
     "agenix"
     "yazi"
     "zellij"
-    "mpv"
     "noctalia"
   ];
   services = [

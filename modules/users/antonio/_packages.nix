@@ -6,44 +6,81 @@
 }:
 let
   sixvim = inputs.mnw.lib.wrap { inherit pkgs inputs; } (self.paths.dots + /neovim);
-
 in
 builtins.attrValues {
-  inherit (pkgs) awww;
-  inherit (zpkgs)
-    gtk-themes
-    viu
-    stash
-    quickshell
-    helium
-    ;
-  inherit (zpkgs.scripts)
-    nixy
-    lutui
-    touchpad-toggle
-    ;
-  inherit (pkgs.master)
-    nh
-    cachix
-    ayugram-desktop
-    neovide
-    ghostty
-    ;
+  ### privacy tools
   inherit (pkgs)
+    seahorse
+    proton-vpn
+    ripdrag
+    ;
+  ### image viewer and media related
+  inherit (pkgs)
+    awww
+    mpvpaper
+    yt-dlp
+    qimgv
     inkscape
     fuzzel
     swappy
     viewnior
-    git
-    komikku
-    nwg-look
+    imv
+    ayugram-desktop
     mangayomi
+    komikku
     ;
+  ### editor
   inherit (pkgs)
+    ollama
     zed-editor
     zed-discord-presence
+    neovide
+    ;
+  ### terminal emulators
+  inherit (pkgs)
+    ghostty
+    kitty
+    foot
+    ;
+  ### screenshot tools
+  inherit (pkgs)
+    gpu-screen-recorder-gtk
+    wayfreeze
+    hyprshot
+    gpu-screen-recorder
+    wf-recorder
+    wl-screenrec
+    grim
+    slurp
+    wl-clipboard
+    imagemagick
+    ;
+  inherit (pkgs)
+    git
     nil
     nixd
+    jq
+    fd
+    ripgrep
+    ouch
+    findutils
+    brightnessctl
+    duf
+    lazygit
+    trashy
+    wtype
+    socat
+    resvg
+    libnotify
+    hyprsunset
+    app2unit
+    libsixel
+    nwg-look
+    gtkmm4
+    networkmanagerapplet
+    ;
+  ### terminal fancy tools
+  inherit (pkgs)
     btop
     bottom
     sysstat
@@ -53,70 +90,37 @@ builtins.attrValues {
     microfetch
     bat
     zoxide
-    hyprshot
-    ;
-  inherit (pkgs)
-    gpu-screen-recorder-gtk
-    wf-recorder
-    yt-dlp
-    jq
-    fd
-    ripgrep
     fzf
-    ouch
-    kitty
-    wl-clipboard
-    cliphist
-    mpvpaper
-    findutils
-    gtkmm4
-    qimgv
-    brightnessctl
-    duf
-    lazygit
-    gpu-screen-recorder
-    ;
-
-  inherit (pkgs) trashy wl-screenrec;
-  inherit (pkgs)
-    wtype
-    socat
-    grim
-    slurp
-    imagemagick
-    resvg
-    ;
-  inherit (pkgs)
-    libnotify
-    imv
-    wayfreeze
-    networkmanagerapplet
-    ;
-  inherit (pkgs)
     nitch
     htop
     ;
-  inherit (pkgs)
-    hyprsunset
-    ripdrag
-    seahorse
-    app2unit
-    ollama
-    proton-vpn
+  inherit (pkgs.master)
+    nh
+    cachix
     ;
-  inherit (pkgs) foot libsixel;
+
+  inherit (zpkgs)
+    gtk-themes
+    viu
+    stash
+    quickshell
+    helium
+    ;
+
+  inherit (zpkgs.scripts)
+    nixy
+    lutui
+    touchpad-toggle
+    ;
+
   inherit (pkgs.kdePackages)
     ark
     breeze
     qtsvg
     ;
+
 }
 ++ [
-  (pkgs.mpv.override {
-    scripts = [
-      pkgs.mpvScripts.mpris
-    ];
-  })
   (pkgs.wrapOBS {
     plugins = [ pkgs.obs-studio-plugins.obs-pipewire-audio-capture ];
   })
