@@ -56,6 +56,7 @@
     device = "/dev/disk/by-uuid/4fc8a774-3b74-4969-87c7-cae44dde8ff7";
     fsType = "btrfs";
     options = [ "subvol=@home" ];
+    neededForBoot = true;
   };
 
   swapDevices = [
