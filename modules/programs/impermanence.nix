@@ -15,8 +15,8 @@
         "/etc/NetworkManager/system-connections"
         {
           directory = "/etc/sops-nix";
-          user = username;
-          group = username;
+          user = "root";
+          group = "wheel";
           mode = "u=rwx,g=rx,o=";
         }
       ];

@@ -49,6 +49,8 @@ let
         systemd.tmpfiles.rules = [
           "f+ /var/lib/AccountsService/users/${username} 0600 root root - [User]\nIcon=/var/lib/AccountsService/icons/${username}\n"
           "L+ /var/lib/AccountsService/icons/${username} - - - - ${iconSource}"
+          "Z /persistent/etc/sops-nix/kagura.txt 0640 root wheel -rw-r--"
+          "d /persistent/etc/sops-nix 0750 root wheel -"
         ];
       };
     });
