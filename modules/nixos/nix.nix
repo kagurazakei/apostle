@@ -22,6 +22,9 @@
           "librewolf-bin-unwrapped-151.0.1-2"
           "librewolf-bin-151.0.1-2"
         ];
+        config.problems.handlers = {
+          zfs.broken = "ignore"; # or "ignore"
+        };
       };
       nix = {
         channel.enable = false;

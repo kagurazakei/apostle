@@ -8,6 +8,11 @@
   inputs.helium-browser.overlays.default
   (_final: prev: {
     inherit (prev.stdenv.hostPlatform) system;
+    nixpkgs.config = {
+      problems.handlers = {
+        zfs.broken = "warn"; # or "ignore"
+      };
+    };
     master = import inputs.master {
       inherit (prev.stdenv.hostPlatform) system;
       config.allowUnfree = true;

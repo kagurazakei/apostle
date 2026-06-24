@@ -2,7 +2,9 @@ let
   inputs = import ./.tack;
   lib = inputs.nixpkgs.lib;
   system = builtins.currentSystem;
-  pkgs = import inputs.nixpkgs { inherit lib system; };
+  pkgs = import inputs.nixpkgs {
+    inherit lib system;
+  };
   myLibs = import ./utils;
   username = "antonio";
 

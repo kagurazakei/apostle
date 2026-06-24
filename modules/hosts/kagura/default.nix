@@ -22,7 +22,7 @@ let
           antonioPass.owner = "antonio";
           tailAuth.file = x.paths.secrets + /tailscale.age;
           tailAuth.owner = "antonio";
-          tailAuth.path = "/etc/keys/tailAuth.txt";
+          tailAuth.path = "/home/${username}/.config/keys/tailAuth.txt";
           secret2.file = x.paths.secrets + /kagura-access-token.age;
           secret2.owner = "antonio";
           secret2.mode = "0500";
@@ -30,13 +30,13 @@ let
           recovery.file = x.paths.secrets + /recovery.age;
           recovery.owner = "antonio";
           recovery.mode = "0500";
-          recovery.path = "/etc/keys/recovery.txt";
+          recovery.path = "/home/${username}/.config/keys/recovery.txt";
           anilist.file = x.paths.secrets + /anilist.age;
           anilist.owner = "antonio";
           anilist.mode = "0500";
-          anilist.path = "/etc/keys/anilist.txt";
+          anilist.path = "/home/${username}/.config/keys/anilist.txt";
           ssh-kagura.file = x.paths.secrets + /kagura-ssh.age;
-          ssh-kagura.path = "/etc/keys/ssh-kagura";
+          ssh-kagura.path = "/home/${username}/.config/keys/ssh-kagura";
           ssh-kagura.owner = "root";
           cachix.file = x.paths.secrets + /cachix-token.age;
           cachix.owner = "antonio";

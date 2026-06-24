@@ -13,7 +13,12 @@
         "/var/lib/nixos"
         "/var/lib/systemd/coredump"
         "/etc/NetworkManager/system-connections"
-        "/etc/sops-nix"
+        {
+          directory = "/etc/sops-nix";
+          user = username;
+          group = username;
+          mode = "u=rwx,g=rx,o=";
+        }
       ];
       users.${username} = {
         directories = [
@@ -29,9 +34,6 @@
             directory = ".local/share/keyrings";
             mode = "0700";
           }
-        ];
-        files = [
-          ".screenrc"
         ];
       };
     };

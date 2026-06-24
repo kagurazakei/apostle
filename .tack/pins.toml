@@ -3,12 +3,11 @@ gh = "github:{path}"
 manic = "github:manic-systems/{path}"
 
 [all_follow]
-nixpkgs = ["nixos-stable", "nixpkgs", "master"]
+nixpkgs = ["nixos-stable", "master"]
 fenix = "fenix"
 niri-src = ["niri-stable", "niri-unstable"]
 nix = "nix-src"
 crane = "crane"
-git-hooks = ["git-hooks-nix"]
 nixpkgs-lib = "nixpkgs-lib"
 xwayland-satellite = [
   "xwayland-satellite-stable",
@@ -31,7 +30,7 @@ nixos-core.url = "github:llakala/nixos-core"
 nix-wrappers.url = "gh:midischwarz12/nix-wrappers"
 nix-src.url = "gh:NixOS/nix"
 cade.url = "manic:cade"
-run0-sudo-shim.url = "gh:amaanq/run0-sudo-shim"
+run0-sudo-shim.url = "gh:amaanq/run0-sudo-shim/sudoedit"
 tack.url = "manic:tack"
 
 # --- Misc personal flakes ----------------------------------------------------

@@ -87,14 +87,6 @@
     "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
     "lastModified": 1731533236
   },
-  "git-hooks": {
-    "type": "github",
-    "owner": "cachix",
-    "repo": "git-hooks.nix",
-    "rev": "3bbec39bc90eadfa031e6f3b77272f3f60803e39",
-    "narHash": "sha256-U3yTuGBnmXvXoQI3qkpfEDsn9RovQPAjN7ndRco+3u0=",
-    "lastModified": 1781733627
-  },
   "helium": {
     "type": "tarball",
     "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1043354934/51ae3208-cf78-4380-a6ed-3d28baaa2d9b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-06-23T04%3A32%3A32Z&rscd=attachment%3B+filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-06-23T03%3A32%3A23Z&ske=2026-06-23T04%3A32%3A32Z&sks=b&skv=2018-11-09&sig=j%2FrS8BDCEf3ilUZuYOdPr6e4Srq%2BY95pF%2FswJSych%2FM%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4MjE5MDM3MywibmJmIjoxNzgyMTg2NzczLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.QwFITKXKWs8FHZRBfDZ8Y-agUbKQxYsg3R6RSiAsBt4&response-content-disposition=attachment%3B%20filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&response-content-type=application%2Foctet-stream",
@@ -299,14 +291,6 @@
     "narHash": "sha256-euBA1hVVur9znfofjTXsTmrQ4yVyu9AeKWqdm/Qdq9k=",
     "lastModified": 1782034411
   },
-  "noctalia-shell": {
-    "type": "github",
-    "owner": "noctalia-dev",
-    "repo": "noctalia-shell",
-    "rev": "f816591afc2f2f606d1f0cf70b51e95c04a7a8aa",
-    "narHash": "sha256-2oJuPyt+4dd+ZzO7TFqpmkSAAYpRg9SF4eV8kJGl6Tk=",
-    "lastModified": 1780949817
-  },
   "npins": {
     "type": "github",
     "owner": "andir",
@@ -359,25 +343,9 @@
     "type": "github",
     "owner": "amaanq",
     "repo": "run0-sudo-shim",
-    "rev": "129847a8d38fec9fc2e907f7c865b727d345edbb",
-    "narHash": "sha256-+b+IfaJE/IgYe/ErkHfndGFO+m56a4e9P79zJcwHMzY=",
-    "lastModified": 1773024505
-  },
-  "rust-analyzer": {
-    "type": "github",
-    "owner": "rust-lang",
-    "repo": "rust-analyzer",
-    "rev": "69ccffdb5b3570c6c14c5780bf2e8836f2209d90",
-    "narHash": "sha256-1JBvwtGyIsEBIemJBi6syH7iQ+pct7i+HNa1WSZfozs=",
-    "lastModified": 1782030001
-  },
-  "rust-overlay": {
-    "type": "github",
-    "owner": "oxalica",
-    "repo": "rust-overlay",
-    "rev": "f59bc28dd0b89e9c0240d1b80195559fc79c2471",
-    "narHash": "sha256-4XHdXp3MRa++XiGkltJChCtdbCmSlNTwQRfWQOhqbRw=",
-    "lastModified": 1782184651
+    "rev": "e93fc7f5fc380df2ea41f8243ed368319cbf315d",
+    "narHash": "sha256-yQz3Ehckh+9hwe4BG7eiDDkTg09RIk5UEOWsKEO7CaY=",
+    "lastModified": 1779937645
   },
   "shizuruPkgs": {
     "type": "github",
