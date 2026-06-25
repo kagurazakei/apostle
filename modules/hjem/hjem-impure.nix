@@ -3,7 +3,6 @@
   self,
   myLibs,
   inputs,
-  config,
   ...
 }:
 let
