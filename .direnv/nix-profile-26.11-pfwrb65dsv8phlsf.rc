@@ -30,7 +30,7 @@ NIX_BINTOOLS='/nix/store/mbyy19mdwnfvfwmdi0gqgggx0njvpl1w-binutils-wrapper-2.46'
 export NIX_BINTOOLS
 NIX_BINTOOLS_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu='1'
 export NIX_BINTOOLS_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-NIX_BUILD_CORES='8'
+NIX_BUILD_CORES='12'
 export NIX_BUILD_CORES
 NIX_CC='/nix/store/788mx070y81zjlg5ipcl0cra3afviw9k-gcc-wrapper-15.2.0'
 export NIX_CC
@@ -42,7 +42,7 @@ NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
 NIX_HARDENING_ENABLE='bindnow format fortify fortify3 libcxxhardeningfast pic relro stackclashprotection stackprotector strictflexarrays1 strictoverflow zerocallusedregs'
 export NIX_HARDENING_ENABLE
-NIX_LDFLAGS='-rpath /home/antonio/apostle-finix/outputs/out/lib '
+NIX_LDFLAGS='-rpath /home/antonio/Apostle-finix/outputs/out/lib '
 export NIX_LDFLAGS
 NIX_NO_SELF_RPATH='1'
 NIX_STORE='/nix/store'
@@ -120,7 +120,7 @@ declare -a envHostHostHooks=('ccWrapper_addCVars' 'bintoolsWrapper_addLDVars' )
 declare -a envHostTargetHooks=('ccWrapper_addCVars' 'bintoolsWrapper_addLDVars' )
 declare -a envTargetTargetHooks=()
 declare -a fixupOutputHooks=('if [ -z "${dontPatchELF-}" ]; then patchELF "$prefix"; fi' 'if [[ -z "${noAuditTmpdir-}" && -e "$prefix" ]]; then auditTmpdir "$prefix"; fi' 'if [ -z "${dontGzipMan-}" ]; then compressManPages "$prefix"; fi' '_moveLib64' '_moveSbin' '_moveSystemdUserUnits' 'patchShebangsAuto' '_pruneLibtoolFiles' '_doStrip' )
-guess='8'
+guess='12'
 initialPath='/nix/store/9ypz3flqsrl5xl495mm8h645gadjsxi1-coreutils-9.11 /nix/store/c1cjgg6p8m8fssivzrc2p13mwwml3p3v-findutils-4.10.0 /nix/store/ww555mznia5v7sz2w85lblg4amvhkhv1-diffutils-3.12 /nix/store/kgxafhycw2kybbqih759ykc2043qyi5j-gnused-4.9 /nix/store/gn94gpcp5q08x4v6g8mvw8v4r65rcjzk-gnugrep-3.12 /nix/store/wp1cshqv98i8abs8rcx91s54igqgll0f-gawk-5.4.0 /nix/store/k5akwnrn9x2afaj2va7g4a2zpdim8l43-gnutar-1.35 /nix/store/ndpbjk6jhw0da5h272dqqnyxa35a9gmx-gzip-1.14 /nix/store/3y3kzc5njlj7nwj1s78am0yzjnpicv9x-bzip2-1.0.8-bin /nix/store/vlq7nnw39j7rwk0pp68w1fcwzpxahm9h-gnumake-4.4.1 /nix/store/gik3rh1vz2jlgnifb9dh6vc6sxwwz9jj-bash-5.3p9 /nix/store/wgvplwp0faqhqr92w0ma8bxaxk202ama-patch-2.8 /nix/store/csra6zhdjw7rjzv98fycz7qjalyv55k2-xz-5.8.3-bin /nix/store/kyz3mm5snbb8998kbkm28jps1phk9509-file-5.47'
 mesonFlags=''
 export mesonFlags
@@ -128,7 +128,7 @@ name='nix-shell-env'
 export name
 nativeBuildInputs=''
 export nativeBuildInputs
-out='/home/antonio/apostle-finix/outputs/out'
+out='/home/antonio/Apostle-finix/outputs/out'
 export out
 outputBin='out'
 outputDev='out'
@@ -159,7 +159,7 @@ preConfigurePhases=' updateAutotoolsGnuConfigScriptsPhase'
 declare -a preFixupHooks=('_moveToShare' '_multioutDocs' '_multioutDevs' )
 preferLocalBuild='1'
 export preferLocalBuild
-prefix='/home/antonio/apostle-finix/outputs/out'
+prefix='/home/antonio/Apostle-finix/outputs/out'
 declare -a propagatedBuildDepFiles=('propagated-build-build-deps' 'propagated-native-build-inputs' 'propagated-build-target-deps' )
 propagatedBuildInputs=''
 export propagatedBuildInputs

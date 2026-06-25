@@ -2,7 +2,6 @@
   self,
   lib,
   pkgs,
-  config,
   ...
 }:
 let
@@ -96,13 +95,15 @@ in
       mangowc.enable = true;
       niri.enable = true;
       bash.enable = true;
+      labwc.enable = true;
+      regreet.enable = lib.mkForce false;
     };
 
     services = {
       autologin = {
         enable = true;
         user = "antonio";
-        command = "${pkgs.dbus}/bin/dbus-run-session mango";
+        command = "${pkgs.dbus}/bin/dbus-run-session niri";
       };
       polkit.enable = true;
       sysklogd.enable = true;

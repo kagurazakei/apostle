@@ -96,8 +96,20 @@ in
       sudo.enable = true;
       mangowc.enable = true;
       niri.enable = true;
+      labwc.enable = true;
       bash.enable = true;
-      regreet.enable = lib.mkForce false;
+      regreet.enable = true;
+      programs.regreet.compositor = {
+        extraArgs = [
+          "-d"
+          "-s"
+          "-m"
+          "last"
+        ];
+        environment = {
+          XKB_DEFAULT_LAYOUT = "us";
+        };
+      };
     };
 
     services = {
@@ -105,6 +117,8 @@ in
       sysklogd.enable = true;
       dbus.enable = true;
       fcron.enable = true;
+      chrony.enable = true;
+      illum.enable = true;
       fwupd.enable = true;
       rtkit.enable = true;
       udisks2.enable = true;
@@ -112,14 +126,6 @@ in
       dhcpcd.enable = true;
       networkmanager.enable = true;
       elogind.enable = true;
-      greetd = {
-        enable = true;
-        settings = {
-          default_session = lib.mkForce {
-            command = "${pkgs.tuigreet}/bin/tuigreet";
-          };
-        };
-      };
     };
     fonts = {
       fontconfig.enable = true;

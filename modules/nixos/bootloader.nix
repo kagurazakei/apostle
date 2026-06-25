@@ -16,7 +16,7 @@
         maxGenerations = 8;
         settings = {
           backdrop = "#1e1e2e";
-          # wallpapers = [ "" ];
+          wallpapers = [ "${inputs.walls}/nix-logo.png" ];
           wallpaper_style = "centered";
         };
       };

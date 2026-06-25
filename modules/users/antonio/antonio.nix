@@ -38,8 +38,8 @@
           "video"
           "render"
           "libvrtd"
-          config.hardware.i2c.group
-          config.services.seatd.group
+          "plugdev"
+          "seat"
         ];
         shell = pkgs.master.fish;
       };

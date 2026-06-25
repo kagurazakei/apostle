@@ -6,7 +6,7 @@
   ...
 }:
 let
-  nixosSystem = inputs.finix.lib.finixSystem;
+  finixSystem = inputs.finix.lib.finixSystem;
   mkHost =
     hostname:
     let
@@ -28,7 +28,6 @@ let
         inherit system zpkgs;
         config.allowUnfree = true;
         overlays = [
-          inputs.niri-nix.overlays.niri-nix
           inputs.nix-cachyos-kernel.overlays.pinned
           inputs.neovim-nightly.overlays.default
           channelOverlay
@@ -39,7 +38,7 @@ let
         master = master;
       };
     in
-    nixosSystem {
+    finixSystem {
       inherit lib;
       modules = [
         {
