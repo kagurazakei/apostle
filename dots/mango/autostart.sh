@@ -10,6 +10,7 @@ app2unit -t service -s b elephant
 app2unit -t service -s b stash watch
 app2unit -t service -s a nm-applet
 app2unit -t service -s b udiskie -t
+uwsm -t service walker -- --gapplication-service
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP 
 systemctl --user start xdg-desktop-portal.service --now 
 systemctl --user start xdg-desktop-portal-wlr.service --now 

@@ -1,7 +1,7 @@
 {
   lib,
   stdenv,
-  sources,
+  sources ? import ../.tack,
   pkg-config,
   cmake,
   ninja,

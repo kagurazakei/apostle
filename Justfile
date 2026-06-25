@@ -20,10 +20,10 @@ deploy-switch target host=`hostname` *flags:
    nh os switch --file {{root}}/default.nix nC.{{host}} --build-host localhost --target-host {{target}} {{flags}} --use-substitutes
 
 clean:
-   sudo nix-collect-garbage -d; nh clean all
+   sudo nix-collect-garbage -d; nh clean all; nix-collect-garbage -d; nix-store --gc
 
 update *flags:
-  npins update {{flags}}
+  tack update {{flags}}
 
-pinsgrade: 
-  npins upgrade
+tackdate: 
+  tack update
