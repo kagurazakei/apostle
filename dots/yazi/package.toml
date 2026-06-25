@@ -48,6 +48,11 @@ use = "simla33/ucp"
 rev = "96f54af"
 hash = "2011ef145f7d4aaa23cbc64c05cd6a7f"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "38efe09"
+hash = "e3260d0b1feded8c8e3ae3afa1169e30"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "04985d1"
