@@ -17,9 +17,13 @@
     "usbhid"
     "usb_storage"
     "sd_mod"
+    "nvme"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [
+    "kvm-intel"
+    "uhid"
+  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {

@@ -31,6 +31,9 @@ in
       self.modules.hjem.antonio
       ./+hardware.nix
     ];
+    nixos.graphics.intel = {
+      hwAccelDriver = true;
+    };
     finit.runlevel = 3;
     profiles.laptop = {
       enable = true;
@@ -40,6 +43,23 @@ in
       linux-firmware
       sof-firmware
     ];
+    services.getty.package = pkgs.util-linux // {
+      meta.mainProgram = "agetty";
+    };
+    finit.package = pkgs.finit.overrideAttrs (finalAttrs: {
+      src = pkgs.fetchFromGitHub {
+        owner = "finit-project";
+        repo = "finit";
+        rev = "b0e672bc9a5502786e731994e5d415d2151612aa";
+        sha256 = "sha256-Ljhvw/YQOcPaqVJd9nAXCQqdJZIacRzDS/WQtk0MaP4=";
+      };
+    });
+    finit.services.wifid = {
+      command = pkgs.callPackage (self.paths.pkgs + "/wifid/package.nix") { };
+      log = true;
+      nohup = true;
+      path = [ config.finit.package ];
+    };
     programs.gnome-keyring.enable = true;
     programs.xwayland-satellite.enable = true;
 
@@ -124,7 +144,7 @@ in
       udisks2.enable = true;
       udev.enable = true;
       dhcpcd.enable = true;
-      networkmanager.enable = true;
+      iwd.enable = true;
       elogind.enable = true;
     };
     fonts = {
