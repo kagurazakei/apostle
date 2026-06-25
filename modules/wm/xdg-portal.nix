@@ -43,6 +43,7 @@
         portals = lib.mkForce [
           pkgs.kdePackages.xdg-desktop-portal-kde
           pkgs.xdg-desktop-portal-gtk
+          pkgs.xdg-desktop-portal-termfilechooser
         ];
       };
     };
