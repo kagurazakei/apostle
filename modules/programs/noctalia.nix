@@ -1,6 +1,6 @@
 {
   modules.programs.noctalia =
-    { noctalia, ... }:
+    { noctalia, self, ... }:
     {
       hjem.extraModules = [ noctalia.hjemModules.default ];
       hj = {
@@ -10,6 +10,9 @@
             enable = true;
             target = "graphical-session.target";
           };
+        };
+        xdg.config.files = {
+          "noctalia/config.toml".source = self.paths.dots + "/noctalia/config.toml";
         };
       };
     };
