@@ -262,6 +262,17 @@ window-rule {
     }
 }
 window-rule {
+    match app-id="^kitty$" title="^termfilechooser$"
+    default-column-width {
+        proportion 0.5
+    }
+    default-window-height {
+        proportion 0.5
+    }
+    open-floating true
+    default-floating-position relative-to="top" x=10 y=10
+}
+window-rule {
     match is-focused=false
     opacity 0.8
 }
