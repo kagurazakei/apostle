@@ -136,7 +136,7 @@ Name=noctalia
 TerminalApplication=kitty
 
 [Icons]
-Theme=Catppuccin-SE
+Theme=Papirus-Dark
 
 [KDE]
 ShowDeleteCommand=false

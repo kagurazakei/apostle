@@ -1,14 +1,14 @@
 let
-  inputs = import ./.tack;
-  lib = inputs.nixpkgs.lib;
-  system = builtins.currentSystem;
-  pkgs = import inputs.nixpkgs {
-    inherit lib system;
-  };
-  myLibs = import ./utils;
-  username = "antonio";
-
-  self =
+  defaultInputs = import ./.tack;
+  mkConfig =
+    inputs:
+    let
+      lib = inputs.nixpkgs.lib;
+      system = builtins.currentSystem;
+      pkgs = import inputs.nixpkgs { inherit lib system; };
+      myLibs = import ./utils;
+      username = "antonio";
+    in
     null
     |> (
       _:
@@ -35,11 +35,14 @@ let
             inputs
             username
             system
+            pkgs
             ;
-          inherit pkgs;
         };
       }
     )
     |> (result: result.config);
+
+  self = mkConfig defaultInputs;
+  outputs = mkConfig;
 in
-self
+self // { inherit outputs; }

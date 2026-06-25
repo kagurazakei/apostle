@@ -80,3 +80,6 @@ walls = { url = "git+https://github.com/kagurazakei/walls.git", type = "fetch" }
 equibop = { url = "gh:Equicord/Equibop", type = "fetch" }
 equicord = { url = "gh:Equicord/Equicord", type = "fetch" }
 helium = { url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz", type = "fetch" }
+
+[inputs.finix]
+url = "gh:finix-community/finix"

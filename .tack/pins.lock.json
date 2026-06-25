@@ -79,6 +79,14 @@
     "narHash": "sha256-M73jIp606F878X6bq/dQ11IRmAwd+/ssdK+7qvr50vo=",
     "lastModified": 1782131086
   },
+  "finix": {
+    "type": "github",
+    "owner": "finix-community",
+    "repo": "finix",
+    "rev": "47037ee0b0bbcf1171f34762b42c9a82f5d48bfd",
+    "narHash": "sha256-gVlIFkTi0Ov9oCanbbbDGIH1QR5QiV63auAbBVkAZjY=",
+    "lastModified": 1782298839
+  },
   "flake-utils": {
     "type": "github",
     "owner": "numtide",
