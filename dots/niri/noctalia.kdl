@@ -13,11 +13,35 @@ layer-rule {
     match namespace="noctalia-shell:wallpaper"
     place-within-backdrop true
 }
-workspace "stash" {
+workspace "scratch" {
     open-on-output "eDP-1"
 }
-spawn-sh-at-startup "niri-scratchpad daemon"
+window-rule {
+    match app-id="^spotify|org.kde.dolphin|foot-float|termfilechooser$"
+    open-on-workspace "scratch"
+    open-floating true
+}
+window-rule {
+    match app-id="foot-float"
+    open-on-workspace "scratch"
+    open-floating true
+    default-column-width {
+        fixed 857
+    }
+    default-window-height {
+        fixed 736
+    }
+}
+spawn-sh-at-startup "dolphin"
+spawn-sh-at-startup "foot --app-id foot-float"
+spawn-sh-at-startup "spotify"
 binds {
+    Mod+T hotkey-overlay-title="Lock Screen" {
+        spawn "nscratch" "-id" "org.kde.dolphin"
+    }
+    Mod+Shift+Return {
+        spawn "nscratch" "-id" "foot-float"
+    }
     Ctrl+Alt+L hotkey-overlay-title="Lock Screen" {
         spawn "noctalia" "msg" "session" "lock"
     }
@@ -65,9 +89,6 @@ binds {
     }
     XF86AudioRaiseVolume allow-when-locked=true {
         spawn "noctalia" "msg" "volume-up"
-    }
-    Mod+T {
-        spawn "dolphin"
     }
     Ctrl+Alt+K {
         spawn "info.febvre.Komikku"

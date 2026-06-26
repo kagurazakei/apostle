@@ -1,10 +1,7 @@
+{ self, ... }:
 {
   modules.programs.noctalia =
-<<<<<<< HEAD
     { noctalia, zpkgs, ... }:
-=======
-    { noctalia, self, ... }:
->>>>>>> 484998f0e0e140de368d6dd411fbcd52cb72136b
     {
       hjem.extraModules = [ noctalia.hjemModules.default ];
       hj = {
