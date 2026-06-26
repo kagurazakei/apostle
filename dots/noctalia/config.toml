@@ -1,0 +1,407 @@
+[audio]
+enable_overdrive = true
+enable_sounds = true
+
+[backdrop]
+blur_intensity = 0.19999999552965164
+enabled = true
+tint_intensity = 0.42999999038875103
+
+[bar.default.monitor.HDMI-A-1]
+enabled = true
+border = "on_primary"
+border_width = 1.0
+capsule = true
+capsule_border = "primary"
+capsule_foreground = "on_hover"
+capsule_radius = 2
+center = [ "cat", "workspaces", "control-center" ]
+color = "error"
+contact_shadow = true
+end = [ "tray", "notifications", "volume", "session", "audio_visualizer" ]
+font_family = "CaskaydiaCove Nerd Font"
+icon_color = "error"
+margin_edge = 2
+margin_ends = 50
+padding = 6
+position = "left"
+radius = 4
+scale = 1.0
+start = [ "launcher", "wallpaper", "clock", "caffeine", "recorder_3" ]
+thickness = 38
+widget_spacing = 12
+
+[bar.default.monitor.eDP-1]
+enabled = true
+border = "on_primary"
+border_width = 1.0
+capsule = true
+capsule_border = "primary"
+capsule_foreground = "on_hover"
+capsule_radius = 2
+center = [ "cat", "workspaces", "control-center" ]
+color = "error"
+contact_shadow = true
+end = [ "tray", "notifications", "volume", "session", "audio_visualizer" ]
+font_family = "CaskaydiaCove Nerd Font"
+icon_color = "error"
+margin_edge = 2
+margin_ends = 50
+padding = 6
+position = "left"
+radius = 4
+scale = 1.0
+start = [ "launcher", "wallpaper", "clock", "caffeine", "recorder_3" ]
+thickness = 38
+widget_spacing = 12
+
+[brightness]
+minimum_brightness = 0.99999997764825821
+
+[calendar]
+enabled = true
+
+[dock]
+active_monitor_only = false
+auto_hide = true
+background_opacity = 0.90999997965991497
+cross_axis_padding = 6
+icon_size = 33
+item_spacing = 9
+launcher_icon = "mood-crazy-happy-filled"
+launcher_position = "start"
+main_axis_padding = 8
+margin_edge = 4
+margin_ends = 7
+pinned = [ "kitty", "nvim", "zed", "komikku", "librewolf", "equibop", "foot client" ]
+position = "top"
+radius = 2
+radius_bottom_left = 2
+radius_bottom_right = 15
+radius_top_left = 15
+reserve_space = false
+show_dots = true
+
+[location]
+address = "Yangon, Myanmar"
+auto_locate = true
+
+[lockscreen]
+wallpaper = "/home/antonio/Pictures/wallpapers/nix-logo.png"
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@WL-1",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000005",
+    "lockscreen-widget-0000000000000006",
+    "lockscreen-widget-0000000000000007"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 957.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 640.0
+    cy = 597.0
+    output = "WL-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 112.0
+    box_width = 512.0
+    cx = 960.0
+    cy = 212.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background_opacity = 0.080000000000000002
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 112.0
+    box_width = 576.0
+    cx = 960.0
+    cy = 804.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "label"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background_opacity = 0.059999999999999998
+        color = "error"
+        description = "Nix!GO!GO!"
+        title = "Hey!!"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 416.0
+    box_width = 288.0
+    cx = 160.0
+    cy = 540.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background_opacity = 0.11
+        image_path = "/home/antonio/apostle/dots/equibop/themes/nso-needy-streamer.gif"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 112.0
+    box_width = 416.0
+    cx = 1680.0
+    cy = 100.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background_opacity = 0.12
+        color = "error"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000006]
+    box_height = 112.0
+    box_width = 336.0
+    cx = 192.0
+    cy = 116.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000006.settings]
+        background_opacity = 0.080000000000000002
+        color = "tertiary"
+        stat = "cpu_temp"
+        stat2 = "gpu_temp"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
+    box_height = 368.0
+    box_width = 304.0
+    cx = 1752.0
+    cy = 524.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
+        background_opacity = 0.10000000000000001
+        image_path = "/home/antonio/apostle/dots/equibop/themes/nso-needy-streamer.gif"
+        opacity = 1.0
+
+[notification]
+layer = "overlay"
+position = "top_center"
+
+[osd]
+orientation = "vertical"
+position = "center_right"
+position_vertical = "center_left"
+
+[plugin_settings."noctalia/screen_recorder"]
+color_range = "full"
+directory = "~/Videos"
+video_source = "portal"
+
+[plugins]
+enabled = [ "noctalia/bongocat", "noctalia/screen_recorder" ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "path"
+    location = "~/Projects/official-plugins"
+    name = "plugins"
+
+    [[plugins.source]]
+    auto_update = true
+    enabled = false
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+[shell]
+app_icon_color = "error"
+app_icon_colorize = true
+avatar_path = "/home/antonio/Apostle/dots/profile.png"
+corner_radius_scale = 0.0
+font_family = "CaskaydiaMono Nerd Font Propo"
+launch_apps_as_systemd_services = true
+niri_overview_type_to_launch_enabled = true
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+settings_show_advanced = true
+telemetry_enabled = true
+
+    [shell.panel]
+    launcher_compact = true
+    launcher_placement = "attached"
+    launcher_session_search = true
+    session_placement = "centered"
+    transparency_mode = "glass"
+
+    [shell.screen_corners]
+    enabled = true
+    size = 8
+
+    [shell.screenshot]
+    directory = "/home/antonio/Pictures/Screenshots"
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Tokyo Night Moon"
+wallpaper_scheme = "m3-rainbow"
+
+    [theme.templates]
+    builtin_ids = [ "foot", "gtk3", "gtk4", "kcolorscheme", "qt" ]
+    community_ids = [ "pywalfox", "vscode", "walker", "papirus-icons", "hyprtoolkit" ]
+
+[wallpaper]
+directory = "/home/antonio/Pictures/wallpapers"
+
+    [wallpaper.default]
+    path = "/home/antonio/Pictures/wallpapers/wallhaven-wqv1eq.jpg"
+
+    [wallpaper.last]
+    path = "/home/antonio/Pictures/wallpapers/wallhaven-wqv1eq.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/antonio/Pictures/wallpapers/wallhaven-wqv1eq.jpg"
+
+[weather]
+unit = "imperial"
+
+[widget.caffeine]
+capsule = true
+capsule_border = "secondary"
+icon_color = "#DB8CF8"
+
+[widget.cat]
+icon_color = "#FBDCAC"
+type = "noctalia/bongocat:cat"
+
+[widget.clipboard]
+glyph = "clipboard-check-filled"
+icon_color = "#517DF6"
+
+[widget.clock]
+anchor = true
+color = "tertiary"
+icon_color = "hover"
+scale = 1.05
+
+[widget.control-center]
+capsule = true
+capsule_border = "error"
+custom_image = "/home/antonio/Downloads/95z1qvh.png"
+glyph = "niri"
+
+[widget.launcher]
+capsule = true
+capsule_border = "secondary"
+capsule_opacity = 0.97999999999999998
+capsule_padding = 10.0
+custom_image = "/home/antonio/Downloads/logo.svg"
+custom_image_colorize = false
+glyph = "ice-cream-2"
+icon_color = "secondary"
+scale = 1.2
+
+[widget.notifications]
+capsule = true
+capsule_border = "tertiary"
+color = "tertiary"
+icon_color = "tertiary"
+
+[widget.recorder]
+color = "#89F8E4"
+icon_color = "#BFF89A"
+type = "noctalia/screen_recorder:recorder"
+
+[widget.recorder_2]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.recorder_3]
+capsule = true
+capsule_border = "error"
+capsule_padding = 8.0
+color = "primary"
+icon_color = "on_surface"
+scale = 1.25
+type = "noctalia/screen_recorder:recorder"
+
+[widget.screenshot]
+capsule = true
+capsule_border = "error"
+
+[widget.session]
+capsule = true
+capsule_border = "error"
+
+[widget.volume]
+capsule = true
+capsule_border = "#F1F8A2"
+color = "primary"
+icon_color = "#F370F2"
+
+[widget.wallpaper]
+capsule = true
+capsule_border = "tertiary"
+
+[widget.workspaces]
+active_pill_size = 4.0500000000000007
+capsule = true
+capsule_padding = 5.0
+capsule_radius = 0
+color = "error"
+display = "none"
+empty_color = "on_surface_variant"
+focused_color = "error"
+font_weight = 500
+hide_when_empty = true
+icon_color = "tertiary"
+inactive_pill_size = 2.4500000000000002
+minimal = false
+occupied_color = "tertiary"
+pill_scale = 0.25
+scale = 1.1500000000000001

@@ -4,6 +4,7 @@ alias iilock "qs -p ~/.config/caelestia/shell.qml ipc call lock lock"
 alias sv "sudo -E nvim"
 alias ott otter-launcher
 alias fm yazi
+alias spf superfile
 alias respect pay-respects
 alias ranger yazi
 alias krabby "krabby random"

@@ -10,11 +10,7 @@ writers.writeBashBin "npins-helper" ''
     set -euo pipefail
 
     export PATH="${coreutils}/bin:${gnused}/bin:${npins}/bin:$PATH"
-
-    # ---------------- GLOBAL CONFIG ----------------
     NPINS_FILE="''${NPINS_FILE:-npins/sources.json}"
-
-    # ---------------- ARG PARSER ----------------
     while [[ $# -gt 0 ]]; do
       case "$1" in
         --file)
@@ -31,8 +27,6 @@ writers.writeBashBin "npins-helper" ''
 
     cmd="''${1:-}"
     shift || true
-
-    # ---------------- helpers ----------------
     log() {
       printf "\033[1;34m[INFO]\033[0m %s\n" "$*"
     }
@@ -45,8 +39,6 @@ writers.writeBashBin "npins-helper" ''
     npins_cmd() {
       ${npins}/bin/npins --lock-file "$NPINS_FILE" "$@"
     }
-
-    # ---------------- usage ----------------
     usage() {
       cat <<EOF
   📦 NPins Helper
@@ -72,11 +64,7 @@ writers.writeBashBin "npins-helper" ''
     }
 
     [[ -z "''${cmd:-}" ]] && usage
-
-    # ---------------- COMMANDS ----------------
     case "$cmd" in
-
-      # ---------------- ADD ----------------
       add)
         [[ $# -eq 0 ]] && usage
 
@@ -146,8 +134,6 @@ writers.writeBashBin "npins-helper" ''
           esac
         done
         ;;
-
-      # ---------------- REMOVE ----------------
       remove)
         [[ $# -eq 0 ]] && err "No pins provided"
 
@@ -156,8 +142,6 @@ writers.writeBashBin "npins-helper" ''
           npins_cmd remove "$name"
         done
         ;;
-
-      # ---------------- SHOW ----------------
       show)
         npins_cmd show
         ;;

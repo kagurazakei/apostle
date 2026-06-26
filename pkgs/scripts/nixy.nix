@@ -60,8 +60,6 @@ writeShellScriptBin "nixy" ''
     ui
     exit 0
   fi
-
-  # Direct CLI usage (no UI)
   case "$1" in
     rebuild)
       sudo nixos-rebuild boot --file "$CONFIG_DIR" --attr nC."$HOSTNAME"
