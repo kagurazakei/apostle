@@ -6,16 +6,8 @@ username: dots:
 let
   dotsDir = config.hjem.users.${username}.impure.dotsDir;
   args = { inherit lib config dotsDir; };
-  processDot =
-    dot:
-    lib.pipe dot [
-      (x: if isFunction x then x args else x)
-      (x: if isFunction dot then x else dotsDir + x)
-      (source: { inherit source; })
-    ];
-  buildHjemConfig = lib.pipe dots [
-    (lib.mapAttrs (_: processDot))
-    (files: { hjem.users.${username}.xdg.config.files = files; })
-  ];
+  normalize = dot: if isFunction dot then { source = dot args; } else { source = dotsDir + dot; };
 in
-buildHjemConfig
+{
+  hjem.users.${username}.xdg.config.files = lib.mapAttrs (_: dot: normalize dot) dots;
+}

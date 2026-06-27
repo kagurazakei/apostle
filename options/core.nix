@@ -13,6 +13,7 @@ let
     templates = ../templates;
     pkgs = ../pkgs;
     secrets = ../secrets;
+    modules = ../modules;
   };
 in
 {
@@ -33,10 +34,6 @@ in
     default = { };
   };
 
-  options.fC = lib.mkOption {
-    type = lib.types.lazyAttrsOf lib.types.raw;
-    default = { };
-  };
   config.paths = paths;
 
   config._module.args.zpkgs = lib.filesystem.packagesFromDirectoryRecursive {
