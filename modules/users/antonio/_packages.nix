@@ -32,8 +32,6 @@ builtins.attrValues {
   ### editor
   inherit (pkgs)
     ollama
-    zed-editor
-    zed-discord-presence
     neovide
     ;
   ### terminal emulators
@@ -57,8 +55,6 @@ builtins.attrValues {
     ;
   inherit (pkgs)
     git
-    nil
-    nixd
     jq
     fd
     ripgrep

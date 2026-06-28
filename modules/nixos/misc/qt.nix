@@ -3,7 +3,7 @@
   modules.nixos.misc =
     {
       pkgs,
-      config,
+      self,
       ...
     }:
     {
@@ -44,17 +44,6 @@
       ];
       environment.variables = {
         QML2_IMPORT_PATH = "${pkgs.kdePackages.kirigami}/${pkgs.kdePackages.qtbase.qtQmlPrefix}";
-      };
-      hj = {
-        xdg.config.files = {
-          "qt6ct/qt6ct.conf".source = config.impure-dots + "/qt6ct/qt6ct.conf";
-          "qt6ct/colors".source = config.impure-dots + "/qt6ct/colors";
-          "qt5ct/qt5ct.conf".source = config.impure-dots + "/qt5ct/qt5ct.conf";
-          "qt5ct/colors".source = config.impure-dots + "/qt5ct/colors";
-          "Kvantum/kvantum.kvconfig".source = config.impure-dots + "/Kvantum/kvantum.kvconfig";
-          "Kvantum/rose-pine-iris".source = config.impure-dots + "/Kvantum/rose-pine-iris";
-          "Kvantum/rose-pine-love".source = config.impure-dots + "/Kvantum/rose-pine-love";
-        };
       };
     };
 }

@@ -3,14 +3,13 @@
   self,
   myLibs,
   inputs,
-  config,
   ...
 }:
 let
   dots = "${self.paths.dots}";
 in
 {
-  modules.hjem.hjem-impure = {
+  modules.hjem.hjem-impure = { config, ... }: {
     hjem.users.${username} = {
       impure = {
         enable = true;
@@ -44,6 +43,13 @@ in
     "fuzzel/noctalia" = "/fuzzel/noctalia";
     "foot/foot.ini" = "/foot/foot.ini";
     "foot/rose-pine.ini" = { ... }: inputs.rosep-foot + "/rose-pine";
+    "qt6ct/qt6ct.conf" = "/qt6ct/qt6ct.conf";
+    "qt6ct/colors/Catppuccin-Mocha.conf" = "/qt6ct/colors/Catppuccin-Mocha.conf";
+    "qt5ct/qt5ct.conf" = "/qt5ct/qt5ct.conf";
+    "qt5ct/colors/Catppuccin-Mocha.conf" = "/qt5ct/colors/Catppuccin-Mocha.conf";
+    "Kvantum/kvantum.kvconfig" = "/Kvantum/kvantum.kvconfig";
+    "Kvantum/rose-pine-iris" = { ... }: inputs.rosep-iris + "/rose-pine-iris";
+    "Kvantum/rose-pine-love" = { ... }: inputs.rosep-love + "/rose-pine-love";
     "zathura/binds" = "/zathura/binds";
     "zathura/options" = "/zathura/options";
     "zathura/theme" = "/zathura/theme";
@@ -51,6 +57,6 @@ in
     "htop" = "/htop";
     "booru" = "/booru";
     "uwsm" = "/uwsm";
-    "cachix/cachix.dhall" = config.age.secrets.cachix.path;
+    "cachix/cachix.dhall" = { config, ... }: config.age.secrets.cachix.path;
   };
 }

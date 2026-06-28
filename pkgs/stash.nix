@@ -1,7 +1,7 @@
 {
   pkgs,
   symlinkJoin,
-  sources,
+  sources ? import ../.tack,
 }:
 let
   stp = sources.stash.packages.${pkgs.stdenv.hostPlatform.system}.default;

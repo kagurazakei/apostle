@@ -39,6 +39,7 @@ helium-browser.url = "gh:oxcl/nix-flake-helium-browser"
 nixcord.url = "gh:FlameFlag/nixcord"
 
 # --- Niri / desktop ----------------------------------------------------------
+niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix"
 niri-src.url = "gh:YaLTeR/niri"
 tuigreet.url = "gh:notashelf/tuigreet"
 watt.url = "gh:notashelf/watt"
@@ -50,7 +51,6 @@ quickshell.url = "git+https://git.outfoxxed.me/quickshell/quickshell.git"
 hjem-impure.url = "github:Rexcrazy804/hjem-impure"
 hjem-rum.url = "github:snugnug/hjem-rum"
 hjem.url = "github:feel-co/hjem"
-niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
 sysc-greet.url = "github:kagurazakei/sysc-greet/master"
 ambxst.url = "github:kagurazakei/ambxst"
 viu.url = "gh:viu-media/viu"
@@ -80,6 +80,5 @@ walls = { url = "git+https://github.com/kagurazakei/walls.git", type = "fetch" }
 equibop = { url = "gh:Equicord/Equibop", type = "fetch" }
 equicord = { url = "gh:Equicord/Equicord", type = "fetch" }
 helium = { url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz", type = "fetch" }
-
-[inputs.finix]
-url = "gh:finix-community/finix"
+rosep-iris = { url = "https://raw.githubusercontent.com/rose-pine/kvantum/master/dist/rose-pine-iris.tar.gz", type = "fetch" }
+rosep-love = { url = "https://raw.githubusercontent.com/rose-pine/kvantum/master/dist/rose-pine-love.tar.gz", type = "fetch" }

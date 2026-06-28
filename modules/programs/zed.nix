@@ -12,6 +12,7 @@
           pkgs.tombi
           pkgs.nixd
           pkgs.nil
+          pkgs.package-version-server
         ];
       };
     in

@@ -15,7 +15,7 @@
   nodejs,
   withTTS ? true,
   withMiddleClickScroll ? false,
-  sources,
+  sources ? import ../../.tack,
 }:
 let
   electron = electron_41;
