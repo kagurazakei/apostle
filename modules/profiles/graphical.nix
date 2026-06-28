@@ -20,6 +20,7 @@ let
     "walker"
     "yazi"
     "zellij"
+    "zed"
   ];
   services = [
     "_sysc-greet"
