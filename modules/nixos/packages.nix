@@ -1,8 +1,4 @@
 {
-  inputs,
-  ...
-}:
-{
   modules.nixos.packages =
     {
       pkgs,
@@ -10,6 +6,7 @@
       config,
       system,
       tack,
+      inputs,
       ...
     }:
     let
@@ -19,15 +16,27 @@
         else
           pkgs.npins;
       cursors = inputs.waifu-cursors.packages.${system}.all;
+      mpv-pkg = pkgs.mpv.override {
+        scripts = [
+          pkgs.mpvScripts.mpris
+        ];
+      };
+
     in
     {
       imports = [
         tack.nixosModules.default
       ];
+
       options = {
         nixos.packages.npins.buildFromSrc = lib.mkOption {
           type = lib.types.bool;
           default = true;
+        };
+
+        nixos.packages.mpv.enable = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
         };
       };
       config = {
@@ -67,7 +76,8 @@
             htop
             ;
           inherit (pkgs.zathuraPkgs) zathura_pdf_mupdf;
-        };
+        }
+        ++ lib.optional config.nixos.packages.mpv.enable mpv-pkg;
       };
     };
 }

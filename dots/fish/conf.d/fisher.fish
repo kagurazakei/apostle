@@ -1,7 +1,7 @@
 function fisher --argument-names cmd --description "A plugin manager for Fish"
     set --query fisher_path || set --local fisher_path $__fish_config_dir
     set --local fisher_version 4.4.5
-    set --local fish_plugins $__fish_config_dir/fish_plugins
+     set --local fish_plugins $__fish_config_dir/fish_plugins
 
     switch "$cmd"
         case -v --version

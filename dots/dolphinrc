@@ -43,7 +43,7 @@ IconSize=16
 ToolButtonStyle=IconOnly
 
 [UiSettings]
-ColorScheme=DankMatugen
+ColorScheme=noctalia
 
 [VersionControl]
 enabledPlugins=Mercurial,Dropbox,Bazaar,Git,Subversion

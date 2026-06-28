@@ -3,13 +3,14 @@
   self,
   myLibs,
   inputs,
+  config,
   ...
 }:
 let
   dots = "${self.paths.dots}";
 in
 {
-  modules.hjem.hjem-impure = { config, ... }: {
+  modules.hjem.hjem-impure = {
     hjem.users.${username} = {
       impure = {
         enable = true;
@@ -43,10 +44,13 @@ in
     "fuzzel/noctalia" = "/fuzzel/noctalia";
     "foot/foot.ini" = "/foot/foot.ini";
     "foot/rose-pine.ini" = { ... }: inputs.rosep-foot + "/rose-pine";
-    ".face.icon" = "/profile.png";
     "zathura/binds" = "/zathura/binds";
     "zathura/options" = "/zathura/options";
     "zathura/theme" = "/zathura/theme";
     "zathura/zathurarc" = "/zathura/zathurarc";
+    "htop" = "/htop";
+    "booru" = "/booru";
+    "uwsm" = "/uwsm";
+    "cachix/cachix.dhall" = config.age.secrets.cachix.path;
   };
 }
