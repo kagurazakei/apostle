@@ -1,4 +1,4 @@
-{ username, zpkgs, ... }:
+{ zpkgs, ... }:
 {
   modules.nixos.misc =
     {
@@ -37,6 +37,10 @@
         qt5.qtgraphicaleffects
         qt5.qtdeclarative
         zpkgs.qt6ct
+        (catppuccin-papirus-folders.override {
+          flavor = "mocha";
+          accent = "red";
+        })
       ];
       environment.variables = {
         QML2_IMPORT_PATH = "${pkgs.kdePackages.kirigami}/${pkgs.kdePackages.qtbase.qtQmlPrefix}";

@@ -1,13 +1,6 @@
 {
-  modules.hosts.hana = { pkgs, ... }: {
+  modules.hosts.hana = {
     nixos.packages.npins.buildFromSrc = true;
-    environment.systemPackages = [
-      (pkgs.mpv.override {
-        scripts = [
-          pkgs.mpvScripts.mpris
-        ];
-      })
-
-    ];
+    nixos.packages.mpv.enable = true;
   };
 }
