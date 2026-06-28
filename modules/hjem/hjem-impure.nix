@@ -23,7 +23,7 @@ in
     };
   };
   modules.programs.dots_impure = myLibs.mkDotsModule username {
-    "nixpkgs" = "/nixpkgs";
+    "nixpkgs" = "/nixpkgs/config.nix";
     "fastfetch" = "/fastfetch";
     "swappy/config" = "/swappy/config";
     "lazygit" = "/lazygit";

@@ -450,7 +450,7 @@ layer-rule {
         blur true
     }
 }
-workspace "general" {
+workspace "scratch" {
     layout {
         default-column-width {
             proportion 0.5

@@ -17,30 +17,60 @@ workspace "scratch" {
     open-on-output "eDP-1"
 }
 window-rule {
-    match app-id="^spotify|org.kde.dolphin|foot-float|termfilechooser$"
+    match app-id="^Spotify|mpv|org.kde.dolphin|yazi|float-kitty|termfilechooser$"
     open-on-workspace "scratch"
     open-floating true
+    default-floating-position relative-to="top" x=10 y=10
+    open-focused false
+    open-on-output "eDP-1"
 }
 window-rule {
-    match app-id="foot-float"
+    match app-id="yazi"
+    match app-id="Spotify"
     open-on-workspace "scratch"
     open-floating true
+    open-focused false
     default-column-width {
-        fixed 857
+        fixed 1257
     }
     default-window-height {
-        fixed 736
+        fixed 936
     }
+    default-floating-position relative-to="top" x=10 y=10
+    open-on-output "eDP-1"
+}
+window-rule {
+    match app-id="float-kitty"
+    open-on-workspace "scratch"
+    open-floating true
+    open-focused false
+    default-column-width {
+        fixed 1300
+    }
+    default-window-height {
+        fixed 1036
+    }
+    default-floating-position relative-to="top" x=10 y=10
 }
 spawn-sh-at-startup "dolphin"
-spawn-sh-at-startup "foot --app-id foot-float"
 spawn-sh-at-startup "spotify"
+spawn-sh-at-startup "kitty --app-id yazi -e yazi"
+spawn-sh-at-startup "kitty --app-id float-kitty"
 binds {
     Mod+T hotkey-overlay-title="Lock Screen" {
-        spawn "nscratch" "-id" "org.kde.dolphin"
+        spawn "nscratch" "-s" "dolphin" "-id" "org.kde.dolphin"
     }
     Mod+Shift+Return {
-        spawn "nscratch" "-id" "foot-float"
+        spawn "nscratch" "-s" "kitty --app-id float-kitty" "-id" "float-kitty"
+    }
+    Mod+Shift+K {
+        spawn "nscratch" "-s" "kitty --app-id yazi -e yazi" "-id" "yazi"
+    }
+    Mod+Shift+M {
+        spawn "nscratch" "-s" "mpv" "-id" "mpv"
+    }
+    Mod+Ctrl+S {
+        spawn "nscratch" "-s" "spotify" "-id" "Spotify"
     }
     Ctrl+Alt+L hotkey-overlay-title="Lock Screen" {
         spawn "noctalia" "msg" "session" "lock"
