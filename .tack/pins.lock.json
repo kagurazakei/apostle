@@ -39,18 +39,6 @@
     "narHash": "sha256-lJapSgRVENTrbmpVyn+UQabC9fpV1G1e+CdlJ090uvg=",
     "lastModified": 1751237777
   },
-  "catppuccin-latte-pink": {
-    "type": "fixed",
-    "url": "https://raw.githubusercontent.com/catppuccin/qt5ct/main/themes/catppuccin-latte-pink.conf",
-    "sha256": "sha256-nh3oai75k2YNx2vvRtNqeVPpHtLk/GLSccv6DXi1E4A=",
-    "unpack": "file"
-  },
-  "catppuccin-mocha-pink": {
-    "type": "fixed",
-    "url": "https://raw.githubusercontent.com/catppuccin/qt5ct/main/themes/catppuccin-mocha-pink.conf",
-    "sha256": "sha256-fO19xo1g2YDF2M0Yz8yG/RDEryDtHDwv+OsP1Ld7J68=",
-    "unpack": "file"
-  },
   "chaotic": {
     "type": "github",
     "owner": "chaotic-cx",
@@ -291,9 +279,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia-shell",
-    "rev": "dfa00a4d316fa846f3b60760ad02faa7cacfdcbc",
-    "narHash": "sha256-gUcSMzP3eS8BsNFK4Vz/nzOn6rhfDpOVd2tAYi4WCAk=",
-    "lastModified": 1782616749
+    "rev": "acbe5aea66a3167c31c64bf53f84cc0c851f9c5c",
+    "narHash": "sha256-LTuu0QYUhIID0Glaebn8JhI7ieRYJqywcqgFd7hHx8E=",
+    "lastModified": 1782699275
   },
   "noctalia-greeter": {
     "type": "github",
@@ -327,18 +315,6 @@
     "narHash": "sha256-Mo2YtNEGlcySnbq0YuP3nUKMAQCMAfE+TcCffo5vzD8=",
     "lastModified": 1781847791
   },
-  "rose-pine-iris": {
-    "type": "fixed",
-    "url": "https://github.com/rose-pine/kvantum/blob/master/dist/rose-pine-love.tar.gz",
-    "sha256": "sha256-8secjDS2Re+6nwEgLD8/Rfm9FVkREL7v0J2ZN0F3Z78=",
-    "unpack": "tarball"
-  },
-  "rose-pine-love": {
-    "type": "fixed",
-    "url": "https://github.com/rose-pine/kvantum/blob/master/dist/rose-pine-iris.tar.gz",
-    "sha256": "sha256-Gs8FFdAwoIjHAsWPATcRl0Gs7UiOZmdR7/jq8OcYJ8A=",
-    "unpack": "tarball"
-  },
   "rosep-fish": {
     "type": "github",
     "owner": "rose-pine",
@@ -355,12 +331,6 @@
     "narHash": "sha256-rZm3d7dN4M2cHMx1SrrSWfCKn3JHUVQ+EsH5FvOww4I=",
     "lastModified": 1773083277
   },
-  "rosep-iris": {
-    "type": "tarball",
-    "url": "https://raw.githubusercontent.com/rose-pine/kvantum/master/dist/rose-pine-iris.tar.gz",
-    "narHash": "sha256-4d6mJ4JF5GgfWpSWp29OvB10fuXBN/k7dQzPKzBsI3E=",
-    "lastModified": 0
-  },
   "rosep-kitty": {
     "type": "github",
     "owner": "rose-pine",
@@ -368,12 +338,6 @@
     "rev": "efd4f01cb9887feaa7114ff21a887464295d0205",
     "narHash": "sha256-GyRyflUVp1BHg6S0emZ6ViALx8L130npnfyZQmdxhfA=",
     "lastModified": 1762352814
-  },
-  "rosep-love": {
-    "type": "tarball",
-    "url": "https://raw.githubusercontent.com/rose-pine/kvantum/master/dist/rose-pine-love.tar.gz",
-    "narHash": "sha256-figtWiTlWhnslISDAwtDtatR4cHiDjZj1LQhk01SG44=",
-    "lastModified": 0
   },
   "run0-sudo-shim": {
     "type": "github",

@@ -1,13 +1,12 @@
 { self, ... }:
 {
   modules.programs.noctalia =
-    { noctalia, zpkgs, ... }:
+    { noctalia, ... }:
     {
       hjem.extraModules = [ noctalia.hjemModules.default ];
       hj = {
         programs.noctalia = {
           enable = true;
-          package = zpkgs.noctalia;
           systemd = {
             enable = true;
             target = "graphical-session.target";

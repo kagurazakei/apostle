@@ -43,7 +43,7 @@ niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix"
 niri-src.url = "gh:YaLTeR/niri"
 tuigreet.url = "gh:notashelf/tuigreet"
 watt.url = "gh:notashelf/watt"
-noctalia.url = "gh:noctalia-dev/noctalia-shell"
+noctalia.url = "gh:noctalia-dev/noctalia-shell/cachix"
 noctalia-greeter.url = "gh:noctalia-dev/noctalia-greeter"
 # --- System services ---------------------------------------------------------
 qtengine.url = "gh:kossLAN/qtengine"
