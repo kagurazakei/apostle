@@ -48,8 +48,8 @@ in
     "qt5ct/qt5ct.conf" = "/qt5ct/qt5ct.conf";
     "qt5ct/colors/Catppuccin-Mocha.conf" = "/qt5ct/colors/Catppuccin-Mocha.conf";
     "Kvantum/kvantum.kvconfig" = "/Kvantum/kvantum.kvconfig";
-    "Kvantum/rose-pine-iris" = { ... }: inputs.rosep-iris + "/rose-pine-iris";
-    "Kvantum/rose-pine-love" = { ... }: inputs.rosep-love + "/rose-pine-love";
+    "Kvantum/rose-pine-iris" = "/Kvantum/rose-pine-iris";
+    "Kvantum/rose-pine-love" = "/Kvantum/rose-pine-love";
     "zathura/binds" = "/zathura/binds";
     "zathura/options" = "/zathura/options";
     "zathura/theme" = "/zathura/theme";

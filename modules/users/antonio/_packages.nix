@@ -100,7 +100,7 @@ builtins.attrValues {
     viu
     stash
     quickshell
-    helium
+    # helium
     ;
 
   inherit (zpkgs.scripts)
