@@ -39,7 +39,7 @@
         zpkgs.qt6ct
         (catppuccin-papirus-folders.override {
           flavor = "mocha";
-          accent = "red";
+          accent = "pink";
         })
       ];
       environment.variables = {
