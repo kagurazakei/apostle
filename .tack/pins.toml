@@ -80,3 +80,14 @@ walls = { url = "git+https://github.com/kagurazakei/walls.git", type = "fetch" }
 equibop = { url = "gh:Equicord/Equibop", type = "fetch" }
 equicord = { url = "gh:Equicord/Equicord", type = "fetch" }
 helium = { url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz", type = "fetch" }
+qt-mocha = { url = "https://raw.githubusercontent.com/catppuccin/qt5ct/refs/heads/main/themes/catppuccin-mocha-pink.conf", type = "fixed", unpack = "file" }
+
+[inputs.rosep-iris]
+url = "https://github.com/rose-pine/kvantum/blob/master/dist/rose-pine-iris.tar.gz"
+type = "fixed"
+unpack = "tarball"
+
+[inputs.rosep-love]
+url = "https://github.com/rose-pine/kvantum/blob/master/dist/rose-pine-love.tar.gz"
+type = "fixed"
+unpack = "tarball"

@@ -43,10 +43,9 @@ in
     "fuzzel/noctalia" = "/fuzzel/noctalia";
     "foot/foot.ini" = "/foot/foot.ini";
     "foot/rose-pine.ini" = { ... }: inputs.rosep-foot + "/rose-pine";
-    "qt6ct/qt6ct.conf" = "/qt6ct/qt6ct.conf";
-    "qt6ct/colors" = "/qt6ct/colors";
-    "qt5ct/qt5ct.conf" = "/qt5ct/qt5ct.conf";
-    "qt5ct/colors" = "/qt5ct/colors";
+    "qt6ct/qt6ct.conf" = "/qtct/qtct.conf";
+    "qt6ct/colors/Catppuccin-Mocha.conf" = "/qtct/colors/Catppuccin-Mocha.conf";
+    "qt5ct/qt5ct.conf" = "/qtct/qtct.conf";
     "Kvantum/kvantum.kvconfig" = "/Kvantum/kvantum.kvconfig";
     "Kvantum/rose-pine-iris" = "/Kvantum/rose-pine-iris";
     "Kvantum/rose-pine-love" = "/Kvantum/rose-pine-love";
