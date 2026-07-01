@@ -1,5 +1,5 @@
 let
-  sources = import ../.tack;
+  sources = import ../../.tack;
   pkgs = import sources.nixpkgs { };
   isImpure = builtins.getEnv "IMPURE" == "true";
   lib = sources.nixpkgs.lib;

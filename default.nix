@@ -3,41 +3,42 @@ let
   mkConfig =
     inputs:
     let
+      system = inputs.system or builtins.currentSystem;
       lib = inputs.nixpkgs.lib;
-      system = builtins.currentSystem;
-      pkgs = import inputs.nixpkgs { inherit lib system; };
-      myLibs = import ./utils;
       username = "antonio";
+      myLibs = import ./modules/utils;
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      specialArgs = {
+        inherit
+          self
+          myLibs
+          inputs
+          username
+          system
+          pkgs
+          ;
+      };
     in
-    null
+    [ ./modules ]
     |> (
-      _:
+      dirs:
       myLibs.recursiveImport {
-        dirs = [
-          ./modules
-          ./options
-        ];
+        inherit dirs;
         excludePrefixedWith = [
           "_"
           "+"
+          "utils"
         ];
       }
     )
-    |> (imports: { imports = imports; })
     |> (
-      modules:
+      imports:
       lib.evalModules {
-        modules = [ modules ];
-        specialArgs = {
-          inherit
-            self
-            myLibs
-            inputs
-            username
-            system
-            pkgs
-            ;
-        };
+        modules = [ { inherit imports; } ];
+        inherit specialArgs;
       }
     )
     |> (result: result.config);
