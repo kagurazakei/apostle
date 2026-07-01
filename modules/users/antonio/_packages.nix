@@ -100,6 +100,7 @@ builtins.attrValues {
     viu
     stash
     quickshell
+    ffmpreg
     # helium
     ;
 

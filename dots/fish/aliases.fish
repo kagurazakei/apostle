@@ -19,6 +19,7 @@ alias z-manga "zathura --config-dir ~/.config"
 #alias ls "eza --long --header --icons --git --group-directories-first "
 alias ls 'g -tb --tb-style=unicode --all --title --total-size --sort=size'
 #alias ls "lsd"
+alias lsgen "TERM=xterm-256color sudo nix-env -p /nix/var/nix/profiles/system --list-generations"
 alias l "ls -a"
 alias lt "ls --tree"
 alias gaa "git add ."
@@ -47,7 +48,7 @@ alias ffbochi "ff --config ~/.config/fastfetch/13.jsonc"
 alias ffr "ff --config ~/.config/fastfetch/10.jsonc"
 alias hey hix-maintain
 alias foot-ff "fastfetch --raw ~/.config/fastfetch/out.sixel --logo-width 40 --logo-height 20"
-alias listgen "sudo nix-env -p /nix/var/nix/profiles/system --list-generations"
+alias listgen "nh os info"
 alias lg lazygit
 alias gs 'git status'
 alias ga 'git add .'
