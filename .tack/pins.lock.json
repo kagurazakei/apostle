@@ -43,9 +43,9 @@
     "type": "github",
     "owner": "chaotic-cx",
     "repo": "nyx",
-    "rev": "8798376f68c965d7e13b4659a5a7e989cee6c6bd",
-    "narHash": "sha256-AugNqyccWhpUr8/AAcZ2xWEHNeNorHlUs4SO0PFqXic=",
-    "lastModified": 1782577315
+    "rev": "704c6fc5ea503b0d375244a86781b840d66f5080",
+    "narHash": "sha256-w66Dd0yhtpJaD1n8LVxnWzggKhwA0uGAR+Tgx8+/07k=",
+    "lastModified": 1782668359
   },
   "crane": {
     "type": "github",
@@ -75,9 +75,9 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "fenix",
-    "rev": "4febf815bd2c2f1181e027c5b07fb66d85317cc6",
-    "narHash": "sha256-XvgBjuAmdT7fvltu56lvZULtDHCr0BLVdEAdfQQlYqw=",
-    "lastModified": 1782550137
+    "rev": "7f6d415487ef6d5dfe08c4bda148af3d21477dec",
+    "narHash": "sha256-+pFKu+a/YWhPUaBj5cIa7PLNcDvpzpgzuZm+jeFJC38=",
+    "lastModified": 1782638651
   },
   "flake-utils": {
     "type": "github",
@@ -89,7 +89,7 @@
   },
   "helium": {
     "type": "tarball",
-    "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1043354934/51ae3208-cf78-4380-a6ed-3d28baaa2d9b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-06-28T05%3A13%3A45Z&rscd=attachment%3B+filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-06-28T04%3A13%3A26Z&ske=2026-06-28T05%3A13%3A45Z&sks=b&skv=2018-11-09&sig=jGbABlgsyYtwJ3b8vpZAEOzfFuX1p3OJW4ZI%2BCQSU4c%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4MjYyNDQ1OSwibmJmIjoxNzgyNjIwODU5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.FW1ZXyni_nw4aHWrWb7rHtTlEobd9I8bI8jsdDyP8P4&response-content-disposition=attachment%3B%20filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&response-content-type=application%2Foctet-stream",
+    "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1043354934/51ae3208-cf78-4380-a6ed-3d28baaa2d9b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-06-29T08%3A08%3A23Z&rscd=attachment%3B+filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-06-29T07%3A08%3A06Z&ske=2026-06-29T08%3A08%3A23Z&sks=b&skv=2018-11-09&sig=R6bf3dom4tQag%2FeD3uSQ8JfsnN3LoP9qTYdxev7FfEs%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4MjcyMDkyNiwibmJmIjoxNzgyNzE3MzI2LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.9sxx0QwVxNXlllok-btN5g8N-O3nD9cnexRTgAK7lF0&response-content-disposition=attachment%3B%20filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&response-content-type=application%2Foctet-stream",
     "narHash": "sha256-HiX4xrtSv4mgtdq4evSFZqBoVsDu1bhfStJT8QJ0WpI=",
     "lastModified": 1781727245
   },
@@ -153,9 +153,9 @@
     "type": "github",
     "owner": "nixos",
     "repo": "nixpkgs",
-    "rev": "bcb52fa87abbc7ec046c4817d85950c35dae92b7",
-    "narHash": "sha256-IWslU3gyQfcDYp3MJRAwksfxZ5p6NW1UgRmYpX1YM0g=",
-    "lastModified": 1782620259
+    "rev": "9c42c13f8073d2226e1b0e20b89a569805163bdc",
+    "narHash": "sha256-i3j0SCT35PoKKfGcvLIkz9Deqn/VRB6f0mRafw1UBZc=",
+    "lastModified": 1782716874
   },
   "mnw": {
     "type": "github",
@@ -169,9 +169,9 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "neovim-nightly-overlay",
-    "rev": "dfa2f665e0701eb1b08ddb00fc83d4867d156bce",
-    "narHash": "sha256-AOiCP22DlIdcoCqF9Wmtb8lM3Oa/r2MzP1Hxa6uKQzQ=",
-    "lastModified": 1782605000
+    "rev": "fa8d697637b1b3ee944518f91a2ad4c8f86512ed",
+    "narHash": "sha256-CiBLAa/4rwU9BEapcgG0ogHggYrWLJ4zjkZYXbsfgL0=",
+    "lastModified": 1782691458
   },
   "niri-nix": {
     "type": "git",
@@ -193,9 +193,9 @@
     "type": "github",
     "owner": "xddxdd",
     "repo": "nix-cachyos-kernel",
-    "rev": "692b3fe746be7797fc39e3481cb0342bc6c3db3f",
-    "narHash": "sha256-44EEEFjy8A3RMuwbUvR+FPpYV4uugtmcw6VfEbKCBj0=",
-    "lastModified": 1782586077
+    "rev": "6298c2c5b19dfb88d07aec2b0860a3aed950aeb7",
+    "narHash": "sha256-x8yVRdSkSjxB+03EHJLMCgrWxZi4H+tMFTrEENgRo5Q=",
+    "lastModified": 1782672531
   },
   "nix-flatpak": {
     "type": "github",
@@ -209,17 +209,17 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "nix-index-database",
-    "rev": "3017088b49efd404f78e3b104f553b97e4af786b",
-    "narHash": "sha256-h4WpMr455AfRub0FXBaon6Vcpe0waUyJ4GivIW6oyd4=",
-    "lastModified": 1782030356
+    "rev": "058b1f9381fa79fcda49982370a750ff92dbba43",
+    "narHash": "sha256-ripjZa7BBLwL1uS5VJF3s/VpZpWt5ZIQEvkJ/FJNpQw=",
+    "lastModified": 1782636943
   },
   "nix-src": {
     "type": "github",
     "owner": "NixOS",
     "repo": "nix",
-    "rev": "53f62712aa8d66bf7198c78962cd7574e0667a92",
-    "narHash": "sha256-UM4szKo3fT3jPLVFVaE4wEPbQOSYvweu+/wZv2K4scM=",
-    "lastModified": 1782577841
+    "rev": "af7f2fa9b832e12eb49977a112a85f426f8e4643",
+    "narHash": "sha256-S9sgadbSkd0lygRK0Y54lirMtHJg24WJULbueJbHp24=",
+    "lastModified": 1782695744
   },
   "nix-wrappers": {
     "type": "github",
@@ -233,9 +233,9 @@
     "type": "github",
     "owner": "FlameFlag",
     "repo": "nixcord",
-    "rev": "e11a63804bd1b2cd9fa6f203fb9a838137a5920a",
-    "narHash": "sha256-xJPv6ioXUDJuDwrN7K8pNhjj0wenxxlcY0LVCJzBlsE=",
-    "lastModified": 1782551196
+    "rev": "6db6f545223015523d72e9727811a3569ef4b099",
+    "narHash": "sha256-7IX/sy/gvDxPCBze4q5dbux6kxF90hc5PIO8u2c2tqk=",
+    "lastModified": 1782670213
   },
   "nixos-core": {
     "type": "github",
@@ -255,9 +255,9 @@
   },
   "nixos-stable": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.3250.4062d36ebeae/nixexprs.tar.xz",
-    "rev": "4062d36ebeae843c750011eef6b61ec9a9dbc9a9",
-    "narHash": "sha256-f+/IH5ng5P91VHrhcNxqpW2RYDySD68V1fcX00COQy4="
+    "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.3494.714a5f8c4ead/nixexprs.tar.xz",
+    "rev": "714a5f8c4ead6b31148d829288440ed033ccc041",
+    "narHash": "sha256-r4TA57SL7nvj1R+GY/FCLwFU48w9IixTQlzBTIYkt8E="
   },
   "nixpkgs": {
     "type": "github",
@@ -279,9 +279,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia-shell",
-    "rev": "acbe5aea66a3167c31c64bf53f84cc0c851f9c5c",
-    "narHash": "sha256-LTuu0QYUhIID0Glaebn8JhI7ieRYJqywcqgFd7hHx8E=",
-    "lastModified": 1782699275
+    "rev": "8c70e95e0af0f359878529631d75fc1ab0d3bd6d",
+    "narHash": "sha256-9nEW0HmJhBnx18relGPey+5mAOP43AoJ1O9ybUJFhrA=",
+    "lastModified": 1782707326
   },
   "noctalia-greeter": {
     "type": "github",
