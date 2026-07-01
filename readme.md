@@ -7,12 +7,12 @@
 
 ![Desktop Overview](assets/mango-1.png)
 <br>
-![Neovim(handle by mnw)](assets/mango-2.png)
+![Neovim(handle by mnw | nitch | bottom)](assets/mango-2.png)
 <br>
-![Kitty&Yazi](assets/mango-3.png)
-![Komikku](assets/mango-4.png)
+![Zed-editor](assets/mango-3.png)
+![Librewolf | equibop](assets/mango-4.png)
 <br>
-![Librewolf(textfox)&Equibop(system-24)](assets/mango-5.png)
+![Komikku the Manga Reader](assets/mango-5.png)
 <br>
 
 > [!WARNING]
