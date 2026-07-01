@@ -8,7 +8,11 @@
 }:
 {
   modules.hjem._ =
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      config,
+      ...
+    }:
     {
       imports = [
         (import inputs.hjem { inherit pkgs; }).nixosModules.default

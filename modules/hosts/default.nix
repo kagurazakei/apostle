@@ -6,18 +6,18 @@
   system,
   ...
 }:
-let
-  nixosSystem = inputs.nixpkgs.lib.nixosSystem;
-  buildHost =
+self
+|> (x: x.modules.hosts)
+|> builtins.attrNames
+|> (
+  hosts:
+  lib.genAttrs hosts (
     hostname:
     hostname
     |> (name: self.modules.hosts.${name})
-    |> (hostModule: {
-      inherit hostModule system;
-    })
     |> (
-      { hostModule, system }:
-      nixosSystem {
+      hostModule:
+      inputs.nixpkgs.lib.nixosSystem {
         inherit lib;
         modules = [
           hostModule
@@ -33,14 +33,7 @@ let
         }
         // inputs;
       }
-    );
-
-  nC =
-    self
-    |> (x: x.modules.hosts)
-    |> builtins.attrNames
-    |> (hosts: lib.genAttrs hosts buildHost);
-in
-{
-  inherit nC;
-}
+    )
+  )
+)
+|> (nC: { inherit nC; })

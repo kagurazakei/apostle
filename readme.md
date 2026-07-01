@@ -7,7 +7,7 @@
 
 ![Desktop Overview](assets/mango-1.png)
 <br>
-![Neovim(handle by mnw | nitch | bottom)](assets/mango-2.png)
+![(Neovim(handle by mnw) | nitch | bottom)](assets/mango-2.png)
 <br>
 ![Zed-editor](assets/mango-3.png)
 ![Librewolf | equibop](assets/mango-4.png)

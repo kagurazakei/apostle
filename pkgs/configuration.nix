@@ -85,6 +85,7 @@
       experimental-features = [
         "nix-command"
         "flakes"
+        "pipe-operators"
       ];
       commit-lockfile-summary = "chore(deps): update flake";
       auto-optimise-store = true;

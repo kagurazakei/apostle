@@ -4,9 +4,7 @@ manic = "github:manic-systems/{path}"
 
 [all_follow]
 nixpkgs = ["nixos-stable", "master"]
-fenix = "fenix"
 niri-src = ["niri-stable", "niri-unstable"]
-nix = "nix-src"
 crane = "crane"
 nixpkgs-lib = "nixpkgs-lib"
 xwayland-satellite = [
@@ -14,12 +12,12 @@ xwayland-satellite = [
   "xwayland-satellite-unstable"
 ]
 hjem-rum = "hjem"
+smithay = "smimthay"
 
 [inputs]
 # --- Core toolchain ----------------------------------------------------------
 nixpkgs.url = "gh:nixos/nixpkgs/nixos-unstable"
 master.url = "gh:nixos/nixpkgs/master"
-fenix.url = "gh:nix-community/fenix"
 nixos-stable.url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
 
 # --- Secrets / identity ------------------------------------------------------
@@ -27,9 +25,6 @@ agenix.url = "gh:ryantm/agenix"
 
 # --- Build / system ----------------------------------------------------------
 nixos-core.url = "github:llakala/nixos-core"
-nix-wrappers.url = "gh:midischwarz12/nix-wrappers"
-nix-src.url = "gh:NixOS/nix"
-cade.url = "manic:cade"
 run0-sudo-shim.url = "gh:amaanq/run0-sudo-shim/sudoedit"
 tack.url = "manic:tack"
 

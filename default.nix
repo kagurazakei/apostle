@@ -2,47 +2,62 @@ let
   defaultInputs = import ./.tack;
   mkConfig =
     inputs:
-    let
+    {
       system = inputs.system or builtins.currentSystem;
       lib = inputs.nixpkgs.lib;
       username = "antonio";
       myLibs = import ./modules/utils;
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      specialArgs = {
-        inherit
-          self
-          myLibs
-          inputs
-          username
-          system
-          pkgs
-          ;
-      };
-    in
-    [ ./modules ]
+      inherit inputs;
+    }
     |> (
-      dirs:
-      myLibs.recursiveImport {
-        inherit dirs;
-        excludePrefixedWith = [
-          "_"
-          "+"
-          "utils"
-        ];
+      ctx:
+      ctx
+      // {
+        pkgs = import ctx.inputs.nixpkgs {
+          inherit (ctx) system;
+          config.allowUnfree = true;
+        };
       }
     )
     |> (
-      imports:
-      lib.evalModules {
-        modules = [ { inherit imports; } ];
-        inherit specialArgs;
+      ctx:
+      ctx
+      // {
+        specialArgs = {
+          inherit self;
+          inherit (ctx)
+            myLibs
+            inputs
+            username
+            system
+            pkgs
+            ;
+        };
       }
     )
-    |> (result: result.config);
-
+    |> (
+      ctx:
+      [ ./modules ]
+      |> (
+        dirs:
+        ctx.myLibs.recursiveImport {
+          inherit dirs;
+          excludePrefixedWith = [
+            "_"
+            "+"
+            "utils"
+          ];
+        }
+      )
+      |> (
+        imports:
+        ctx.lib.evalModules {
+          modules = [ { inherit imports; } ];
+          inherit (ctx) specialArgs;
+        }
+      )
+      |> (result: result.config)
+    );
   self = mkConfig defaultInputs;
   outputs = mkConfig;
 in
