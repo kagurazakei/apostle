@@ -12,7 +12,7 @@ xwayland-satellite = [
   "xwayland-satellite-unstable"
 ]
 hjem-rum = "hjem"
-smithay = "smimthay"
+smithay = "smithay"
 
 [inputs]
 # --- Core toolchain ----------------------------------------------------------

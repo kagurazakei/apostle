@@ -6,34 +6,28 @@
   system,
   ...
 }:
-self
-|> (x: x.modules.hosts)
+self.modules.hosts
 |> builtins.attrNames
 |> (
   hosts:
   lib.genAttrs hosts (
     hostname:
-    hostname
-    |> (name: self.modules.hosts.${name})
-    |> (
-      hostModule:
-      inputs.nixpkgs.lib.nixosSystem {
-        inherit lib;
-        modules = [
-          hostModule
-          { nixpkgs.overlays = import ../../overlays { inherit inputs; }; }
-        ];
-        specialArgs = {
-          inherit
-            self
-            inputs
-            system
-            zpkgs
-            ;
-        }
-        // inputs;
+    inputs.nixpkgs.lib.nixosSystem {
+      inherit lib;
+      modules = [
+        self.modules.hosts.${hostname}
+        { nixpkgs.overlays = import ../../overlays { inherit inputs; }; }
+      ];
+      specialArgs = {
+        inherit
+          self
+          inputs
+          system
+          zpkgs
+          ;
       }
-    )
+      // inputs;
+    }
   )
 )
 |> (nC: { inherit nC; })
