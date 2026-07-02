@@ -15,14 +15,6 @@
     "narHash": "sha256-19X5EEm8z22boDoCkfBOGJwsJAGGsg2UwO0nOP83V2g=",
     "lastModified": 1781244955
   },
-  "cade": {
-    "type": "github",
-    "owner": "manic-systems",
-    "repo": "cade",
-    "rev": "316562cb400117dd7ec998acf67182566e475318",
-    "narHash": "sha256-MFx0t5f8nQBhWl6WjopW+e19JUKhaDWZ39T7tBmJRHc=",
-    "lastModified": 1781176544
-  },
   "cat-gtk-themes": {
     "type": "github",
     "owner": "kagurazakei",
@@ -43,9 +35,9 @@
     "type": "github",
     "owner": "chaotic-cx",
     "repo": "nyx",
-    "rev": "704c6fc5ea503b0d375244a86781b840d66f5080",
-    "narHash": "sha256-w66Dd0yhtpJaD1n8LVxnWzggKhwA0uGAR+Tgx8+/07k=",
-    "lastModified": 1782668359
+    "rev": "723098d6a17cdc1a3b8aec3bf6ea22fa3bf00b8f",
+    "narHash": "sha256-DgUgEB7iSQgmceTCs+rLdsnQm/P9fBZTVrtaRaYPHaM=",
+    "lastModified": 1782887747
   },
   "crane": {
     "type": "github",
@@ -71,14 +63,6 @@
     "narHash": "sha256-i1GiDWdSW+QdqAJchnAIh0mJOlApf5NXnX7wBf1j8cI=",
     "lastModified": 1782326841
   },
-  "fenix": {
-    "type": "github",
-    "owner": "nix-community",
-    "repo": "fenix",
-    "rev": "7f6d415487ef6d5dfe08c4bda148af3d21477dec",
-    "narHash": "sha256-+pFKu+a/YWhPUaBj5cIa7PLNcDvpzpgzuZm+jeFJC38=",
-    "lastModified": 1782638651
-  },
   "flake-utils": {
     "type": "github",
     "owner": "numtide",
@@ -89,7 +73,7 @@
   },
   "helium": {
     "type": "tarball",
-    "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1043354934/51ae3208-cf78-4380-a6ed-3d28baaa2d9b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-06-29T08%3A08%3A23Z&rscd=attachment%3B+filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-06-29T07%3A08%3A06Z&ske=2026-06-29T08%3A08%3A23Z&sks=b&skv=2018-11-09&sig=R6bf3dom4tQag%2FeD3uSQ8JfsnN3LoP9qTYdxev7FfEs%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4MjcyMDkyNiwibmJmIjoxNzgyNzE3MzI2LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.9sxx0QwVxNXlllok-btN5g8N-O3nD9cnexRTgAK7lF0&response-content-disposition=attachment%3B%20filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&response-content-type=application%2Foctet-stream",
+    "url": "https://release-assets.githubusercontent.com/github-production-release-asset/1043354934/51ae3208-cf78-4380-a6ed-3d28baaa2d9b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-07-02T08%3A14%3A53Z&rscd=attachment%3B+filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-07-02T07%3A14%3A34Z&ske=2026-07-02T08%3A14%3A53Z&sks=b&skv=2018-11-09&sig=6qqdgmJYHgIjmFiuHIqPZvYS1ydJZTtevTsNqoSDe%2F8%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4Mjk4MDk5NCwibmJmIjoxNzgyOTc3Mzk0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.mj7YMEpBAUBJJBqnOaEoaG7G64L6rUM33EAKPFzOd9Q&response-content-disposition=attachment%3B%20filename%3Dhelium-0.13.4.1-x86_64_linux.tar.xz&response-content-type=application%2Foctet-stream",
     "narHash": "sha256-HiX4xrtSv4mgtdq4evSFZqBoVsDu1bhfStJT8QJ0WpI=",
     "lastModified": 1781727245
   },
@@ -153,9 +137,9 @@
     "type": "github",
     "owner": "nixos",
     "repo": "nixpkgs",
-    "rev": "9c42c13f8073d2226e1b0e20b89a569805163bdc",
-    "narHash": "sha256-i3j0SCT35PoKKfGcvLIkz9Deqn/VRB6f0mRafw1UBZc=",
-    "lastModified": 1782716874
+    "rev": "375531d6833e96247f94b5a57e52790fa9155a3f",
+    "narHash": "sha256-SJB8JMcKD2ZJrIOqy1D0ICHS/WsBY3jYJDgUYfKCOeU=",
+    "lastModified": 1782977031
   },
   "mnw": {
     "type": "github",
@@ -169,9 +153,9 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "neovim-nightly-overlay",
-    "rev": "fa8d697637b1b3ee944518f91a2ad4c8f86512ed",
-    "narHash": "sha256-CiBLAa/4rwU9BEapcgG0ogHggYrWLJ4zjkZYXbsfgL0=",
-    "lastModified": 1782691458
+    "rev": "2b5cf92633caaf2604e7b78d8d16ad92dbb502c6",
+    "narHash": "sha256-ezzhZespCpcwqu07KaPYqSEuaA/eKBFd/9In/flp1r8=",
+    "lastModified": 1782717626
   },
   "niri-nix": {
     "type": "git",
@@ -193,9 +177,9 @@
     "type": "github",
     "owner": "xddxdd",
     "repo": "nix-cachyos-kernel",
-    "rev": "6298c2c5b19dfb88d07aec2b0860a3aed950aeb7",
-    "narHash": "sha256-x8yVRdSkSjxB+03EHJLMCgrWxZi4H+tMFTrEENgRo5Q=",
-    "lastModified": 1782672531
+    "rev": "e2100ddeb1d86fbb73afc5f9a34d9f8b6f3bbc00",
+    "narHash": "sha256-ZmAmMCidyketjLDCJc5uRuKpLHibLwarJWcR+9Y7Kn0=",
+    "lastModified": 1782933689
   },
   "nix-flatpak": {
     "type": "github",
@@ -213,29 +197,13 @@
     "narHash": "sha256-ripjZa7BBLwL1uS5VJF3s/VpZpWt5ZIQEvkJ/FJNpQw=",
     "lastModified": 1782636943
   },
-  "nix-src": {
-    "type": "github",
-    "owner": "NixOS",
-    "repo": "nix",
-    "rev": "af7f2fa9b832e12eb49977a112a85f426f8e4643",
-    "narHash": "sha256-S9sgadbSkd0lygRK0Y54lirMtHJg24WJULbueJbHp24=",
-    "lastModified": 1782695744
-  },
-  "nix-wrappers": {
-    "type": "github",
-    "owner": "midischwarz12",
-    "repo": "nix-wrappers",
-    "rev": "fdde24be5ff6b3840c92c84a34c80b1e13fe796e",
-    "narHash": "sha256-mU9KVUh8frMXv0cD871fDv2hSd+p/eljbMhRglhQFEw=",
-    "lastModified": 1770663017
-  },
   "nixcord": {
     "type": "github",
     "owner": "FlameFlag",
     "repo": "nixcord",
-    "rev": "6db6f545223015523d72e9727811a3569ef4b099",
-    "narHash": "sha256-7IX/sy/gvDxPCBze4q5dbux6kxF90hc5PIO8u2c2tqk=",
-    "lastModified": 1782670213
+    "rev": "17d5c4662e5852ef7df55435cea3e898a1a6fead",
+    "narHash": "sha256-TNJ+BT/Dy2HzbIZ8z45lL67RDQKs5kIRNxeWoxmNmfI=",
+    "lastModified": 1782954739
   },
   "nixos-core": {
     "type": "github",
@@ -255,17 +223,17 @@
   },
   "nixos-stable": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.3494.714a5f8c4ead/nixexprs.tar.xz",
-    "rev": "714a5f8c4ead6b31148d829288440ed033ccc041",
-    "narHash": "sha256-r4TA57SL7nvj1R+GY/FCLwFU48w9IixTQlzBTIYkt8E="
+    "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.3869.95ca1e203c07/nixexprs.tar.xz",
+    "rev": "95ca1e203c0750115fd4a6f17d5a245dfe6b1edd",
+    "narHash": "sha256-Q80uZ1R+Y0g0kNfzGG8AcbvNkgYlnwJ3ubunAuIDUIQ="
   },
   "nixpkgs": {
     "type": "github",
     "owner": "nixos",
     "repo": "nixpkgs",
-    "rev": "e73de5be04e0eff4190a1432b946d469c794e7b4",
-    "narHash": "sha256-pGvFkM8N0xEkIIXDe5YYfbEAvHrk4IxBrjB/x8OomhE=",
-    "lastModified": 1782467914
+    "rev": "b5aa0fbd538984f6e3d201be0005b4463d8b09f8",
+    "narHash": "sha256-oPXCU/SSUokcGaJREHibG1CBX3+s/W7orDWQOZDsEeQ=",
+    "lastModified": 1782723713
   },
   "nixpkgs-lib": {
     "type": "github",
@@ -279,9 +247,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia-shell",
-    "rev": "8c70e95e0af0f359878529631d75fc1ab0d3bd6d",
-    "narHash": "sha256-9nEW0HmJhBnx18relGPey+5mAOP43AoJ1O9ybUJFhrA=",
-    "lastModified": 1782707326
+    "rev": "8d2c6881d3e1e7f1e894fc2e811c36fe9ffa6989",
+    "narHash": "sha256-mp92xRkWul0PEkPt1v/eJOBcuzG/ohQavn6vO+djEtc=",
+    "lastModified": 1782953157
   },
   "noctalia-greeter": {
     "type": "github",
@@ -299,12 +267,6 @@
     "narHash": "sha256-2DZ7zcCZlnwTsj8cDKg+i/Pb7plU/GPtO1pFPsnNBGE=",
     "lastModified": 1780473225
   },
-  "qt-mocha": {
-    "type": "fixed",
-    "url": "https://raw.githubusercontent.com/catppuccin/qt5ct/refs/heads/main/themes/catppuccin-mocha-pink.conf",
-    "sha256": "sha256-fO19xo1g2YDF2M0Yz8yG/RDEryDtHDwv+OsP1Ld7J68=",
-    "unpack": "file"
-  },
   "qtengine": {
     "type": "github",
     "owner": "kossLAN",
@@ -317,9 +279,9 @@
     "type": "git",
     "url": "https://git.outfoxxed.me/quickshell/quickshell.git",
     "ref": "HEAD",
-    "rev": "68c2c85c33845385f7ab8147b32f1450b1e468e0",
-    "narHash": "sha256-Mo2YtNEGlcySnbq0YuP3nUKMAQCMAfE+TcCffo5vzD8=",
-    "lastModified": 1781847791
+    "rev": "1661ef100a431a470ed2c42e6d06539b77edf826",
+    "narHash": "sha256-7YAUrV8YoDFnvOtFAGzdMVgNh25h7nOg3PxjRmLAHaE=",
+    "lastModified": 1782811879
   },
   "rosep-fish": {
     "type": "github",
@@ -337,12 +299,6 @@
     "narHash": "sha256-rZm3d7dN4M2cHMx1SrrSWfCKn3JHUVQ+EsH5FvOww4I=",
     "lastModified": 1773083277
   },
-  "rosep-iris": {
-    "type": "fixed",
-    "url": "https://github.com/rose-pine/kvantum/blob/master/dist/rose-pine-iris.tar.gz",
-    "sha256": "sha256-33v9ACToEXBKQGUgXmlVca4FAl6gW7gpuzxTMnKiMF0=",
-    "unpack": "tarball"
-  },
   "rosep-kitty": {
     "type": "github",
     "owner": "rose-pine",
@@ -351,19 +307,13 @@
     "narHash": "sha256-GyRyflUVp1BHg6S0emZ6ViALx8L130npnfyZQmdxhfA=",
     "lastModified": 1762352814
   },
-  "rosep-love": {
-    "type": "fixed",
-    "url": "https://github.com/rose-pine/kvantum/blob/master/dist/rose-pine-love.tar.gz",
-    "sha256": "sha256-DveGdV81y8Yajekm67MzqqLfR/Hr0RXhid0AwDCtu3k=",
-    "unpack": "tarball"
-  },
   "run0-sudo-shim": {
     "type": "github",
     "owner": "amaanq",
     "repo": "run0-sudo-shim",
-    "rev": "e93fc7f5fc380df2ea41f8243ed368319cbf315d",
-    "narHash": "sha256-yQz3Ehckh+9hwe4BG7eiDDkTg09RIk5UEOWsKEO7CaY=",
-    "lastModified": 1779937645
+    "rev": "002dcd75ba18febf50a73eee901cb191678da7ab",
+    "narHash": "sha256-0++X37t1mBN2Ad2ZWzy42SIbfJmCM8ynpnjMhyoLLPg=",
+    "lastModified": 1782889535
   },
   "shizuruPkgs": {
     "type": "github",
@@ -377,9 +327,9 @@
     "type": "github",
     "owner": "Gerg-L",
     "repo": "spicetify-nix",
-    "rev": "5ff9a6ca9dcbad7cccea2c97d30237468b16feda",
-    "narHash": "sha256-JOSMk12GgnTLVlUSCuKkqyUF6cw82wl7t7e1WuFfg5s=",
-    "lastModified": 1782633406
+    "rev": "9cabea6f5973ec01f60080ea50f54f8f6d74dc95",
+    "narHash": "sha256-7QVN7ijsXbIBRrI9LdXfeoFktTS0I6HZya9tu6+STrs=",
+    "lastModified": 1782898510
   },
   "stash": {
     "type": "github",

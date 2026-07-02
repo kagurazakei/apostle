@@ -7,6 +7,13 @@
   inputs.neovim-nightly.overlays.default
   inputs.helium-browser.overlays.default
   (_final: prev: {
+    inherit (prev.lixPackageSets.git)
+      nixpkgs-review
+      nix-eval-jobs
+      nix-fast-build
+      colmena
+      nix-rebuild-ng
+      ;
     inherit (prev.stdenv.hostPlatform) system;
     master = import inputs.master {
       inherit (prev.stdenv.hostPlatform) system;
