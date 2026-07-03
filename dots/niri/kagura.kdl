@@ -91,7 +91,7 @@ binds {
         close-window
     }
     Mod+Return {
-        spawn "kitty"
+        spawn "ghostty"
     }
     Mod+Right {
         focus-column-right
