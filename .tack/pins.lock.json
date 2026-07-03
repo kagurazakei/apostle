@@ -315,14 +315,6 @@
     "narHash": "sha256-6bL54LqB9oCjgO6S0BUYEGV3DCp6veSOKaYUfS+Wuoo=",
     "lastModified": 1771422838
   },
-  "smithay": {
-    "type": "github",
-    "owner": "Smithay",
-    "repo": "smithay",
-    "rev": "cb1eb2a3f48d95a7ea4b030159a2512ba667a2fb",
-    "narHash": "sha256-rmvsEIczMVRQFhczpKfv7vpHWuAswKbOnM4hSdANUBU=",
-    "lastModified": 1783012859
-  },
   "spicetify": {
     "type": "github",
     "owner": "Gerg-L",
