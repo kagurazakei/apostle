@@ -97,17 +97,14 @@ builtins.attrValues {
 
   inherit (zpkgs)
     gtk-themes
-    viu
     stash
     quickshell
     ffmpreg
-    # helium
     ;
 
   inherit (zpkgs.scripts)
     nixy
     lutui
-    touchpad-toggle
     ;
 
   inherit (pkgs.kdePackages)

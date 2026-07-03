@@ -17,6 +17,7 @@ let
     "noctalia"
     "nixcord"
     "spicetify"
+    "watt"
     "walker"
     "yazi"
     "zellij"

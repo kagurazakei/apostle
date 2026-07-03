@@ -7,14 +7,6 @@
     "narHash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I=",
     "lastModified": 1770165109
   },
-  "ambxst": {
-    "type": "github",
-    "owner": "kagurazakei",
-    "repo": "ambxst",
-    "rev": "869d863fb154de323c8a6c9e6382bc9b034e5276",
-    "narHash": "sha256-19X5EEm8z22boDoCkfBOGJwsJAGGsg2UwO0nOP83V2g=",
-    "lastModified": 1781244955
-  },
   "cat-gtk-themes": {
     "type": "github",
     "owner": "kagurazakei",
@@ -362,14 +354,6 @@
     "rev": "2412c8f18d191fdc6c4bb202da77794cdd9c3165",
     "narHash": "sha256-vkci6lC9aGRLbQsBpr+rTjkpJ1G7h7JzsV4SK2mfCew=",
     "lastModified": 1782196692
-  },
-  "viu": {
-    "type": "github",
-    "owner": "viu-media",
-    "repo": "viu",
-    "rev": "f6329483099b89a1084dfb785ded7cfe12327ad0",
-    "narHash": "sha256-3j6jhOkGk78sjhh1aNpsDfWoBGszT7rZz6Ec2VztJ8U=",
-    "lastModified": 1778324937
   },
   "waifu-cursors": {
     "type": "github",
