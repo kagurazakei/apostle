@@ -3,7 +3,6 @@
   self,
   myLibs,
   inputs,
-  config,
   ...
 }:
 let
@@ -24,7 +23,7 @@ in
     };
   };
   modules.programs.dots_impure = myLibs.mkDotsModule username {
-    "nixpkgs" = "/nixpkgs";
+    "nixpkgs" = "/nixpkgs/config.nix";
     "fastfetch" = "/fastfetch";
     "swappy/config" = "/swappy/config";
     "lazygit" = "/lazygit";
@@ -44,10 +43,20 @@ in
     "fuzzel/noctalia" = "/fuzzel/noctalia";
     "foot/foot.ini" = "/foot/foot.ini";
     "foot/rose-pine.ini" = { ... }: inputs.rosep-foot + "/rose-pine";
-    ".face.icon" = "/profile.png";
+    "qt6ct/qt6ct.conf" = "/qtct/qt6ct.conf";
+    "qt6ct/colors/Catppuccin-Mocha.conf" = "/qtct/colors/Catppuccin-Mocha.conf";
+    "qt5ct/colors/Catppuccin-Mocha.conf" = "/qtct/colors/Catppuccin-Mocha.conf";
+    "qt5ct/qt5ct.conf" = "/qtct/qt5ct.conf";
+    "Kvantum/kvantum.kvconfig" = "/Kvantum/kvantum.kvconfig";
+    "Kvantum/rose-pine-iris" = "/Kvantum/rose-pine-iris";
+    "Kvantum/rose-pine-love" = "/Kvantum/rose-pine-love";
     "zathura/binds" = "/zathura/binds";
     "zathura/options" = "/zathura/options";
     "zathura/theme" = "/zathura/theme";
     "zathura/zathurarc" = "/zathura/zathurarc";
+    "htop" = "/htop";
+    "booru" = "/booru";
+    "uwsm" = "/uwsm";
+    "cachix/cachix.dhall" = { config, ... }: config.age.secrets.cachix.path;
   };
 }

@@ -3,7 +3,7 @@
 #
 # [] []?: -> []
 let
-  inputs = import ../.tack;
+  inputs = import ../../.tack;
   lib = import "${inputs.nixpkgs}/lib";
   inherit (builtins)
     filter

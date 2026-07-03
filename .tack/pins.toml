@@ -3,27 +3,21 @@ gh = "github:{path}"
 manic = "github:manic-systems/{path}"
 
 [all_follow]
-nixpkgs = ["nixos-stable", "nixpkgs", "master"]
-fenix = "fenix"
-rust-overlay = "rust-overlay"
+nixpkgs = ["nixos-stable", "master"]
 niri-src = ["niri-stable", "niri-unstable"]
-nix = "nix-src"
 crane = "crane"
-git-hooks = ["git-hooks-nix"]
 nixpkgs-lib = "nixpkgs-lib"
-rust-analyzer-src = "rust-analyzer"
 xwayland-satellite = [
   "xwayland-satellite-stable",
   "xwayland-satellite-unstable"
 ]
 hjem-rum = "hjem"
+smithay = "smithay"
 
 [inputs]
 # --- Core toolchain ----------------------------------------------------------
-rust-overlay.url = "gh:oxalica/rust-overlay"
 nixpkgs.url = "gh:nixos/nixpkgs/nixos-unstable"
 master.url = "gh:nixos/nixpkgs/master"
-fenix.url = "gh:nix-community/fenix"
 nixos-stable.url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
 
 # --- Secrets / identity ------------------------------------------------------
@@ -31,10 +25,7 @@ agenix.url = "gh:ryantm/agenix"
 
 # --- Build / system ----------------------------------------------------------
 nixos-core.url = "github:llakala/nixos-core"
-nix-wrappers.url = "gh:midischwarz12/nix-wrappers"
-nix-src.url = "gh:NixOS/nix"
-cade.url = "manic:cade"
-run0-sudo-shim.url = "gh:amaanq/run0-sudo-shim"
+run0-sudo-shim.url = "gh:amaanq/run0-sudo-shim/sudoedit"
 tack.url = "manic:tack"
 
 # --- Misc personal flakes ----------------------------------------------------
@@ -43,20 +34,18 @@ helium-browser.url = "gh:oxcl/nix-flake-helium-browser"
 nixcord.url = "gh:FlameFlag/nixcord"
 
 # --- Niri / desktop ----------------------------------------------------------
+niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix"
 niri-src.url = "gh:YaLTeR/niri"
-noctalia-shell.url = "gh:noctalia-dev/noctalia-shell/legacy-v4"
 tuigreet.url = "gh:notashelf/tuigreet"
 watt.url = "gh:notashelf/watt"
-noctalia-greeter.url = "git+https://github.com/noctalia-dev/noctalia-greeter.git"
-noctalia.url = "gh:noctalia-dev/noctalia-shell"
-
+noctalia.url = "gh:noctalia-dev/noctalia-shell/cachix"
+noctalia-greeter.url = "gh:noctalia-dev/noctalia-greeter"
 # --- System services ---------------------------------------------------------
 qtengine.url = "gh:kossLAN/qtengine"
 quickshell.url = "git+https://git.outfoxxed.me/quickshell/quickshell.git"
 hjem-impure.url = "github:Rexcrazy804/hjem-impure"
 hjem-rum.url = "github:snugnug/hjem-rum"
 hjem.url = "github:feel-co/hjem"
-niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix.git"
 sysc-greet.url = "github:kagurazakei/sysc-greet/master"
 ambxst.url = "github:kagurazakei/ambxst"
 viu.url = "gh:viu-media/viu"
@@ -86,4 +75,3 @@ walls = { url = "git+https://github.com/kagurazakei/walls.git", type = "fetch" }
 equibop = { url = "gh:Equicord/Equibop", type = "fetch" }
 equicord = { url = "gh:Equicord/Equicord", type = "fetch" }
 helium = { url = "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz", type = "fetch" }
-

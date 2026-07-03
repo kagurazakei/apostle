@@ -1,8 +1,11 @@
 { self, ... }:
 let
   gpuModules = [ "intel" ];
+  mpvModules = [ "mpv" ];
+
+  getModules = category: names: map (name: category.${name}) names;
   buildProfile = x: {
-    imports = map (m: x.modules.nixos.${m}) gpuModules;
+    imports = getModules x.modules.nixos gpuModules ++ getModules x.modules.programs mpvModules;
   };
 in
 {

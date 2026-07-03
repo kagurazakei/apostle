@@ -3,45 +3,31 @@
   inputs,
   lib,
   zpkgs,
+  system,
   ...
 }:
-let
-  nixosSystem = inputs.nixpkgs.lib.nixosSystem;
-
-  buildHost =
+self.modules.hosts
+|> builtins.attrNames
+|> (
+  hosts:
+  lib.genAttrs hosts (
     hostname:
-    hostname
-    |> (name: self.modules.hosts.${name})
-    |> (hostModule: {
-      inherit hostModule;
-      system = hostModule.system or "x86_64-linux";
-    })
-    |> (
-      { hostModule, system }:
-      nixosSystem {
-        inherit lib;
-        modules = [
-          hostModule
-          { nixpkgs.overlays = import ../../overlays { inherit inputs; }; }
-        ];
-        specialArgs = {
-          inherit
-            self
-            inputs
-            system
-            zpkgs
-            ;
-        }
-        // inputs;
+    inputs.nixpkgs.lib.nixosSystem {
+      inherit lib;
+      modules = [
+        self.modules.hosts.${hostname}
+        { nixpkgs.overlays = import ../../overlays { inherit inputs; }; }
+      ];
+      specialArgs = {
+        inherit
+          self
+          inputs
+          system
+          zpkgs
+          ;
       }
-    );
-
-  nC =
-    self
-    |> (x: x.modules.hosts)
-    |> builtins.attrNames
-    |> (hosts: lib.genAttrs hosts buildHost);
-in
-{
-  inherit nC;
-}
+      // inputs;
+    }
+  )
+)
+|> (nC: { inherit nC; })

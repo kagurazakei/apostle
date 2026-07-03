@@ -1,46 +1,45 @@
 { self, ... }:
 let
-  modules = {
-    nixos = [ "misc_steam" ];
-    programs = [
-      "dots_fish"
-      "dots_hyprland"
-      "dots_niri"
-      "dots_mango"
-      "dots_impure"
-      "dots_yazi"
-      "spicetify"
-      "git"
-      "dolphin"
-      "fish"
-      "impermanence"
-      "librewolf"
-      "nixcord"
-      "agenix"
-      "yazi"
-      "zellij"
-      "mpv"
-      "noctalia"
-    ];
-    services = [
-      "_sysc-greet"
-      "_greetd"
-      "noctalia-greeter"
-    ];
-    wm = [
-      "_"
-      "hyprland"
-      "niri"
-      "mango"
-    ];
-  };
-
+  nixos = [ "misc_steam" ];
+  programs = [
+    "dots_fish"
+    "dots_hyprland"
+    "dots_niri"
+    "dots_mango"
+    "dots_impure"
+    "dots_yazi"
+    "agenix"
+    "dolphin"
+    "fish"
+    "git"
+    "impermanence"
+    "librewolf"
+    "noctalia"
+    "nixcord"
+    "spicetify"
+    "walker"
+    "yazi"
+    "zellij"
+    "zed"
+  ];
+  services = [
+    "_sysc-greet"
+    "_greetd"
+    "noctalia-greeter"
+  ];
+  wm = [
+    "_"
+    "hyprland"
+    "niri"
+    "mango"
+  ];
+  getModules = category: names: map (name: category.${name}) names;
   buildProfile = x: {
     imports =
-      map (m: x.modules.nixos.${m}) modules.nixos
-      ++ map (p: x.modules.programs.${p}) modules.programs
-      ++ map (s: x.modules.services.${s}) modules.services
-      ++ map (w: x.modules.wm.${w}) modules.wm;
+      getModules x.modules.nixos nixos
+      ++ getModules x.modules.programs programs
+      ++ getModules x.modules.services services
+      ++ getModules x.modules.wm wm;
   };
 in
 {

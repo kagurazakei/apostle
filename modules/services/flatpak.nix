@@ -21,6 +21,7 @@
             description = "Hjem Impure Systemd Service";
             after = [ "graphical-session.target" ];
             partOf = [ "graphical-session.target" ];
+            wantedBy = [ "graphical-session.target" ];
             serviceConfig = {
               ExecStart = "/etc/profiles/per-user/antonio/bin/hjem-impure";
               Restart = "on-failure";
@@ -30,6 +31,7 @@
             description = "arRPC Systemd Service";
             after = [ "graphical-session.target" ];
             partOf = [ "graphical-session.target" ];
+            wantedBy = [ "graphical-session.target" ];
             serviceConfig = {
               ExecStart = "${pkgs.arrpc}/bin/arrpc";
               Restart = "on-failure";

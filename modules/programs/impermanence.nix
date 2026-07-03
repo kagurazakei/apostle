@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, username, ... }:
 {
   modules.programs.impermanence = {
     imports = [
@@ -14,24 +14,28 @@
         "/var/lib/systemd/coredump"
         "/etc/NetworkManager/system-connections"
         {
-          directory = "/var/lib/colord";
-          user = "colord";
-          group = "colord";
+          directory = "/etc/sops-nix";
+          user = "root";
+          group = "wheel";
           mode = "u=rwx,g=rx,o=";
         }
-        "/var/lib/agenix"
       ];
-      files = [
-        ".screenrc"
-        "/etc/sops-nix/keys.txt"
-        "/etc/sops-nix/id_ed25519"
-        {
-          file = "/var/keys/secret_file";
-          parentDirectory = {
-            mode = "u=rwx,g=,o=";
-          };
-        }
-      ];
+      users.${username} = {
+        directories = [
+          {
+            directory = ".ssh";
+            mode = "0700";
+          }
+          {
+            directory = ".config/keys";
+            mode = "0700";
+          }
+          {
+            directory = ".local/share/keyrings";
+            mode = "0700";
+          }
+        ];
+      };
     };
   };
 }

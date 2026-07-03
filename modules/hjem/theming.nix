@@ -20,6 +20,7 @@
         listOf
         ;
       cfg = config.theming;
+
       mkFontOption = {
         family = mkOption {
           type = nullOr str;
@@ -34,8 +35,71 @@
           default = -1;
         };
       };
+      mkQtConfig =
+        {
+          colorScheme,
+          iconTheme,
+          style,
+          font,
+          fontFixed,
+        }:
+        {
+          theme = {
+            inherit colorScheme iconTheme style;
+            font = {
+              family = font.family;
+              size = font.size;
+              weight = font.weight;
+            };
+            fontFixed = {
+              family = fontFixed.family;
+              size = fontFixed.size;
+              weight = fontFixed.weight;
+            };
+          };
+          misc.singleClickActivate = false;
+        };
+      mkEnvVars =
+        {
+          cursorSize,
+          cursorName,
+          username,
+        }:
+        ''
+          XCURSOR_SIZE=${toString cursorSize}
+          XCURSOR_THEME=${cursorName}
+          HYPRCURSOR_SIZE=${toString cursorSize}
+          HYPRCURSOR_THEME=${cursorName}
+          QT_QPA_PLATFORMTHEME=qtengine
+          DCONF_PROFILE=${username}
+        '';
+      mkDconfSettings =
+        {
+          cursorName,
+          cursorSize,
+          gtkName,
+          iconThemeName,
+          qtFont,
+        }:
+        {
+          "org/gnome/desktop/interface" = {
+            cursor-theme = cursorName;
+            cursor-size = lib.gvariant.mkUint32 cursorSize;
+            gtk-theme = gtkName;
+            color-scheme = "prefer-dark";
+            icon-theme = iconThemeName;
+            font-name = "${qtFont.family} ${toString qtFont.size}";
+          };
+        };
+      mkIconThemeIndex = cursorName: ''
+        [Icon Theme]
+        Name=Default
+        Inherits=${cursorName}
+      '';
+
     in
-    {
+    null
+    |> (_: {
       options.theming = {
         enable = mkOption {
           type = nullOr bool;
@@ -108,78 +172,56 @@
           fontFixed = mkFontOption;
         };
       };
-      config = mkIf cfg.enable {
-        assertions = [
-          {
-            assertion = !(cfg.enable && cfg.username == "");
-            message = "this is scuffed but username must be manually set";
-          }
-        ];
-        hjem.users.${cfg.username} = {
-          programs.qtengine = {
-            enable = true;
-            config = {
-              theme = {
+    })
+    |> (
+      options:
+      options
+      // {
+        config = mkIf cfg.enable {
+          assertions = [
+            {
+              assertion = !(cfg.enable && cfg.username == "");
+              message = "this is scuffed but username must be manually set";
+            }
+          ];
+          hjem.users.${cfg.username} = {
+            programs.qtengine = {
+              enable = true;
+              config = mkQtConfig {
                 colorScheme = cfg.qt.colorScheme;
                 iconTheme = cfg.qt.iconTheme;
                 style = cfg.qt.style;
-
-                font = {
-                  family = cfg.qt.font.family;
-                  size = cfg.qt.font.size;
-                  weight = cfg.qt.font.weight;
-                };
-
-                fontFixed = {
-                  family = cfg.qt.fontFixed.family;
-                  size = cfg.qt.fontFixed.size;
-                  weight = cfg.qt.fontFixed.weight;
-                };
+                font = cfg.qt.font;
+                fontFixed = cfg.qt.fontFixed;
               };
-              misc.singleClickActivate = false;
             };
+            xdg.data.files = {
+              "icons/${cfg.cursor.name}".source = "${cfg.cursor.package}/share/icons/${cfg.cursor.name}";
+              "icons/default/index.theme".text = mkIconThemeIndex cfg.cursor.name;
+            };
+            xdg.config.files."environment.d/envvars.conf".text = mkEnvVars {
+              cursorSize = cfg.cursor.size;
+              cursorName = cfg.cursor.name;
+              username = cfg.username;
+            };
+            packages = [
+              cfg.gtk.package
+              cfg.iconTheme.package
+            ]
+            ++ cfg.qt.packages;
           };
-          xdg.data.files = {
-            "icons/${cfg.cursor.name}".source = "${cfg.cursor.package}/share/icons/${cfg.cursor.name}";
-            "icons/default/index.theme".text = ''
-              [Icon Theme]
-              Name=Default
-              Inherits=${cfg.cursor.name}
-            '';
-          };
-
-          xdg.config.files."environment.d/envvars.conf".text = ''
-            XCURSOR_SIZE=${toString cfg.cursor.size}
-            XCURSOR_THEME=${cfg.cursor.name}
-            HYPRCURSOR_SIZE=${toString cfg.cursor.size}
-            HYPRCURSOR_THEME=${cfg.cursor.name}
-            QT_QPA_PLATFORMTHEME=qtengine
-            DCONF_PROFILE=${cfg.username}
-          '';
-
-          packages = [
-            cfg.gtk.package
-            cfg.iconTheme.package
-          ]
-          ++ cfg.qt.packages;
+          programs.dconf.profiles.${cfg.username}.databases = [
+            {
+              settings = mkDconfSettings {
+                cursorName = cfg.cursor.name;
+                cursorSize = cfg.cursor.size;
+                gtkName = cfg.gtk.name;
+                iconThemeName = cfg.iconTheme.name;
+                qtFont = cfg.qt.font;
+              };
+            }
+          ];
         };
-        programs.dconf.profiles.${cfg.username}.databases = [
-          {
-            settings = {
-              "org/gnome/desktop/interface" = {
-                cursor-theme = cfg.cursor.name;
-                cursor-size = lib.gvariant.mkUint32 cfg.cursor.size;
-
-                gtk-theme = cfg.gtk.name;
-                color-scheme = "prefer-dark";
-
-                icon-theme = cfg.iconTheme.name;
-                font-name = "${cfg.qt.font.family} ${toString cfg.qt.font.size}";
-                #accentcolor
-              };
-            };
-          }
-        ];
-      };
-    };
+      }
+    );
 }

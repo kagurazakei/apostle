@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   modules.programs.noctalia =
     { noctalia, ... }:
@@ -10,6 +11,9 @@
             enable = true;
             target = "graphical-session.target";
           };
+        };
+        xdg.config.files = {
+          "noctalia/config.toml".source = self.paths.dots + "/noctalia/config.toml";
         };
       };
     };

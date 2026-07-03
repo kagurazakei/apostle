@@ -9,10 +9,11 @@ let
   callPackage = callPackageWith pkgs;
 
   paths = {
-    dots = ../dots;
-    templates = ../templates;
-    pkgs = ../pkgs;
-    secrets = ../secrets;
+    dots = ../../dots;
+    templates = ../../templates;
+    pkgs = ../../pkgs;
+    secrets = ../../secrets;
+    modules = ../../modules;
   };
 in
 {

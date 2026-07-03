@@ -16,12 +16,6 @@
       documentation.enable = false;
       nixpkgs = {
         config.allowUnfree = true;
-        config.permittedInsecurePackages = [
-          "librewolf-unwrapped-151.0.2-1"
-          "librewolf-151.0.2-1"
-          "librewolf-bin-unwrapped-151.0.1-2"
-          "librewolf-bin-151.0.1-2"
-        ];
       };
       nix = {
         channel.enable = false;
@@ -58,6 +52,7 @@
             "https://attic.xuyh0120.win/lantian"
             "https://hyprland.cachix.org"
             "https://niri-nix.cachix.org"
+            "https://noctalia.cachix.org"
           ];
           trusted-public-keys = [
             "kagurazakei.cachix.org-1:L150C/szoC/r6LOupCWQRU5IqdWIBl926O1HpiBVEkw="
@@ -66,6 +61,7 @@
             "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
             "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
             "niri-nix.cachix.org-1:SvFtqpDcf7Sm1SMJdby1/+Y+6f3Yt3/3PMcSTKPJNJ0="
+            "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
           ];
         };
 
