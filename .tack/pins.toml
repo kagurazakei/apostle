@@ -40,6 +40,7 @@ tuigreet.url = "gh:notashelf/tuigreet"
 watt.url = "gh:notashelf/watt"
 noctalia.url = "gh:noctalia-dev/noctalia-shell/cachix"
 noctalia-greeter.url = "gh:noctalia-dev/noctalia-greeter"
+smithay.url = "gh:Smithay/smithay"
 # --- System services ---------------------------------------------------------
 qtengine.url = "gh:kossLAN/qtengine"
 quickshell.url = "git+https://git.outfoxxed.me/quickshell/quickshell.git"

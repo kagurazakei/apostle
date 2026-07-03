@@ -1,7 +1,7 @@
 {
   modules.hosts.hana = {
     wm.hyprland = {
-      enable = true;
+      enable = false;
       buildFromSrc = false;
     };
   };
