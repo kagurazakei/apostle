@@ -15,7 +15,7 @@
     }:
     {
       imports = [
-        (import inputs.hjem { inherit pkgs; }).nixosModules.default
+        inputs.hjem.nixosModules.default
         (lib.mkAliasOptionModule [ "hj" ] [ "hjem" "users" "${username}" ])
         (lib.mkAliasOptionModule [ "impure-dots" ] [ "hjem" "users" "${username}" "impure" "dotsDir" ])
       ];

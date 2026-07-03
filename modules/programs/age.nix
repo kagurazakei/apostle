@@ -13,11 +13,11 @@
     }:
     {
       imports = [
-        (inputs.agenix + "/modules/age.nix")
+        inputs.agenix.nixosModules.default
         (lib.mkAliasOptionModule [ "greeny" "secrets" ] [ "age" "secrets" ])
       ];
       environment.systemPackages = [
-        (pkgs.callPackage "${inputs.agenix}/pkgs/agenix.nix" { })
+        inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
       age.identityPaths = [
         "/etc/sops-nix/${config.networking.hostName}.txt"

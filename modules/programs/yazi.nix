@@ -2,7 +2,6 @@
   myLibs,
   username,
   pkgs,
-  lib,
   ...
 }:
 let
