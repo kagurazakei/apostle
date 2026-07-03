@@ -1,13 +1,25 @@
 { self, ... }:
-let
-  gpuModules = [ "intel" ];
-  mpvModules = [ "mpv" ];
-
-  getModules = category: names: map (name: category.${name}) names;
-  buildProfile = x: {
-    imports = getModules x.modules.nixos gpuModules ++ getModules x.modules.programs mpvModules;
-  };
-in
 {
-  modules.profiles.laptop = self |> buildProfile;
+  categories = [
+    {
+      target = "nixos";
+      modules = [ "intel" ];
+    }
+    {
+      target = "programs";
+      modules = [ "mpv" ];
+    }
+  ];
 }
+|> (
+  ctx:
+  self
+  |> (x: {
+    modules.profiles.laptop = {
+      imports =
+        ctx.categories
+        |> (map (c: map (name: x.modules.${c.target}.${name}) c.modules))
+        |> builtins.concatLists;
+    };
+  })
+)

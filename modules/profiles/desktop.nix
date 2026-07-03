@@ -1,13 +1,16 @@
 { self, ... }:
-let
+{
   gpuModules = [
     "nvidia"
     "amd"
   ];
-  buildProfile = x: {
-    imports = map (m: x.modules.nixos.${m}) gpuModules;
-  };
-in
-{
-  modules.profiles.desktop = self |> buildProfile;
 }
+|> (
+  ctx:
+  self
+  |> (x: {
+    modules.profiles.desktop = {
+      imports = ctx.gpuModules |> (map (m: x.modules.nixos.${m}));
+    };
+  })
+)

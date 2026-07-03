@@ -1,48 +1,63 @@
 { self, ... }:
-let
-  nixos = [ "misc_steam" ];
-  programs = [
-    "dots_fish"
-    "dots_hyprland"
-    "dots_niri"
-    "dots_mango"
-    "dots_impure"
-    "dots_yazi"
-    "agenix"
-    "dolphin"
-    "fish"
-    "git"
-    "impermanence"
-    "librewolf"
-    "noctalia"
-    "nixcord"
-    "spicetify"
-    "watt"
-    "walker"
-    "yazi"
-    "zellij"
-    "zed"
-  ];
-  services = [
-    "_sysc-greet"
-    "_greetd"
-    "noctalia-greeter"
-  ];
-  wm = [
-    "_"
-    "hyprland"
-    "niri"
-    "mango"
-  ];
-  getModules = category: names: map (name: category.${name}) names;
-  buildProfile = x: {
-    imports =
-      getModules x.modules.nixos nixos
-      ++ getModules x.modules.programs programs
-      ++ getModules x.modules.services services
-      ++ getModules x.modules.wm wm;
-  };
-in
 {
-  modules.profiles.graphical = self |> buildProfile;
+  categories = [
+    {
+      target = "nixos";
+      modules = [ "misc_steam" ];
+    }
+    {
+      target = "programs";
+      modules = [
+        "dots_fish"
+        "dots_hyprland"
+        "dots_niri"
+        "dots_mango"
+        "dots_impure"
+        "dots_yazi"
+        "agenix"
+        "dolphin"
+        "fish"
+        "git"
+        "impermanence"
+        "librewolf"
+        "noctalia"
+        "nixcord"
+        "spicetify"
+        "watt"
+        "walker"
+        "yazi"
+        "zellij"
+        "zed"
+      ];
+    }
+    {
+      target = "services";
+      modules = [
+        "_sysc-greet"
+        "_greetd"
+        "noctalia-greeter"
+      ];
+    }
+    {
+      target = "wm";
+      modules = [
+        "_"
+        "hyprland"
+        "niri"
+        "mango"
+      ];
+    }
+  ];
 }
+|> (
+  ctx:
+  self
+  |> (x: {
+    modules.profiles.graphical = {
+      imports =
+        ctx.categories
+        |> (map (c: map (name: x.modules.${c.target}.${name}) c.modules))
+        |> builtins.concatLists;
+    };
+  })
+)
